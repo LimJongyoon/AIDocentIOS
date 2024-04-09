@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ouq-T0-Dpd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qgl-ad-8XA">
     <device id="retina6_12" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
@@ -8,10 +8,38 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--언어-->
+        <scene sceneID="rXU-u2-NTG">
+            <objects>
+                <viewController id="7Sb-8b-KPQ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UBF-Cg-OhK">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gCg-Pz-eZs">
+                                <rect key="frame" x="159" y="453" width="75" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="MMCA" imagePlacement="top" title="Button" titleAlignment="automatic"/>
+                                <connections>
+                                    <segue destination="Bgf-TA-HaV" kind="show" id="Aei-Xf-dvN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="hVT-rp-AqM"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="언어" id="Rj3-dn-Yun"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4dQ-ds-e1l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4108" y="-308"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="H5R-OI-sU5">
             <objects>
                 <tabBarController id="Ouq-T0-Dpd" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="7JS-T0-EQV"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bru-8C-Rhu">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -27,7 +55,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zKc-In-EjB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2366" y="-297"/>
+            <point key="canvasLocation" x="-1440.4580152671756" y="-297.18309859154931"/>
         </scene>
         <!--홈-->
         <scene sceneID="FOo-vB-foX">
@@ -62,7 +90,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8KV-da-rpn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3195" y="451"/>
+            <point key="canvasLocation" x="-3196.1832061068699" y="450.7042253521127"/>
         </scene>
         <!--작품 안내-->
         <scene sceneID="nh8-AZ-Gjc">
@@ -163,9 +191,55 @@
             </objects>
             <point key="canvasLocation" x="1434" y="451"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="F3f-lj-dDb">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qgl-ad-8XA" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wcm-wJ-Hod">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="7Sb-8b-KPQ" kind="relationship" relationship="rootViewController" id="kzZ-im-gKC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hmh-nK-EtM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4837.4045801526718" y="-308.45070422535213"/>
+        </scene>
+        <!--관 선택하기-->
+        <scene sceneID="rRC-Sp-GgX">
+            <objects>
+                <viewController id="Bgf-TA-HaV" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Yzf-rf-HwT">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n0W-3l-4aS">
+                                <rect key="frame" x="159" y="399" width="75" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="MMCA" imagePlacement="top" title="Button" titleAlignment="automatic"/>
+                                <connections>
+                                    <segue destination="Ouq-T0-Dpd" kind="show" id="RMr-vl-YgX"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="2HO-XW-ARy"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="관 선택하기" id="uA2-2V-qVs"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oVo-RM-WDB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3381" y="-308"/>
+        </scene>
     </scenes>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
+        <image name="MMCA" width="236" height="244"/>
         <image name="homekit" catalog="system" width="128" height="104"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <image name="menucard" catalog="system" width="108" height="128"/>
