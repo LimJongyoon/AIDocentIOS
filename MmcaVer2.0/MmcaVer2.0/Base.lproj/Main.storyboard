@@ -16,24 +16,54 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gCg-Pz-eZs">
-                                <rect key="frame" x="159" y="453" width="75" height="54"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Language" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sca-Cp-S27">
+                                <rect key="frame" x="152" y="381" width="89" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="MMCA" imagePlacement="top" title="Button" titleAlignment="automatic"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kdt-eo-8OM">
+                                <rect key="frame" x="76" y="420" width="66" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="태극기s">
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
-                                    <segue destination="Bgf-TA-HaV" kind="show" id="Aei-Xf-dvN"/>
+                                    <segue destination="Bgf-TA-HaV" kind="show" id="gce-je-6nN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yf6-Ra-d2x">
+                                <rect key="frame" x="163" y="420" width="66" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="US">
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Bgf-TA-HaV" kind="show" id="WhB-y2-vHc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Crn-dL-AuO">
+                                <rect key="frame" x="250" y="420" width="66" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="JP">
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Bgf-TA-HaV" kind="show" id="Vdn-hS-r4y"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hVT-rp-AqM"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <navigationItem key="navigationItem" title="언어" id="Rj3-dn-Yun"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4dQ-ds-e1l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4108" y="-308"/>
+            <point key="canvasLocation" x="-4109.160305343511" y="-308.45070422535213"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="H5R-OI-sU5">
@@ -209,7 +239,7 @@
             </objects>
             <point key="canvasLocation" x="-4837.4045801526718" y="-308.45070422535213"/>
         </scene>
-        <!--관 선택하기-->
+        <!--관 선택-->
         <scene sceneID="rRC-Sp-GgX">
             <objects>
                 <viewController id="Bgf-TA-HaV" sceneMemberID="viewController">
@@ -217,33 +247,209 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n0W-3l-4aS">
-                                <rect key="frame" x="159" y="399" width="75" height="54"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="MMCA" imagePlacement="top" title="Button" titleAlignment="automatic"/>
-                                <connections>
-                                    <segue destination="Ouq-T0-Dpd" kind="show" id="RMr-vl-YgX"/>
-                                </connections>
-                            </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Ks-sd-Qyr">
+                                <rect key="frame" x="0.0" y="103" width="393" height="749"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xvr-th-VtD">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="939.66666666666663"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="now-ig-QNo">
+                                                <rect key="frame" x="8" y="10" width="377" height="200"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서울" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IuJ-qh-fHr">
+                                                        <rect key="frame" x="160.66666666666666" y="81" width="55.666666666666657" height="38.333333333333343"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="32"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YNg-Ok-chM">
+                                                        <rect key="frame" x="0.0" y="0.0" width="377" height="200"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="40"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" backgroundImage="서울">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <segue destination="Ouq-T0-Dpd" kind="show" id="A80-CQ-yJi"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="IuJ-qh-fHr" firstAttribute="centerX" secondItem="now-ig-QNo" secondAttribute="centerX" id="2s4-2A-LWz"/>
+                                                    <constraint firstAttribute="trailing" secondItem="YNg-Ok-chM" secondAttribute="trailing" id="3JH-U6-JJG"/>
+                                                    <constraint firstItem="IuJ-qh-fHr" firstAttribute="centerY" secondItem="now-ig-QNo" secondAttribute="centerY" id="6et-w6-ho8"/>
+                                                    <constraint firstAttribute="height" constant="200" id="Amq-WJ-fnn"/>
+                                                    <constraint firstItem="YNg-Ok-chM" firstAttribute="leading" secondItem="now-ig-QNo" secondAttribute="leading" id="Ebw-sd-gSb"/>
+                                                    <constraint firstAttribute="bottom" secondItem="YNg-Ok-chM" secondAttribute="bottom" id="OcZ-tv-SrZ"/>
+                                                    <constraint firstItem="YNg-Ok-chM" firstAttribute="top" secondItem="now-ig-QNo" secondAttribute="top" id="lOL-Hb-RcI"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yTb-kn-C1D">
+                                                <rect key="frame" x="8" y="220" width="377" height="200"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="과천" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m7K-FQ-Gx5">
+                                                        <rect key="frame" x="160.66666666666666" y="80.666666666666686" width="56" height="39"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="32"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rj6-uL-JCr">
+                                                        <rect key="frame" x="0.0" y="0.0" width="377" height="200"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="40"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" backgroundImage="과천">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <segue destination="Ouq-T0-Dpd" kind="show" id="Bco-xs-QGd"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="Rj6-uL-JCr" secondAttribute="trailing" id="2x1-ZP-DMs"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Rj6-uL-JCr" secondAttribute="bottom" id="8Jz-5r-U9l"/>
+                                                    <constraint firstItem="Rj6-uL-JCr" firstAttribute="top" secondItem="yTb-kn-C1D" secondAttribute="top" id="EiC-Zq-WhD"/>
+                                                    <constraint firstAttribute="height" constant="200" id="G13-qF-t8W"/>
+                                                    <constraint firstItem="Rj6-uL-JCr" firstAttribute="leading" secondItem="yTb-kn-C1D" secondAttribute="leading" id="GtG-eI-xeF"/>
+                                                    <constraint firstItem="m7K-FQ-Gx5" firstAttribute="centerY" secondItem="yTb-kn-C1D" secondAttribute="centerY" id="Jwa-yK-aGi"/>
+                                                    <constraint firstItem="m7K-FQ-Gx5" firstAttribute="centerX" secondItem="yTb-kn-C1D" secondAttribute="centerX" id="dn5-oG-6kt"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BCI-K8-vbg">
+                                                <rect key="frame" x="8" y="430" width="377" height="200"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="청주" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UNe-1W-nb1">
+                                                        <rect key="frame" x="160.66666666666666" y="80.666666666666629" width="56" height="39"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="32"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gdh-6u-EL1">
+                                                        <rect key="frame" x="0.0" y="0.0" width="377" height="200"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="40"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" backgroundImage="청주">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <segue destination="Ouq-T0-Dpd" kind="show" id="bEN-lh-W4f"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="UNe-1W-nb1" firstAttribute="centerY" secondItem="BCI-K8-vbg" secondAttribute="centerY" id="ImD-O4-yoh"/>
+                                                    <constraint firstItem="UNe-1W-nb1" firstAttribute="centerX" secondItem="BCI-K8-vbg" secondAttribute="centerX" id="QSS-y3-Fz2"/>
+                                                    <constraint firstItem="Gdh-6u-EL1" firstAttribute="top" secondItem="BCI-K8-vbg" secondAttribute="top" id="YEq-2U-j0h"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Gdh-6u-EL1" secondAttribute="bottom" id="ZtT-Td-Smt"/>
+                                                    <constraint firstItem="Gdh-6u-EL1" firstAttribute="leading" secondItem="BCI-K8-vbg" secondAttribute="leading" id="aKs-nG-NRJ"/>
+                                                    <constraint firstAttribute="height" constant="200" id="cNm-QV-dfR"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Gdh-6u-EL1" secondAttribute="trailing" id="rCI-qX-ct3"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QSU-Fx-rud">
+                                                <rect key="frame" x="8" y="640" width="377" height="200"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="덕수궁" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KZ8-x9-XVs">
+                                                        <rect key="frame" x="146.66666666666666" y="80.666666666666629" width="84" height="39"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="32"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D08-Cr-Xsc">
+                                                        <rect key="frame" x="0.0" y="0.0" width="377" height="200"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="40"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" backgroundImage="덕수궁">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <segue destination="Ouq-T0-Dpd" kind="show" id="Duh-0k-Lh8"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="D08-Cr-Xsc" secondAttribute="trailing" id="dSQ-zf-uDM"/>
+                                                    <constraint firstItem="KZ8-x9-XVs" firstAttribute="centerX" secondItem="QSU-Fx-rud" secondAttribute="centerX" id="fup-EV-3CO"/>
+                                                    <constraint firstAttribute="height" constant="200" id="hh9-gF-vWX"/>
+                                                    <constraint firstAttribute="bottom" secondItem="D08-Cr-Xsc" secondAttribute="bottom" id="jjO-2S-Ypu"/>
+                                                    <constraint firstItem="D08-Cr-Xsc" firstAttribute="top" secondItem="QSU-Fx-rud" secondAttribute="top" id="jlO-9z-hNX"/>
+                                                    <constraint firstItem="D08-Cr-Xsc" firstAttribute="leading" secondItem="QSU-Fx-rud" secondAttribute="leading" id="ld5-NY-TSD"/>
+                                                    <constraint firstItem="KZ8-x9-XVs" firstAttribute="centerY" secondItem="QSU-Fx-rud" secondAttribute="centerY" id="wsc-fW-XoS"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="yTb-kn-C1D" firstAttribute="leading" secondItem="Xvr-th-VtD" secondAttribute="leading" constant="8" id="08b-P6-H0Q"/>
+                                            <constraint firstAttribute="trailing" secondItem="now-ig-QNo" secondAttribute="trailing" constant="8" id="6qm-v6-ucn"/>
+                                            <constraint firstAttribute="trailing" secondItem="BCI-K8-vbg" secondAttribute="trailing" constant="8" id="72T-AK-aLq"/>
+                                            <constraint firstAttribute="trailing" secondItem="yTb-kn-C1D" secondAttribute="trailing" constant="8" id="9lV-ty-HIq"/>
+                                            <constraint firstAttribute="trailing" secondItem="QSU-Fx-rud" secondAttribute="trailing" constant="8" id="LrB-e2-L2d"/>
+                                            <constraint firstItem="now-ig-QNo" firstAttribute="top" secondItem="Xvr-th-VtD" secondAttribute="top" constant="10" id="PRv-zd-FSO"/>
+                                            <constraint firstItem="yTb-kn-C1D" firstAttribute="top" secondItem="now-ig-QNo" secondAttribute="bottom" constant="10" id="Ypc-7z-jNC"/>
+                                            <constraint firstItem="BCI-K8-vbg" firstAttribute="leading" secondItem="Xvr-th-VtD" secondAttribute="leading" constant="8" id="ddl-ZQ-5om"/>
+                                            <constraint firstItem="BCI-K8-vbg" firstAttribute="top" secondItem="yTb-kn-C1D" secondAttribute="bottom" constant="10" id="hHp-yp-OTh"/>
+                                            <constraint firstItem="now-ig-QNo" firstAttribute="leading" secondItem="Xvr-th-VtD" secondAttribute="leading" constant="8" id="liG-oq-YMr"/>
+                                            <constraint firstItem="QSU-Fx-rud" firstAttribute="top" secondItem="BCI-K8-vbg" secondAttribute="bottom" constant="10" id="vam-oz-igN"/>
+                                            <constraint firstItem="QSU-Fx-rud" firstAttribute="leading" secondItem="Xvr-th-VtD" secondAttribute="leading" constant="8" id="yc0-Ye-K0W"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Xvr-th-VtD" secondAttribute="trailing" id="501-vV-XaB"/>
+                                    <constraint firstAttribute="bottom" secondItem="Xvr-th-VtD" secondAttribute="bottom" id="B9Z-Od-fZX"/>
+                                    <constraint firstItem="Xvr-th-VtD" firstAttribute="centerX" secondItem="3Ks-sd-Qyr" secondAttribute="centerX" id="Lp1-s0-bdg"/>
+                                    <constraint firstItem="Xvr-th-VtD" firstAttribute="leading" secondItem="3Ks-sd-Qyr" secondAttribute="leading" id="hO2-zQ-0jj"/>
+                                    <constraint firstItem="Xvr-th-VtD" firstAttribute="top" secondItem="3Ks-sd-Qyr" secondAttribute="top" id="nIp-R9-6ir"/>
+                                    <constraint firstItem="Xvr-th-VtD" firstAttribute="height" secondItem="3Ks-sd-Qyr" secondAttribute="height" multiplier="0.186395" constant="800" id="ohH-SO-FbT"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2HO-XW-ARy"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="3Ks-sd-Qyr" firstAttribute="trailing" secondItem="2HO-XW-ARy" secondAttribute="trailing" id="PU7-Qd-0g1"/>
+                            <constraint firstItem="3Ks-sd-Qyr" firstAttribute="top" secondItem="2HO-XW-ARy" secondAttribute="top" id="USY-TN-nBJ"/>
+                            <constraint firstAttribute="bottom" secondItem="3Ks-sd-Qyr" secondAttribute="bottom" id="cey-wc-ndR"/>
+                            <constraint firstItem="3Ks-sd-Qyr" firstAttribute="leading" secondItem="2HO-XW-ARy" secondAttribute="leading" id="n1g-5z-PrD"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="관 선택하기" id="uA2-2V-qVs"/>
+                    <navigationItem key="navigationItem" title="관 선택" id="uA2-2V-qVs"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oVo-RM-WDB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3381" y="-308"/>
+            <point key="canvasLocation" x="-3382.4427480916029" y="-308.45070422535213"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="WhB-y2-vHc"/>
+        <segue reference="A80-CQ-yJi"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
-        <image name="MMCA" width="236" height="244"/>
+        <image name="JP" width="298" height="198"/>
+        <image name="US" width="1920" height="1011"/>
         <image name="homekit" catalog="system" width="128" height="104"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <image name="menucard" catalog="system" width="108" height="128"/>
         <image name="signpost.right.and.left" catalog="system" width="125" height="128"/>
+        <image name="과천" width="1376" height="898"/>
+        <image name="덕수궁" width="1101" height="735"/>
+        <image name="서울" width="800" height="533"/>
+        <image name="청주" width="1200" height="780"/>
+        <image name="태극기s" width="300" height="200"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
