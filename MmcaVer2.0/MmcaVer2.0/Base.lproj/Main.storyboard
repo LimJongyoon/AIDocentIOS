@@ -12,21 +12,17 @@
         <!--언어-->
         <scene sceneID="rXU-u2-NTG">
             <objects>
-                <viewController id="7Sb-8b-KPQ" sceneMemberID="viewController">
+                <viewController id="7Sb-8b-KPQ" customClass="LanguageViewController" customModule="MmcaVer2_0" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UBF-Cg-OhK">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Language" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sca-Cp-S27">
-                                <rect key="frame" x="152" y="381" width="89" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                                <color key="textColor" red="0.65490196079999996" green="0.66274509800000003" blue="0.67450980390000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kdt-eo-8OM">
-                                <rect key="frame" x="76" y="420" width="66" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kdt-eo-8OM">
+                                <rect key="frame" x="87.666666666666671" y="404" width="66.000000000000014" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="66" id="Bhz-Bd-ELQ"/>
+                                    <constraint firstAttribute="height" constant="44" id="zIf-yl-zc0"/>
+                                </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="태극기s">
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -40,9 +36,12 @@
                                     <segue destination="Bgf-TA-HaV" kind="show" id="gce-je-6nN"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yf6-Ra-d2x">
-                                <rect key="frame" x="163" y="420" width="66" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yf6-Ra-d2x">
+                                <rect key="frame" x="163.66666666666666" y="404" width="66" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="XaA-ym-RIM"/>
+                                    <constraint firstAttribute="width" constant="66" id="sG6-bZ-fzH"/>
+                                </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="US">
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -56,9 +55,12 @@
                                     <segue destination="Bgf-TA-HaV" kind="show" id="WhB-y2-vHc"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Crn-dL-AuO">
-                                <rect key="frame" x="250" y="420" width="66" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Crn-dL-AuO">
+                                <rect key="frame" x="239.66666666666663" y="404" width="66" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Ccl-c5-x22"/>
+                                    <constraint firstAttribute="width" constant="66" id="ajz-W3-MnH"/>
+                                </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="JP">
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -67,11 +69,32 @@
                                     <segue destination="Bgf-TA-HaV" kind="show" id="Vdn-hS-r4y"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Language" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sca-Cp-S27">
+                                <rect key="frame" x="152" y="372" width="89" height="24"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <color key="textColor" red="0.65490196079999996" green="0.66274509800000003" blue="0.67450980390000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hVT-rp-AqM"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="yf6-Ra-d2x" firstAttribute="leading" secondItem="Kdt-eo-8OM" secondAttribute="trailing" constant="10" id="C74-TK-UzT"/>
+                            <constraint firstItem="yf6-Ra-d2x" firstAttribute="centerY" secondItem="UBF-Cg-OhK" secondAttribute="centerY" id="ElZ-AM-X6w"/>
+                            <constraint firstItem="Crn-dL-AuO" firstAttribute="leading" secondItem="yf6-Ra-d2x" secondAttribute="trailing" constant="10" id="LYM-IX-Gr4"/>
+                            <constraint firstItem="yf6-Ra-d2x" firstAttribute="centerX" secondItem="UBF-Cg-OhK" secondAttribute="centerX" id="QZv-dw-BVB"/>
+                            <constraint firstItem="yf6-Ra-d2x" firstAttribute="top" secondItem="sca-Cp-S27" secondAttribute="bottom" constant="8" symbolic="YES" id="oFJ-D5-yh4"/>
+                            <constraint firstItem="sca-Cp-S27" firstAttribute="centerX" secondItem="yf6-Ra-d2x" secondAttribute="centerX" id="p8i-2e-fm4"/>
+                            <constraint firstItem="Kdt-eo-8OM" firstAttribute="bottom" secondItem="yf6-Ra-d2x" secondAttribute="bottom" id="sEB-eE-4bb"/>
+                            <constraint firstItem="Crn-dL-AuO" firstAttribute="bottom" secondItem="yf6-Ra-d2x" secondAttribute="bottom" id="w9D-on-IKV"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="언어" id="Rj3-dn-Yun"/>
+                    <connections>
+                        <outlet property="USAButton" destination="yf6-Ra-d2x" id="lQS-WI-PSP"/>
+                        <outlet property="japanButton" destination="Crn-dL-AuO" id="yqz-y8-v9U"/>
+                        <outlet property="koreaButton" destination="Kdt-eo-8OM" id="yWs-YR-Qci"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4dQ-ds-e1l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -129,7 +152,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="7ju-F1-mCq"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <navigationItem key="navigationItem" title="홈" id="rYJ-qG-1qm"/>
                 </viewController>
@@ -275,7 +298,7 @@
         <!--관 선택-->
         <scene sceneID="rRC-Sp-GgX">
             <objects>
-                <viewController id="Bgf-TA-HaV" sceneMemberID="viewController">
+                <viewController id="Bgf-TA-HaV" customClass="PlaceSelectViewController" customModule="MmcaVer2_0" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Yzf-rf-HwT">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -283,10 +306,10 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Ks-sd-Qyr">
                                 <rect key="frame" x="0.0" y="103" width="393" height="749"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xvr-th-VtD">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xvr-th-VtD" userLabel="view">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="939.66666666666663"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="now-ig-QNo">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="now-ig-QNo" userLabel="서울view">
                                                 <rect key="frame" x="8" y="10" width="377" height="200"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서울" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IuJ-qh-fHr">
@@ -339,7 +362,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yTb-kn-C1D">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yTb-kn-C1D" userLabel="과천view">
                                                 <rect key="frame" x="8" y="220" width="377" height="200"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="과천" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m7K-FQ-Gx5">
@@ -373,7 +396,7 @@
                                                     <constraint firstItem="m7K-FQ-Gx5" firstAttribute="centerX" secondItem="yTb-kn-C1D" secondAttribute="centerX" id="dn5-oG-6kt"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BCI-K8-vbg">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BCI-K8-vbg" userLabel="청주뷰">
                                                 <rect key="frame" x="8" y="430" width="377" height="200"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="청주" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UNe-1W-nb1">
@@ -407,7 +430,7 @@
                                                     <constraint firstAttribute="trailing" secondItem="Gdh-6u-EL1" secondAttribute="trailing" id="rCI-qX-ct3"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QSU-Fx-rud">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QSU-Fx-rud" userLabel="덕수궁뷰">
                                                 <rect key="frame" x="8" y="640" width="377" height="200"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="덕수궁" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KZ8-x9-XVs">
@@ -479,6 +502,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="관 선택" id="uA2-2V-qVs"/>
+                    <connections>
+                        <outlet property="chungjuButton" destination="Gdh-6u-EL1" id="yo9-gf-eYu"/>
+                        <outlet property="deoksugungButton" destination="D08-Cr-Xsc" id="aUe-8g-7Bk"/>
+                        <outlet property="gwacheonButton" destination="Rj6-uL-JCr" id="msM-ef-9py"/>
+                        <outlet property="seoulButton" destination="YNg-Ok-chM" id="sWg-xQ-65o"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oVo-RM-WDB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -487,7 +516,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="WhB-y2-vHc"/>
-        <segue reference="A80-CQ-yJi"/>
+        <segue reference="bEN-lh-W4f"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.65490196079999996" green="0.66274509800000003" blue="0.67450980390000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
     <resources>
