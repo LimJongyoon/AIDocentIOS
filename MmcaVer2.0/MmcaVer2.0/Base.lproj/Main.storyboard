@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qgl-ad-8XA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ouq-T0-Dpd">
     <device id="retina6_12" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -12,13 +12,13 @@
         <!--언어-->
         <scene sceneID="rXU-u2-NTG">
             <objects>
-                <viewController id="7Sb-8b-KPQ" customClass="LanguageViewController" customModule="MmcaVer2_0" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="formSheet" id="7Sb-8b-KPQ" customClass="LanguageViewController" customModule="MmcaVer2_0" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UBF-Cg-OhK">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kdt-eo-8OM">
-                                <rect key="frame" x="87.666666666666671" y="404" width="66.000000000000014" height="44"/>
+                            <button opaque="NO" contentMode="center" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kdt-eo-8OM">
+                                <rect key="frame" x="87.666666666666515" y="397" width="66" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="66" id="Bhz-Bd-ELQ"/>
                                     <constraint firstAttribute="height" constant="44" id="zIf-yl-zc0"/>
@@ -33,11 +33,11 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="Bgf-TA-HaV" kind="show" id="gce-je-6nN"/>
+                                    <action selector="koreaButton:" destination="7Sb-8b-KPQ" eventType="touchUpInside" id="w0M-14-zrA"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yf6-Ra-d2x">
-                                <rect key="frame" x="163.66666666666666" y="404" width="66" height="44"/>
+                                <rect key="frame" x="163.66666666666666" y="399" width="66" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="XaA-ym-RIM"/>
                                     <constraint firstAttribute="width" constant="66" id="sG6-bZ-fzH"/>
@@ -52,11 +52,11 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="Bgf-TA-HaV" kind="show" id="WhB-y2-vHc"/>
+                                    <action selector="USAButton:" destination="7Sb-8b-KPQ" eventType="touchUpInside" id="XL6-56-Pwf"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Crn-dL-AuO">
-                                <rect key="frame" x="239.66666666666663" y="404" width="66" height="44"/>
+                                <rect key="frame" x="239.66666666666663" y="399" width="66" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="Ccl-c5-x22"/>
                                     <constraint firstAttribute="width" constant="66" id="ajz-W3-MnH"/>
@@ -66,11 +66,11 @@
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Bgf-TA-HaV" kind="show" id="Vdn-hS-r4y"/>
+                                    <action selector="japanButton:" destination="7Sb-8b-KPQ" eventType="touchUpInside" id="6cV-mB-h7O"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Language" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sca-Cp-S27">
-                                <rect key="frame" x="152" y="372" width="89" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="한국어" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sca-Cp-S27">
+                                <rect key="frame" x="170.66666666666666" y="367" width="52" height="24"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                 <color key="textColor" red="0.65490196079999996" green="0.66274509800000003" blue="0.67450980390000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -94,6 +94,7 @@
                         <outlet property="USAButton" destination="yf6-Ra-d2x" id="lQS-WI-PSP"/>
                         <outlet property="japanButton" destination="Crn-dL-AuO" id="yqz-y8-v9U"/>
                         <outlet property="koreaButton" destination="Kdt-eo-8OM" id="yWs-YR-Qci"/>
+                        <outlet property="languageLabel" destination="sca-Cp-S27" id="C1n-B8-BJg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4dQ-ds-e1l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -120,7 +121,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zKc-In-EjB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1440.4580152671756" y="-297.18309859154931"/>
+            <point key="canvasLocation" x="-513.74045801526711" y="-297.18309859154931"/>
         </scene>
         <!--홈-->
         <scene sceneID="FOo-vB-foX">
@@ -147,12 +148,70 @@
         <!--홈-->
         <scene sceneID="rUT-CN-ezA">
             <objects>
-                <viewController id="DCQ-ku-xMP" customClass="HomeViewController" customModule="MmcaVer2_0" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" id="DCQ-ku-xMP" customClass="HomeViewController" customModule="MmcaVer2_0" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="P71-IH-gh5">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qgq-Lh-eyy">
+                                <rect key="frame" x="15" y="363.66666666666669" width="176.66666666666666" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="내 근처 소장품 검색"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gUk-Tv-2EJ">
+                                <rect key="frame" x="15" y="408.66666666666669" width="176.66666666666666" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="라벨 카메라"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YG6-YN-8he">
+                                <rect key="frame" x="15" y="453.66666666666669" width="176.66666666666666" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="관 바꾸기"/>
+                                <connections>
+                                    <segue destination="ZPw-Z1-KVT" kind="presentation" id="f7K-6S-fri"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FRb-XY-4Ty">
+                                <rect key="frame" x="201.66666666666663" y="363.66666666666669" width="176.33333333333337" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="텍스트로 소장품 검색"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F9T-99-2E6">
+                                <rect key="frame" x="201.66666666666663" y="453.66666666666669" width="176.33333333333337" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="언어 / Language"/>
+                                <connections>
+                                    <segue destination="qgl-ad-8XA" kind="presentation" id="mju-Xj-LDb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qcv-Lh-so0">
+                                <rect key="frame" x="201.66666666666663" y="408.66666666666669" width="176.33333333333337" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="미디어월 연결"/>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="7ju-F1-mCq"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Qcv-Lh-so0" firstAttribute="leading" secondItem="gUk-Tv-2EJ" secondAttribute="trailing" constant="10" id="0Vx-ky-1k9"/>
+                            <constraint firstItem="FRb-XY-4Ty" firstAttribute="trailing" secondItem="Qcv-Lh-so0" secondAttribute="trailing" id="3sS-jS-PdJ"/>
+                            <constraint firstItem="gUk-Tv-2EJ" firstAttribute="leading" secondItem="7ju-F1-mCq" secondAttribute="leading" constant="15" id="6ij-Fe-rlS"/>
+                            <constraint firstItem="YG6-YN-8he" firstAttribute="top" secondItem="gUk-Tv-2EJ" secondAttribute="bottom" constant="10" id="EmB-AV-54Y"/>
+                            <constraint firstItem="F9T-99-2E6" firstAttribute="trailing" secondItem="Qcv-Lh-so0" secondAttribute="trailing" id="K4U-zn-h2k"/>
+                            <constraint firstItem="gUk-Tv-2EJ" firstAttribute="top" secondItem="Qgq-Lh-eyy" secondAttribute="bottom" constant="10" id="L2T-zZ-16t"/>
+                            <constraint firstItem="gUk-Tv-2EJ" firstAttribute="centerY" secondItem="P71-IH-gh5" secondAttribute="centerY" id="Q8I-Ww-j2c"/>
+                            <constraint firstItem="Qcv-Lh-so0" firstAttribute="top" secondItem="FRb-XY-4Ty" secondAttribute="bottom" constant="10" id="UIb-Hh-Gtw"/>
+                            <constraint firstItem="FRb-XY-4Ty" firstAttribute="width" secondItem="Qgq-Lh-eyy" secondAttribute="width" id="e4T-6T-0FY"/>
+                            <constraint firstItem="YG6-YN-8he" firstAttribute="leading" secondItem="gUk-Tv-2EJ" secondAttribute="leading" id="eHe-ag-TCA"/>
+                            <constraint firstItem="Qcv-Lh-so0" firstAttribute="width" secondItem="gUk-Tv-2EJ" secondAttribute="width" id="feU-YK-kW7"/>
+                            <constraint firstItem="Qcv-Lh-so0" firstAttribute="centerY" secondItem="P71-IH-gh5" secondAttribute="centerY" id="fyp-Sy-Xcp"/>
+                            <constraint firstItem="7ju-F1-mCq" firstAttribute="trailing" secondItem="Qcv-Lh-so0" secondAttribute="trailing" constant="15" id="iVy-i0-Het"/>
+                            <constraint firstItem="F9T-99-2E6" firstAttribute="top" secondItem="Qcv-Lh-so0" secondAttribute="bottom" constant="10" id="m4a-a2-YSB"/>
+                            <constraint firstItem="F9T-99-2E6" firstAttribute="leading" secondItem="YG6-YN-8he" secondAttribute="trailing" constant="10" id="nIZ-st-0KL"/>
+                            <constraint firstItem="Qgq-Lh-eyy" firstAttribute="leading" secondItem="gUk-Tv-2EJ" secondAttribute="leading" id="nMu-6d-33O"/>
+                            <constraint firstItem="FRb-XY-4Ty" firstAttribute="leading" secondItem="Qgq-Lh-eyy" secondAttribute="trailing" constant="10" id="wzG-DA-ZiU"/>
+                            <constraint firstItem="F9T-99-2E6" firstAttribute="width" secondItem="YG6-YN-8he" secondAttribute="width" id="yWg-h7-Dnv"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="홈" id="rYJ-qG-1qm"/>
                 </viewController>
@@ -166,6 +225,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DoU-v3-MSk" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="작품 안내" image="signpost.right.and.left" catalog="system" id="h7t-mN-MQh"/>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="djF-ZE-wtV"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="clK-6C-QxM">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -185,7 +245,7 @@
         <!--작품 안내-->
         <scene sceneID="BrA-co-18A">
             <objects>
-                <viewController id="k9j-3H-jac" customClass="InfoViewController" customModule="MmcaVer2_0" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InfoViewController" id="k9j-3H-jac" customClass="InfoViewController" customModule="MmcaVer2_0" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ptP-TZ-8uu">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -201,7 +261,7 @@
         <!--작품 검색-->
         <scene sceneID="CKl-Sn-lU8">
             <objects>
-                <viewController id="39e-Lc-Gz0" customClass="SearchViewController" customModule="MmcaVer2_0" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchViewController" id="39e-Lc-Gz0" customClass="SearchViewController" customModule="MmcaVer2_0" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rYK-fy-wIO">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -220,6 +280,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gdw-St-VMl" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="작품 검색" image="magnifyingglass" catalog="system" id="tWr-Kk-CbF"/>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="vJL-yM-ey7"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="9Fe-MW-pqF">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -239,7 +300,7 @@
         <!--메뉴-->
         <scene sceneID="Z2q-uR-5tx">
             <objects>
-                <viewController id="Aqa-wn-dnF" customClass="MenuViewController" customModule="MmcaVer2_0" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MenuViewController" id="Aqa-wn-dnF" customClass="MenuViewController" customModule="MmcaVer2_0" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cZU-rS-AFE">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -280,7 +341,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qgl-ad-8XA" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="wcm-wJ-Hod">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" red="0.65490196079999996" green="0.66274509800000003" blue="0.67450980390000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -298,16 +359,16 @@
         <!--관 선택-->
         <scene sceneID="rRC-Sp-GgX">
             <objects>
-                <viewController id="Bgf-TA-HaV" customClass="PlaceSelectViewController" customModule="MmcaVer2_0" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PlaceSelectViewController" id="Bgf-TA-HaV" customClass="PlaceSelectViewController" customModule="MmcaVer2_0" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Yzf-rf-HwT">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Ks-sd-Qyr">
-                                <rect key="frame" x="0.0" y="103" width="393" height="749"/>
+                                <rect key="frame" x="0.0" y="56" width="393" height="786"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xvr-th-VtD" userLabel="view">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="939.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="946.66666666666663"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="now-ig-QNo" userLabel="서울view">
                                                 <rect key="frame" x="8" y="10" width="377" height="200"/>
@@ -339,7 +400,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <segue destination="Ouq-T0-Dpd" kind="show" id="A80-CQ-yJi"/>
+                                                            <action selector="seoulButton:" destination="Bgf-TA-HaV" eventType="touchUpInside" id="Z1t-ku-inB"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -381,7 +442,7 @@
                                                             <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
-                                                            <segue destination="Ouq-T0-Dpd" kind="show" id="Bco-xs-QGd"/>
+                                                            <action selector="gwacheonButton:" destination="Bgf-TA-HaV" eventType="touchUpInside" id="CxJ-HV-PVW"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -415,7 +476,7 @@
                                                             <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
-                                                            <segue destination="Ouq-T0-Dpd" kind="show" id="bEN-lh-W4f"/>
+                                                            <action selector="chungjuButton:" destination="Bgf-TA-HaV" eventType="touchUpInside" id="toz-45-gxO"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -449,7 +510,7 @@
                                                             <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
-                                                            <segue destination="Ouq-T0-Dpd" kind="show" id="Duh-0k-Lh8"/>
+                                                            <action selector="deoksugungButton:" destination="Bgf-TA-HaV" eventType="touchUpInside" id="ybI-wV-vgf"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -511,13 +572,27 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oVo-RM-WDB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3382.4427480916029" y="-308.45070422535213"/>
+            <point key="canvasLocation" x="-2455.7251908396947" y="-308.45070422535213"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ugd-6N-Ttc">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZPw-Z1-KVT" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dom-E3-xiC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Bgf-TA-HaV" kind="relationship" relationship="rootViewController" id="S6H-MF-HaC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vzV-7m-y8d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3196" y="-308"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="WhB-y2-vHc"/>
-        <segue reference="bEN-lh-W4f"/>
-    </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.65490196079999996" green="0.66274509800000003" blue="0.67450980390000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
     <resources>
         <image name="JP" width="298" height="198"/>
