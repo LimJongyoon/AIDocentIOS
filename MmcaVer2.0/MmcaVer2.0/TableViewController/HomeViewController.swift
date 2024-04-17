@@ -1,29 +1,25 @@
-//
-//  HomeViewController.swift
-//  MmcaVer2.0
-//
-//  Created by Lim on 4/8/24.
-//
-
 import UIKit
 
 class HomeViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func infoButtonTapped(_ sender: UIButton) {
+        if let tabBar = tabBarController {
+            tabBar.selectedIndex = 1 // InfoViewController의 인덱스는 1입니다.
+        }
     }
-    */
-
+    
+    
+    @IBAction func searchButtonTapped(_ sender: UIButton) {
+        if let tabBar = tabBarController {
+            tabBar.selectedIndex = 2 // SearchViewController의 인덱스는 2입니다.
+        }
+    }
+    
 }
+

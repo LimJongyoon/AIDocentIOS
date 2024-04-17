@@ -157,6 +157,9 @@
                                 <rect key="frame" x="15" y="363.66666666666669" width="176.66666666666666" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="내 근처 소장품 검색"/>
+                                <connections>
+                                    <action selector="infoButtonTapped:" destination="DCQ-ku-xMP" eventType="touchUpInside" id="Dfh-zu-vsn"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gUk-Tv-2EJ">
                                 <rect key="frame" x="15" y="408.66666666666669" width="176.66666666666666" height="35"/>
@@ -175,6 +178,9 @@
                                 <rect key="frame" x="201.66666666666663" y="363.66666666666669" width="176.33333333333337" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="텍스트로 소장품 검색"/>
+                                <connections>
+                                    <action selector="searchButtonTapped:" destination="DCQ-ku-xMP" eventType="touchUpInside" id="Bkc-Mv-TSz"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F9T-99-2E6">
                                 <rect key="frame" x="201.66666666666663" y="453.66666666666669" width="176.33333333333337" height="35"/>
