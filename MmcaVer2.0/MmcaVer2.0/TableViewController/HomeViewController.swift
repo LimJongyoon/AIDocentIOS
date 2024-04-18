@@ -21,5 +21,11 @@ class HomeViewController: UIViewController {
         }
     }
     
+    
+    @IBAction func cameraButtonTapped(_ sender: UIButton) {
+        if let visionViewController = UIStoryboard(name: "Cam", bundle: nil).instantiateViewController(withIdentifier: "VisionObjectRecognitionViewController") as? VisionObjectRecognitionViewController {
+            self.present(visionViewController, animated: true, completion: nil)    }
+        
+    }
 }
 

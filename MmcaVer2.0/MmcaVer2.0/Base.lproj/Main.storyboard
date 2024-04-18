@@ -24,7 +24,7 @@
                                     <constraint firstAttribute="height" constant="44" id="zIf-yl-zc0"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="태극기s">
+                                <state key="normal" image="koreaplag">
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -165,6 +165,9 @@
                                 <rect key="frame" x="15" y="408.66666666666669" width="176.66666666666666" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="라벨 카메라"/>
+                                <connections>
+                                    <action selector="cameraButtonTapped:" destination="DCQ-ku-xMP" eventType="touchUpInside" id="tKV-Sf-VZP"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YG6-YN-8he">
                                 <rect key="frame" x="15" y="453.66666666666669" width="176.66666666666666" height="35"/>
@@ -390,7 +393,7 @@
                                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="40"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                        <state key="normal" backgroundImage="서울">
+                                                        <state key="normal" backgroundImage="seoul">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
@@ -443,7 +446,7 @@
                                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="40"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                        <state key="normal" backgroundImage="과천">
+                                                        <state key="normal" backgroundImage="gwacheon">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
@@ -477,7 +480,7 @@
                                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="40"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                        <state key="normal" backgroundImage="청주">
+                                                        <state key="normal" backgroundImage="chungju">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
@@ -511,7 +514,7 @@
                                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="40"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                        <state key="normal" backgroundImage="덕수궁">
+                                                        <state key="normal" backgroundImage="Deoksugung">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
@@ -601,17 +604,17 @@
     </scenes>
     <color key="tintColor" red="0.65490196079999996" green="0.66274509800000003" blue="0.67450980390000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
     <resources>
+        <image name="Deoksugung" width="1101" height="735"/>
         <image name="JP" width="298" height="198"/>
         <image name="US" width="1920" height="1011"/>
+        <image name="chungju" width="1200" height="780"/>
+        <image name="gwacheon" width="1376" height="898"/>
         <image name="homekit" catalog="system" width="128" height="104"/>
+        <image name="koreaplag" width="300" height="200"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <image name="menucard" catalog="system" width="108" height="128"/>
+        <image name="seoul" width="800" height="533"/>
         <image name="signpost.right.and.left" catalog="system" width="125" height="128"/>
-        <image name="과천" width="1376" height="898"/>
-        <image name="덕수궁" width="1101" height="735"/>
-        <image name="서울" width="800" height="533"/>
-        <image name="청주" width="1200" height="780"/>
-        <image name="태극기s" width="300" height="200"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
