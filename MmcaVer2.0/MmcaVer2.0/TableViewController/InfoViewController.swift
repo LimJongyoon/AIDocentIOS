@@ -12,11 +12,11 @@ class InfoViewController: UIViewController, CBCentralManagerDelegate, UITableVie
     
     // 테이블 뷰 인스턴스 생성
     let tableView = UITableView()
-
+    
     // 뷰가 로드된 후 호출되는 메소드
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // CBCentralManager 초기화 및 델리게이트 설정
         centralManager = CBCentralManager(delegate: self, queue: nil)
         
@@ -42,7 +42,7 @@ class InfoViewController: UIViewController, CBCentralManagerDelegate, UITableVie
             // 블루투스가 켜져 있지 않은 경우 추가 처리
         }
     }
-
+    
     // CBCentralManagerDelegate 프로토콜 메소드 - 주변 기기 발견 시 호출
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String: Any], rssi RSSI: NSNumber) {
         if peripheral.name != nil {
@@ -72,7 +72,7 @@ class InfoViewController: UIViewController, CBCentralManagerDelegate, UITableVie
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return discoveredPeripherals.filter { $0.name != nil && !$0.name!.isEmpty }.count
     }
-
+    
     // UITableViewDataSource 프로토콜 메소드 - 테이블 뷰 셀 반환
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // 이름이 있는 주변 기기만 필터링
@@ -91,16 +91,19 @@ class InfoViewController: UIViewController, CBCentralManagerDelegate, UITableVie
         
         // 이미지가 없을 경우, 시스템의 기본 이미지 사용
         if image == nil {
-            image = UIImage(systemName: "questionmark.circle") // 빈 이미지에 적합한 시스템 이미지
+            image = UIImage(named: "EmptyQuestionMark") // 빈 이미지에 적합한 이미지
         }
-
+        
         // 이미지뷰 설정
         let imageView = UIImageView(image: image)
         imageView.frame = CGRect(x: 10, y: 10, width: 40, height: 40)
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true // 이미지뷰 내의 콘텐츠를 이미지뷰 크기에 맞춰 자름
+
         
         // 셀의 왼쪽에 이미지뷰 추가
         cell.imageView?.image = image
-    
+        
         
         // 텍스트 라벨 설정
         cell.textLabel?.text = peripheralName
@@ -109,9 +112,13 @@ class InfoViewController: UIViewController, CBCentralManagerDelegate, UITableVie
         
         return cell
     }
-
-
-
+    
+    
+    private func tableView(_ tableView: UITableView, heightForRowAt indexPath: Int) -> CGFloat {
+        return 100 // 셀 높이 설정
+    }
+    
+    
     // UITableViewDelegate 프로토콜 메소드 - 셀 선택 시 호출
     private func tableView(_ tableView: UITableView, didSelectRowAt indexPath: Int) {
         // 셀 선택 시 수행할 작업
