@@ -86,16 +86,26 @@ class InfoViewController: UIViewController, CBCentralManagerDelegate, UITableVie
         let peripheralName = peripheral.name ?? ""
         let rssiValue = rssiValues[peripheral] ?? 0
         
+        // 이미지 파일을 Assets에서 찾기
+        var image: UIImage? = UIImage(named: peripheralName)
+        
+        // 이미지가 없을 경우, 시스템의 기본 이미지 사용
+        if image == nil {
+            image = UIImage(systemName: "questionmark.circle") // 빈 이미지에 적합한 시스템 이미지
+        }
+
         // 이미지뷰 설정
-        let imageView = UIImageView(image: UIImage(named: peripheralName))
-        imageView.frame = CGRect(x: 10, y: 10, width: 40, height: 40)
+        let imageView = UIImageView(image: image)
+        imageView.frame = CGRect(x: 10, y: 10, width: 100, height: 100)
+        
+        // 셀의 왼쪽에 이미지뷰 추가
+        cell.imageView?.image = image
+    
         
         // 텍스트 라벨 설정
         cell.textLabel?.text = peripheralName
         cell.detailTextLabel?.text = "RSSI: \(rssiValue)"
         
-        // 이미지뷰를 셀의 왼쪽에 추가
-        cell.imageView?.image = UIImage(named: peripheralName)
         
         return cell
     }
