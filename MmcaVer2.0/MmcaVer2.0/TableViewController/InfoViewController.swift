@@ -45,7 +45,7 @@ class InfoViewController: UIViewController, CBCentralManagerDelegate, UITableVie
 
     // CBCentralManagerDelegate 프로토콜 메소드 - 주변 기기 발견 시 호출
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String: Any], rssi RSSI: NSNumber) {
-        if let name = peripheral.name {
+        if peripheral.name != nil {
             // 발견된 기기가 기존에 없는 경우에만 추가
             if !discoveredPeripherals.contains(peripheral) {
                 discoveredPeripherals.append(peripheral)
@@ -107,14 +107,4 @@ class InfoViewController: UIViewController, CBCentralManagerDelegate, UITableVie
         // 셀 선택 시 수행할 작업
     }
     
-    // 주변 기기를 RSSI 값에 따라 정렬하여 반환하는 메소드
-//    func sortedPeripherals() -> [CBPeripheral] {
-//        return discoveredPeripherals
-//            .filter { $0.name != nil && !$0.name!.isEmpty }
-//            .sorted { (peripheral1, peripheral2) -> Bool in
-//                let rssi1 = rssiValues[peripheral1] ?? 0
-//                let rssi2 = rssiValues[peripheral2] ?? 0
-//                return rssi1.intValue > rssi2.intValue // RSSI 값이 큰 순으로 정렬
-//            }
-//    }
 }
