@@ -31,16 +31,6 @@ class InfoViewController: UIViewController, CBCentralManagerDelegate, UITableVie
         // 뷰에 테이블 뷰 추가
         self.view.addSubview(tableView)
         
-        //갱신 3초
-        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
-            if self.centralManager.state == .poweredOn {
-                // 블루투스가 켜져 있으면 주변 기기 스캔 다시 시작
-                self.centralManager.scanForPeripherals(withServices: nil, options: nil)
-            } else {
-                // 블루투스가 켜져 있지 않은 경우 추가 처리
-                print("Bluetooth is not powered on.")
-            }
-        }
     }
     
     // CBCentralManagerDelegate 프로토콜 메소드 - 블루투스 상태 업데이트 시 호출
@@ -55,10 +45,20 @@ class InfoViewController: UIViewController, CBCentralManagerDelegate, UITableVie
 
     // CBCentralManagerDelegate 프로토콜 메소드 - 주변 기기 발견 시 호출
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String: Any], rssi RSSI: NSNumber) {
-        if let name = peripheral.name, !discoveredPeripherals.contains(peripheral) {
-            // 이름이 있는 경우에만 목록에 추가하고 테이블 뷰 갱신
-            discoveredPeripherals.append(peripheral)
+        if let name = peripheral.name {
+            // 발견된 기기가 기존에 없는 경우에만 추가
+            if !discoveredPeripherals.contains(peripheral) {
+                discoveredPeripherals.append(peripheral)
+            }
+            // RSSI 값 갱신
             rssiValues[peripheral] = RSSI
+            // 주변 기기를 RSSI 값에 따라 정렬
+            discoveredPeripherals.sort { (peripheral1, peripheral2) -> Bool in
+                let rssi1 = rssiValues[peripheral1] ?? 0
+                let rssi2 = rssiValues[peripheral2] ?? 0
+                return rssi1.intValue > rssi2.intValue // RSSI 값이 큰 순으로 정렬
+            }
+            // 테이블 뷰 갱신
             tableView.reloadData()
         }
     }
@@ -108,13 +108,13 @@ class InfoViewController: UIViewController, CBCentralManagerDelegate, UITableVie
     }
     
     // 주변 기기를 RSSI 값에 따라 정렬하여 반환하는 메소드
-    func sortedPeripherals() -> [CBPeripheral] {
-        return discoveredPeripherals
-            .filter { $0.name != nil && !$0.name!.isEmpty }
-            .sorted { (peripheral1, peripheral2) -> Bool in
-                let rssi1 = rssiValues[peripheral1] ?? 0
-                let rssi2 = rssiValues[peripheral2] ?? 0
-                return rssi1.intValue > rssi2.intValue // RSSI 값이 큰 순으로 정렬
-            }
-    }
+//    func sortedPeripherals() -> [CBPeripheral] {
+//        return discoveredPeripherals
+//            .filter { $0.name != nil && !$0.name!.isEmpty }
+//            .sorted { (peripheral1, peripheral2) -> Bool in
+//                let rssi1 = rssiValues[peripheral1] ?? 0
+//                let rssi2 = rssiValues[peripheral2] ?? 0
+//                return rssi1.intValue > rssi2.intValue // RSSI 값이 큰 순으로 정렬
+//            }
+//    }
 }
