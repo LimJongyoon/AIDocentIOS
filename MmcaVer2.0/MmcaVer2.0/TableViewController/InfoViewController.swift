@@ -96,7 +96,7 @@ class InfoViewController: UIViewController, CBCentralManagerDelegate, UITableVie
 
         // 이미지뷰 설정
         let imageView = UIImageView(image: image)
-        imageView.frame = CGRect(x: 10, y: 10, width: 100, height: 100)
+        imageView.frame = CGRect(x: 10, y: 10, width: 40, height: 40)
         
         // 셀의 왼쪽에 이미지뷰 추가
         cell.imageView?.image = image
