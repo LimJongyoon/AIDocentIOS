@@ -125,3 +125,14 @@ class InfoViewController: UIViewController, CBCentralManagerDelegate, UITableVie
     }
     
 }
+
+/*
+ 현재는 그냥 블루투스 이름을 검색하는 형식으로 되어있는데
+ 추후에는 비콘의 정보를 읽어와서 database(아마 sqlite3사용할듯)에서 비교한다음
+ 정보가 있는 비콘에 달린 데이터를 보여주는 방식으로 해야할거같음
+ 
+ 비콘 | 소장품명 | 작가 | 년도  |     이미지 경로   |
+ A-03| 유제류  | 신현중| 1980 |~/image/ujr.png |
+ 
+ 대충 이런느낌으로
+ */
