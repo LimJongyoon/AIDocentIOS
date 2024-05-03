@@ -37,10 +37,12 @@ class InfoViewController: UIViewController, CBCentralManagerDelegate, UITableVie
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
         if central.state == .poweredOn {
             // 블루투스가 켜져 있으면 주변 기기 스캔 시작
-            central.scanForPeripherals(withServices: nil, options: nil)
-        } else {
-            // 블루투스가 켜져 있지 않은 경우 추가 처리
-        }
+            // 중복을 허용 시켜서 빈번한 업데이트 발생
+            let options = [CBCentralManagerScanOptionAllowDuplicatesKey: true] as [String: Any]
+            central.scanForPeripherals(withServices: nil, options: options)        }
+        else {
+                // 블루투스가 켜져 있지 않은 경우 추가 처리
+            }
     }
     
     // CBCentralManagerDelegate 프로토콜 메소드 - 주변 기기 발견 시 호출
@@ -99,7 +101,7 @@ class InfoViewController: UIViewController, CBCentralManagerDelegate, UITableVie
         imageView.frame = CGRect(x: 10, y: 10, width: 40, height: 40)
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true // 이미지뷰 내의 콘텐츠를 이미지뷰 크기에 맞춰 자름
-
+        
         
         // 셀의 왼쪽에 이미지뷰 추가
         cell.imageView?.image = image
