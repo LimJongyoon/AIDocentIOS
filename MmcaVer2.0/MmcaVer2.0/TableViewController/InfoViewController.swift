@@ -1,6 +1,6 @@
 import UIKit
 import CoreBluetooth
-//import SQLite // SQLite.swift 라이브러리를 임포트합니다.
+import SQLite3 // SQLite.swift 라이브러리를 임포트합니다.
 
 
 // InfoViewController 클래스 선언
@@ -22,14 +22,29 @@ class InfoViewController: UIViewController, CBCentralManagerDelegate, UITableVie
         // CBCentralManager 초기화 및 델리게이트 설정
         centralManager = CBCentralManager(delegate: self, queue: nil)
         
+        // 페이지 타이틀을 위한 레이블 생성
+        let titleLabel = UILabel()
+        titleLabel.text = "주변에 근접한 작품"  // 레이블에 표시될 텍스트 설정
+        titleLabel.textAlignment = .left   // 텍스트 정렬을 왼쪽으로 설정
+        titleLabel.font = UIFont.systemFont(ofSize: 30, weight: .bold) // 폰트 크기 30, 볼드체로 설정
+        titleLabel.frame = CGRect(x: 20, y: 100, width: self.view.bounds.width, height: 100)  // 레이블의 위치와 크기 설정
+        // x: 0, y: 0 시작 지점은 뷰의 상단 왼쪽 모서리
+        // width: 뷰의 전체 너비와 동일하게 설정하여 화면 가로를 꽉 채움
+        // height: 300으로 설정하여 높이가 300픽셀이 됨
+        self.view.addSubview(titleLabel)  // 생성된 레이블을 뷰의 서브뷰로 추가
+
         // 테이블 뷰 프레임 설정
-        tableView.frame = self.view.bounds
-        // 테이블 뷰 크기가 변경될 때 자동으로 크기 조정
+        tableView.frame = CGRect(x: 0, y: 200, width: self.view.bounds.width, height: self.view.bounds.height - 300)
+        // x: 0, y: 200 시작 지점은 뷰의 상단에서부터 200픽셀 아래
+        // 이는 titleLabel의 하단 바로 아래에서 시작
+        // width: 뷰의 전체 너비와 동일하게 설정하여 화면 가로를 꽉 채움
+        // height: 전체 뷰 높이에서 300픽셀 빼기 (titleLabel의 높이만큼)
+        // 이 설정으로 테이블 뷰는 화면의 나머지 높이를 차지함
         tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        // 테이블 뷰의 델리게이트 및 데이터 소스 설정
-        tableView.delegate = self
-        tableView.dataSource = self
-        
+        // 뷰 크기가 변경될 때 (예: 기기 회전 시) 테이블 뷰의 너비와 높이가 자동으로 조정됨
+        tableView.delegate = self  // 테이블 뷰의 델리게이트 설정
+        tableView.dataSource = self  // 테이블 뷰의 데이터 소스 설정
+
         // 뷰에 테이블 뷰 추가
         self.view.addSubview(tableView)
         
@@ -131,12 +146,10 @@ class InfoViewController: UIViewController, CBCentralManagerDelegate, UITableVie
 }
 
 /*
- 현재는 그냥 블루투스 이름을 검색하는 형식으로 되어있는데
- 추후에는 비콘의 정보를 읽어와서 database(아마 sqlite3사용할듯)에서 비교한다음
- 정보가 있는 비콘에 달린 데이터를 보여주는 방식으로 해야할거같음
+ 비콘의 정보를 읽어와서 database의 id 값과 비교한다음
+ 비콘의 이름과 database의 id 값이 같으면
+ 이름 작가 년도 이미지를 가져오는 방식으로
+ id     | name  | artist | year  |     imagePath   |
+ MMCA001| 유제류  | 신현중   | 1980  |~/image/ujr.png  |
  
- 비콘 | 소장품명 | 작가 | 년도  |     이미지 경로   |
- A-03| 유제류  | 신현중| 1980 |~/image/ujr.png |
- 
- 대충 이런느낌으로
  */
