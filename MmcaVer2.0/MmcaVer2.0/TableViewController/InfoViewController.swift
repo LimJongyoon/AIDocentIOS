@@ -1,6 +1,6 @@
 import UIKit
 import CoreBluetooth
-import SQLite3 // SQLite.swift 라이브러리를 임포트합니다.
+//import SQLite3 // SQLite.swift 라이브러리를 임포트합니다.
 
 
 // InfoViewController 클래스 선언
