@@ -10,81 +10,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--언어-->
-        <scene sceneID="rXU-u2-NTG">
-            <objects>
-                <viewController modalPresentationStyle="formSheet" id="7Sb-8b-KPQ" customClass="LanguageViewController" customModule="MmcaVer2_0" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="UBF-Cg-OhK">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="center" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kdt-eo-8OM">
-                                <rect key="frame" x="87.666666666666515" y="397" width="66" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="66" id="Bhz-Bd-ELQ"/>
-                                    <constraint firstAttribute="height" constant="44" id="zIf-yl-zc0"/>
-                                </constraints>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="koreaplag">
-                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="9999"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="koreaButton:" destination="7Sb-8b-KPQ" eventType="touchUpInside" id="w0M-14-zrA"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yf6-Ra-d2x">
-                                <rect key="frame" x="163.66666666666666" y="399" width="66" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="XaA-ym-RIM"/>
-                                    <constraint firstAttribute="width" constant="66" id="sG6-bZ-fzH"/>
-                                </constraints>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="US">
-                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="-99998"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="USAButton:" destination="7Sb-8b-KPQ" eventType="touchUpInside" id="XL6-56-Pwf"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="한국어" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sca-Cp-S27">
-                                <rect key="frame" x="170.66666666666666" y="367" width="52" height="24"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                                <color key="textColor" red="0.65490196079999996" green="0.66274509800000003" blue="0.67450980390000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="hVT-rp-AqM"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="yf6-Ra-d2x" firstAttribute="leading" secondItem="Kdt-eo-8OM" secondAttribute="trailing" constant="10" id="C74-TK-UzT"/>
-                            <constraint firstItem="yf6-Ra-d2x" firstAttribute="centerY" secondItem="UBF-Cg-OhK" secondAttribute="centerY" id="ElZ-AM-X6w"/>
-                            <constraint firstItem="yf6-Ra-d2x" firstAttribute="centerX" secondItem="UBF-Cg-OhK" secondAttribute="centerX" id="QZv-dw-BVB"/>
-                            <constraint firstItem="yf6-Ra-d2x" firstAttribute="top" secondItem="sca-Cp-S27" secondAttribute="bottom" constant="8" symbolic="YES" id="oFJ-D5-yh4"/>
-                            <constraint firstItem="sca-Cp-S27" firstAttribute="centerX" secondItem="yf6-Ra-d2x" secondAttribute="centerX" id="p8i-2e-fm4"/>
-                            <constraint firstItem="Kdt-eo-8OM" firstAttribute="bottom" secondItem="yf6-Ra-d2x" secondAttribute="bottom" id="sEB-eE-4bb"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="언어" id="Rj3-dn-Yun"/>
-                    <connections>
-                        <outlet property="USAButton" destination="yf6-Ra-d2x" id="lQS-WI-PSP"/>
-                        <outlet property="koreaButton" destination="Kdt-eo-8OM" id="yWs-YR-Qci"/>
-                        <outlet property="languageLabel" destination="sca-Cp-S27" id="C1n-B8-BJg"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4dQ-ds-e1l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-4109.160305343511" y="-308.45070422535213"/>
-        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="H5R-OI-sU5">
             <objects>
@@ -157,9 +82,6 @@
                                 <rect key="frame" x="15" y="453.66666666666669" width="176.66666666666666" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="관 바꾸기"/>
-                                <connections>
-                                    <segue destination="ZPw-Z1-KVT" kind="presentation" id="f7K-6S-fri"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FRb-XY-4Ty">
                                 <rect key="frame" x="201.66666666666663" y="363.66666666666669" width="176.33333333333337" height="35"/>
@@ -173,9 +95,6 @@
                                 <rect key="frame" x="201.66666666666663" y="453.66666666666669" width="176.33333333333337" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="언어 / Language"/>
-                                <connections>
-                                    <segue destination="qgl-ad-8XA" kind="presentation" id="mju-Xj-LDb"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qcv-Lh-so0">
                                 <rect key="frame" x="201.66666666666663" y="408.66666666666669" width="176.33333333333337" height="35"/>
@@ -328,275 +247,42 @@
             </objects>
             <point key="canvasLocation" x="1434" y="451"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="F3f-lj-dDb">
+        <!--View Controller-->
+        <scene sceneID="0yc-SC-guF">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qgl-ad-8XA" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wcm-wJ-Hod">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="56"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" red="0.65490196079999996" green="0.66274509800000003" blue="0.67450980390000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </textAttributes>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="7Sb-8b-KPQ" kind="relationship" relationship="rootViewController" id="kzZ-im-gKC"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Hmh-nK-EtM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-4837.4045801526718" y="-308.45070422535213"/>
-        </scene>
-        <!--관 선택-->
-        <scene sceneID="rRC-Sp-GgX">
-            <objects>
-                <viewController storyboardIdentifier="PlaceSelectViewController" id="Bgf-TA-HaV" customClass="PlaceSelectViewController" customModule="MmcaVer2_0" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Yzf-rf-HwT">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                <viewController id="l5F-GA-yjZ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gB6-dt-33X">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Ks-sd-Qyr">
-                                <rect key="frame" x="0.0" y="56" width="393" height="786"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xvr-th-VtD" userLabel="view">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="946.66666666666663"/>
-                                        <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="now-ig-QNo" userLabel="서울view">
-                                                <rect key="frame" x="8" y="10" width="377" height="200"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서울" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IuJ-qh-fHr">
-                                                        <rect key="frame" x="160.66666666666666" y="81" width="55.666666666666657" height="38.333333333333343"/>
-                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="32"/>
-                                                        <color key="textColor" red="0.65490196079999996" green="0.66274509800000003" blue="0.67450980390000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YNg-Ok-chM">
-                                                        <rect key="frame" x="0.0" y="0.0" width="377" height="200"/>
-                                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="40"/>
-                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                        <state key="normal" backgroundImage="seoul">
-                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </state>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                <real key="value" value="99999"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="999999999"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                        <connections>
-                                                            <action selector="seoulButton:" destination="Bgf-TA-HaV" eventType="touchUpInside" id="Z1t-ku-inB"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                <constraints>
-                                                    <constraint firstItem="IuJ-qh-fHr" firstAttribute="centerX" secondItem="now-ig-QNo" secondAttribute="centerX" id="2s4-2A-LWz"/>
-                                                    <constraint firstAttribute="trailing" secondItem="YNg-Ok-chM" secondAttribute="trailing" id="3JH-U6-JJG"/>
-                                                    <constraint firstItem="IuJ-qh-fHr" firstAttribute="centerY" secondItem="now-ig-QNo" secondAttribute="centerY" id="6et-w6-ho8"/>
-                                                    <constraint firstAttribute="height" constant="200" id="Amq-WJ-fnn"/>
-                                                    <constraint firstItem="YNg-Ok-chM" firstAttribute="leading" secondItem="now-ig-QNo" secondAttribute="leading" id="Ebw-sd-gSb"/>
-                                                    <constraint firstAttribute="bottom" secondItem="YNg-Ok-chM" secondAttribute="bottom" id="OcZ-tv-SrZ"/>
-                                                    <constraint firstItem="YNg-Ok-chM" firstAttribute="top" secondItem="now-ig-QNo" secondAttribute="top" id="lOL-Hb-RcI"/>
-                                                </constraints>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="0.0"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yTb-kn-C1D" userLabel="과천view">
-                                                <rect key="frame" x="8" y="220" width="377" height="200"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="과천" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m7K-FQ-Gx5">
-                                                        <rect key="frame" x="160.66666666666666" y="80.666666666666686" width="56" height="39"/>
-                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="32"/>
-                                                        <color key="textColor" red="0.65490196079999996" green="0.66274509800000003" blue="0.67450980390000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rj6-uL-JCr">
-                                                        <rect key="frame" x="0.0" y="0.0" width="377" height="200"/>
-                                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="40"/>
-                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                        <state key="normal" backgroundImage="gwacheon">
-                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </state>
-                                                        <connections>
-                                                            <action selector="gwacheonButton:" destination="Bgf-TA-HaV" eventType="touchUpInside" id="CxJ-HV-PVW"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="Rj6-uL-JCr" secondAttribute="trailing" id="2x1-ZP-DMs"/>
-                                                    <constraint firstAttribute="bottom" secondItem="Rj6-uL-JCr" secondAttribute="bottom" id="8Jz-5r-U9l"/>
-                                                    <constraint firstItem="Rj6-uL-JCr" firstAttribute="top" secondItem="yTb-kn-C1D" secondAttribute="top" id="EiC-Zq-WhD"/>
-                                                    <constraint firstAttribute="height" constant="200" id="G13-qF-t8W"/>
-                                                    <constraint firstItem="Rj6-uL-JCr" firstAttribute="leading" secondItem="yTb-kn-C1D" secondAttribute="leading" id="GtG-eI-xeF"/>
-                                                    <constraint firstItem="m7K-FQ-Gx5" firstAttribute="centerY" secondItem="yTb-kn-C1D" secondAttribute="centerY" id="Jwa-yK-aGi"/>
-                                                    <constraint firstItem="m7K-FQ-Gx5" firstAttribute="centerX" secondItem="yTb-kn-C1D" secondAttribute="centerX" id="dn5-oG-6kt"/>
-                                                </constraints>
-                                            </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BCI-K8-vbg" userLabel="청주뷰">
-                                                <rect key="frame" x="8" y="430" width="377" height="200"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="청주" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UNe-1W-nb1">
-                                                        <rect key="frame" x="160.66666666666666" y="80.666666666666629" width="56" height="39"/>
-                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="32"/>
-                                                        <color key="textColor" red="0.65490196079999996" green="0.66274509800000003" blue="0.67450980390000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gdh-6u-EL1">
-                                                        <rect key="frame" x="0.0" y="0.0" width="377" height="200"/>
-                                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="40"/>
-                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                        <state key="normal" backgroundImage="chungju">
-                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </state>
-                                                        <connections>
-                                                            <action selector="chungjuButton:" destination="Bgf-TA-HaV" eventType="touchUpInside" id="toz-45-gxO"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                <constraints>
-                                                    <constraint firstItem="UNe-1W-nb1" firstAttribute="centerY" secondItem="BCI-K8-vbg" secondAttribute="centerY" id="ImD-O4-yoh"/>
-                                                    <constraint firstItem="UNe-1W-nb1" firstAttribute="centerX" secondItem="BCI-K8-vbg" secondAttribute="centerX" id="QSS-y3-Fz2"/>
-                                                    <constraint firstItem="Gdh-6u-EL1" firstAttribute="top" secondItem="BCI-K8-vbg" secondAttribute="top" id="YEq-2U-j0h"/>
-                                                    <constraint firstAttribute="bottom" secondItem="Gdh-6u-EL1" secondAttribute="bottom" id="ZtT-Td-Smt"/>
-                                                    <constraint firstItem="Gdh-6u-EL1" firstAttribute="leading" secondItem="BCI-K8-vbg" secondAttribute="leading" id="aKs-nG-NRJ"/>
-                                                    <constraint firstAttribute="height" constant="200" id="cNm-QV-dfR"/>
-                                                    <constraint firstAttribute="trailing" secondItem="Gdh-6u-EL1" secondAttribute="trailing" id="rCI-qX-ct3"/>
-                                                </constraints>
-                                            </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QSU-Fx-rud" userLabel="덕수궁뷰">
-                                                <rect key="frame" x="8" y="640" width="377" height="200"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="덕수궁" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KZ8-x9-XVs">
-                                                        <rect key="frame" x="146.66666666666666" y="80.666666666666629" width="84" height="39"/>
-                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="32"/>
-                                                        <color key="textColor" red="0.65490196079999996" green="0.66274509800000003" blue="0.67450980390000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D08-Cr-Xsc">
-                                                        <rect key="frame" x="0.0" y="0.0" width="377" height="200"/>
-                                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="40"/>
-                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                        <state key="normal" backgroundImage="Deoksugung">
-                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </state>
-                                                        <connections>
-                                                            <action selector="deoksugungButton:" destination="Bgf-TA-HaV" eventType="touchUpInside" id="ybI-wV-vgf"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="D08-Cr-Xsc" secondAttribute="trailing" id="dSQ-zf-uDM"/>
-                                                    <constraint firstItem="KZ8-x9-XVs" firstAttribute="centerX" secondItem="QSU-Fx-rud" secondAttribute="centerX" id="fup-EV-3CO"/>
-                                                    <constraint firstAttribute="height" constant="200" id="hh9-gF-vWX"/>
-                                                    <constraint firstAttribute="bottom" secondItem="D08-Cr-Xsc" secondAttribute="bottom" id="jjO-2S-Ypu"/>
-                                                    <constraint firstItem="D08-Cr-Xsc" firstAttribute="top" secondItem="QSU-Fx-rud" secondAttribute="top" id="jlO-9z-hNX"/>
-                                                    <constraint firstItem="D08-Cr-Xsc" firstAttribute="leading" secondItem="QSU-Fx-rud" secondAttribute="leading" id="ld5-NY-TSD"/>
-                                                    <constraint firstItem="KZ8-x9-XVs" firstAttribute="centerY" secondItem="QSU-Fx-rud" secondAttribute="centerY" id="wsc-fW-XoS"/>
-                                                </constraints>
-                                            </view>
-                                        </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <constraints>
-                                            <constraint firstItem="yTb-kn-C1D" firstAttribute="leading" secondItem="Xvr-th-VtD" secondAttribute="leading" constant="8" id="08b-P6-H0Q"/>
-                                            <constraint firstAttribute="trailing" secondItem="now-ig-QNo" secondAttribute="trailing" constant="8" id="6qm-v6-ucn"/>
-                                            <constraint firstAttribute="trailing" secondItem="BCI-K8-vbg" secondAttribute="trailing" constant="8" id="72T-AK-aLq"/>
-                                            <constraint firstAttribute="trailing" secondItem="yTb-kn-C1D" secondAttribute="trailing" constant="8" id="9lV-ty-HIq"/>
-                                            <constraint firstAttribute="trailing" secondItem="QSU-Fx-rud" secondAttribute="trailing" constant="8" id="LrB-e2-L2d"/>
-                                            <constraint firstItem="now-ig-QNo" firstAttribute="top" secondItem="Xvr-th-VtD" secondAttribute="top" constant="10" id="PRv-zd-FSO"/>
-                                            <constraint firstItem="yTb-kn-C1D" firstAttribute="top" secondItem="now-ig-QNo" secondAttribute="bottom" constant="10" id="Ypc-7z-jNC"/>
-                                            <constraint firstItem="BCI-K8-vbg" firstAttribute="leading" secondItem="Xvr-th-VtD" secondAttribute="leading" constant="8" id="ddl-ZQ-5om"/>
-                                            <constraint firstItem="BCI-K8-vbg" firstAttribute="top" secondItem="yTb-kn-C1D" secondAttribute="bottom" constant="10" id="hHp-yp-OTh"/>
-                                            <constraint firstItem="now-ig-QNo" firstAttribute="leading" secondItem="Xvr-th-VtD" secondAttribute="leading" constant="8" id="liG-oq-YMr"/>
-                                            <constraint firstItem="QSU-Fx-rud" firstAttribute="top" secondItem="BCI-K8-vbg" secondAttribute="bottom" constant="10" id="vam-oz-igN"/>
-                                            <constraint firstItem="QSU-Fx-rud" firstAttribute="leading" secondItem="Xvr-th-VtD" secondAttribute="leading" constant="8" id="yc0-Ye-K0W"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="Xvr-th-VtD" secondAttribute="trailing" id="501-vV-XaB"/>
-                                    <constraint firstAttribute="bottom" secondItem="Xvr-th-VtD" secondAttribute="bottom" id="B9Z-Od-fZX"/>
-                                    <constraint firstItem="Xvr-th-VtD" firstAttribute="centerX" secondItem="3Ks-sd-Qyr" secondAttribute="centerX" id="Lp1-s0-bdg"/>
-                                    <constraint firstItem="Xvr-th-VtD" firstAttribute="leading" secondItem="3Ks-sd-Qyr" secondAttribute="leading" id="hO2-zQ-0jj"/>
-                                    <constraint firstItem="Xvr-th-VtD" firstAttribute="top" secondItem="3Ks-sd-Qyr" secondAttribute="top" id="nIp-R9-6ir"/>
-                                    <constraint firstItem="Xvr-th-VtD" firstAttribute="height" secondItem="3Ks-sd-Qyr" secondAttribute="height" multiplier="0.186395" constant="800" id="ohH-SO-FbT"/>
-                                </constraints>
-                            </scrollView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="2HO-XW-ARy"/>
+                        <viewLayoutGuide key="safeArea" id="NgT-Nr-CRZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="3Ks-sd-Qyr" firstAttribute="trailing" secondItem="2HO-XW-ARy" secondAttribute="trailing" id="PU7-Qd-0g1"/>
-                            <constraint firstItem="3Ks-sd-Qyr" firstAttribute="top" secondItem="2HO-XW-ARy" secondAttribute="top" id="USY-TN-nBJ"/>
-                            <constraint firstAttribute="bottom" secondItem="3Ks-sd-Qyr" secondAttribute="bottom" id="cey-wc-ndR"/>
-                            <constraint firstItem="3Ks-sd-Qyr" firstAttribute="leading" secondItem="2HO-XW-ARy" secondAttribute="leading" id="n1g-5z-PrD"/>
-                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="관 선택" id="uA2-2V-qVs"/>
-                    <connections>
-                        <outlet property="chungjuButton" destination="Gdh-6u-EL1" id="yo9-gf-eYu"/>
-                        <outlet property="deoksugungButton" destination="D08-Cr-Xsc" id="aUe-8g-7Bk"/>
-                        <outlet property="gwacheonButton" destination="Rj6-uL-JCr" id="msM-ef-9py"/>
-                        <outlet property="seoulButton" destination="YNg-Ok-chM" id="sWg-xQ-65o"/>
-                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oVo-RM-WDB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cCM-9z-RZV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2455.7251908396947" y="-308.45070422535213"/>
+            <point key="canvasLocation" x="1002" y="-429"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="ugd-6N-Ttc">
+        <!--View Controller-->
+        <scene sceneID="1KY-bu-Dkb">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZPw-Z1-KVT" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dom-E3-xiC">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="56"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Bgf-TA-HaV" kind="relationship" relationship="rootViewController" id="S6H-MF-HaC"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vzV-7m-y8d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController id="veC-Jk-1gT" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xy1-Yc-D98">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="hZH-Ev-Bec"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zhx-r7-fYs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3196" y="-308"/>
+            <point key="canvasLocation" x="1650" y="-430"/>
         </scene>
     </scenes>
     <color key="tintColor" red="0.65490196079999996" green="0.66274509800000003" blue="0.67450980390000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
     <resources>
-        <image name="Deoksugung" width="1101" height="735"/>
-        <image name="US" width="1920" height="1011"/>
-        <image name="chungju" width="1200" height="780"/>
-        <image name="gwacheon" width="1376" height="898"/>
         <image name="homekit" catalog="system" width="128" height="104"/>
-        <image name="koreaplag" width="300" height="200"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <image name="menucard" catalog="system" width="108" height="128"/>
-        <image name="seoul" width="800" height="533"/>
         <image name="signpost.right.and.left" catalog="system" width="125" height="128"/>
         <namedColor name="Color">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
