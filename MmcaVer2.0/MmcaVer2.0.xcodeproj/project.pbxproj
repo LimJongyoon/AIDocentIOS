@@ -18,13 +18,6 @@
 		3A702FF92BCCE674000D382D /* LanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A702FF82BCCE674000D382D /* LanguageViewController.swift */; };
 		3A702FFB2BCCE69F000D382D /* PlaceSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A702FFA2BCCE69F000D382D /* PlaceSelectViewController.swift */; };
 		3AA8DCC52BC3E82E00A1B8CB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA8DCC42BC3E82E00A1B8CB /* HomeViewController.swift */; };
-		3AB4B9CB2BEB38EF0043AB16 /* MMCA001.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AB4B9C52BEB38EF0043AB16 /* MMCA001.png */; };
-		3AB4B9CC2BEB38EF0043AB16 /* MMCA002.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AB4B9C62BEB38EF0043AB16 /* MMCA002.png */; };
-		3AB4B9CD2BEB38EF0043AB16 /* MMCA003.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AB4B9C72BEB38EF0043AB16 /* MMCA003.png */; };
-		3AB4B9CE2BEB38EF0043AB16 /* BeaconInfo.db in Resources */ = {isa = PBXBuildFile; fileRef = 3AB4B9C92BEB38EF0043AB16 /* BeaconInfo.db */; };
-		3AE633892BD101BE00E2C6D0 /* ObjectDetector.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 3AE633852BD101BE00E2C6D0 /* ObjectDetector.mlmodel */; };
-		3AE6338A2BD101BE00E2C6D0 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE633862BD101BE00E2C6D0 /* CameraViewController.swift */; };
-		3AE6338B2BD101BE00E2C6D0 /* VisionObjectRecognitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE633872BD101BE00E2C6D0 /* VisionObjectRecognitionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,14 +34,6 @@
 		3A702FF82BCCE674000D382D /* LanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageViewController.swift; sourceTree = "<group>"; };
 		3A702FFA2BCCE69F000D382D /* PlaceSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceSelectViewController.swift; sourceTree = "<group>"; };
 		3AA8DCC42BC3E82E00A1B8CB /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		3AB4B9C52BEB38EF0043AB16 /* MMCA001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MMCA001.png; sourceTree = "<group>"; };
-		3AB4B9C62BEB38EF0043AB16 /* MMCA002.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MMCA002.png; sourceTree = "<group>"; };
-		3AB4B9C72BEB38EF0043AB16 /* MMCA003.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MMCA003.png; sourceTree = "<group>"; };
-		3AB4B9C92BEB38EF0043AB16 /* BeaconInfo.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = BeaconInfo.db; sourceTree = "<group>"; };
-		3AE633852BD101BE00E2C6D0 /* ObjectDetector.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ObjectDetector.mlmodel; sourceTree = "<group>"; };
-		3AE633862BD101BE00E2C6D0 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
-		3AE633872BD101BE00E2C6D0 /* VisionObjectRecognitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisionObjectRecognitionViewController.swift; sourceTree = "<group>"; };
-		3AE6338C2BD1089700E2C6D0 /* Cam.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Cam.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,12 +68,9 @@
 			children = (
 				3A64C2C72BC3D9F000CD31B4 /* AppDelegate.swift */,
 				3A64C2C92BC3D9F000CD31B4 /* SceneDelegate.swift */,
-				3AE633882BD101BE00E2C6D0 /* camera */,
 				3A702FF52BCCE5B3000D382D /* InitialViewController */,
-				3AA8DCC62BC3E83800A1B8CB /* TableViewController */,
-				3AB4B9CA2BEB38EF0043AB16 /* BeaconDataBase */,
+				3AA8DCC62BC3E83800A1B8CB /* BoxTableViewController */,
 				3A64C2CD2BC3D9F000CD31B4 /* Main.storyboard */,
-				3AE6338C2BD1089700E2C6D0 /* Cam.storyboard */,
 				3A64C2D02BC3D9F000CD31B4 /* Assets.xcassets */,
 				3A64C2D22BC3D9F000CD31B4 /* LaunchScreen.storyboard */,
 				3A64C2D52BC3D9F000CD31B4 /* Info.plist */,
@@ -105,7 +87,7 @@
 			path = InitialViewController;
 			sourceTree = "<group>";
 		};
-		3AA8DCC62BC3E83800A1B8CB /* TableViewController */ = {
+		3AA8DCC62BC3E83800A1B8CB /* BoxTableViewController */ = {
 			isa = PBXGroup;
 			children = (
 				3AA8DCC42BC3E82E00A1B8CB /* HomeViewController.swift */,
@@ -113,36 +95,7 @@
 				3A448E012BC3E40A001E7731 /* SearchViewController.swift */,
 				3A448E032BC3E484001E7731 /* MenuViewController.swift */,
 			);
-			path = TableViewController;
-			sourceTree = "<group>";
-		};
-		3AB4B9C82BEB38EF0043AB16 /* image */ = {
-			isa = PBXGroup;
-			children = (
-				3AB4B9C52BEB38EF0043AB16 /* MMCA001.png */,
-				3AB4B9C62BEB38EF0043AB16 /* MMCA002.png */,
-				3AB4B9C72BEB38EF0043AB16 /* MMCA003.png */,
-			);
-			path = image;
-			sourceTree = "<group>";
-		};
-		3AB4B9CA2BEB38EF0043AB16 /* BeaconDataBase */ = {
-			isa = PBXGroup;
-			children = (
-				3AB4B9C82BEB38EF0043AB16 /* image */,
-				3AB4B9C92BEB38EF0043AB16 /* BeaconInfo.db */,
-			);
-			path = BeaconDataBase;
-			sourceTree = "<group>";
-		};
-		3AE633882BD101BE00E2C6D0 /* camera */ = {
-			isa = PBXGroup;
-			children = (
-				3AE633852BD101BE00E2C6D0 /* ObjectDetector.mlmodel */,
-				3AE633862BD101BE00E2C6D0 /* CameraViewController.swift */,
-				3AE633872BD101BE00E2C6D0 /* VisionObjectRecognitionViewController.swift */,
-			);
-			path = camera;
+			path = BoxTableViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,11 +156,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3AB4B9CC2BEB38EF0043AB16 /* MMCA002.png in Resources */,
-				3AB4B9CB2BEB38EF0043AB16 /* MMCA001.png in Resources */,
-				3AB4B9CD2BEB38EF0043AB16 /* MMCA003.png in Resources */,
 				3A64C2D12BC3D9F000CD31B4 /* Assets.xcassets in Resources */,
-				3AB4B9CE2BEB38EF0043AB16 /* BeaconInfo.db in Resources */,
 				3A64C2D42BC3D9F000CD31B4 /* Base in Resources */,
 				3A64C2CF2BC3D9F000CD31B4 /* Base in Resources */,
 			);
@@ -220,9 +169,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3AE6338B2BD101BE00E2C6D0 /* VisionObjectRecognitionViewController.swift in Sources */,
-				3AE6338A2BD101BE00E2C6D0 /* CameraViewController.swift in Sources */,
-				3AE633892BD101BE00E2C6D0 /* ObjectDetector.mlmodel in Sources */,
 				3A64C2C82BC3D9F000CD31B4 /* AppDelegate.swift in Sources */,
 				3A448E042BC3E484001E7731 /* MenuViewController.swift in Sources */,
 				3A448E002BC3E2DC001E7731 /* InfoViewController.swift in Sources */,
