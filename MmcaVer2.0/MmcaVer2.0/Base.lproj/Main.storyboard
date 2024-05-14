@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -55,20 +56,6 @@
                                     <action selector="USAButton:" destination="7Sb-8b-KPQ" eventType="touchUpInside" id="XL6-56-Pwf"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Crn-dL-AuO">
-                                <rect key="frame" x="239.66666666666663" y="399" width="66" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="Ccl-c5-x22"/>
-                                    <constraint firstAttribute="width" constant="66" id="ajz-W3-MnH"/>
-                                </constraints>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="JP">
-                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="japanButton:" destination="7Sb-8b-KPQ" eventType="touchUpInside" id="6cV-mB-h7O"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="한국어" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sca-Cp-S27">
                                 <rect key="frame" x="170.66666666666666" y="367" width="52" height="24"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
@@ -81,18 +68,15 @@
                         <constraints>
                             <constraint firstItem="yf6-Ra-d2x" firstAttribute="leading" secondItem="Kdt-eo-8OM" secondAttribute="trailing" constant="10" id="C74-TK-UzT"/>
                             <constraint firstItem="yf6-Ra-d2x" firstAttribute="centerY" secondItem="UBF-Cg-OhK" secondAttribute="centerY" id="ElZ-AM-X6w"/>
-                            <constraint firstItem="Crn-dL-AuO" firstAttribute="leading" secondItem="yf6-Ra-d2x" secondAttribute="trailing" constant="10" id="LYM-IX-Gr4"/>
                             <constraint firstItem="yf6-Ra-d2x" firstAttribute="centerX" secondItem="UBF-Cg-OhK" secondAttribute="centerX" id="QZv-dw-BVB"/>
                             <constraint firstItem="yf6-Ra-d2x" firstAttribute="top" secondItem="sca-Cp-S27" secondAttribute="bottom" constant="8" symbolic="YES" id="oFJ-D5-yh4"/>
                             <constraint firstItem="sca-Cp-S27" firstAttribute="centerX" secondItem="yf6-Ra-d2x" secondAttribute="centerX" id="p8i-2e-fm4"/>
                             <constraint firstItem="Kdt-eo-8OM" firstAttribute="bottom" secondItem="yf6-Ra-d2x" secondAttribute="bottom" id="sEB-eE-4bb"/>
-                            <constraint firstItem="Crn-dL-AuO" firstAttribute="bottom" secondItem="yf6-Ra-d2x" secondAttribute="bottom" id="w9D-on-IKV"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="언어" id="Rj3-dn-Yun"/>
                     <connections>
                         <outlet property="USAButton" destination="yf6-Ra-d2x" id="lQS-WI-PSP"/>
-                        <outlet property="japanButton" destination="Crn-dL-AuO" id="yqz-y8-v9U"/>
                         <outlet property="koreaButton" destination="Kdt-eo-8OM" id="yWs-YR-Qci"/>
                         <outlet property="languageLabel" destination="sca-Cp-S27" id="C1n-B8-BJg"/>
                     </connections>
@@ -200,7 +184,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7ju-F1-mCq"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="Color"/>
                         <constraints>
                             <constraint firstItem="Qcv-Lh-so0" firstAttribute="leading" secondItem="gUk-Tv-2EJ" secondAttribute="trailing" constant="10" id="0Vx-ky-1k9"/>
                             <constraint firstItem="FRb-XY-4Ty" firstAttribute="trailing" secondItem="Qcv-Lh-so0" secondAttribute="trailing" id="3sS-jS-PdJ"/>
@@ -605,7 +589,6 @@
     <color key="tintColor" red="0.65490196079999996" green="0.66274509800000003" blue="0.67450980390000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
     <resources>
         <image name="Deoksugung" width="1101" height="735"/>
-        <image name="JP" width="298" height="198"/>
         <image name="US" width="1920" height="1011"/>
         <image name="chungju" width="1200" height="780"/>
         <image name="gwacheon" width="1376" height="898"/>
@@ -615,6 +598,9 @@
         <image name="menucard" catalog="system" width="108" height="128"/>
         <image name="seoul" width="800" height="533"/>
         <image name="signpost.right.and.left" catalog="system" width="125" height="128"/>
+        <namedColor name="Color">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

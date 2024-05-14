@@ -30,6 +30,6 @@
 	<key>NSBluetoothPeripheralUsageDescription</key>
 	<string></string>
 	<key>UIUserInterfaceStyle</key>
-	<string>Dark</string>
+	<string>Light</string>
 </dict>
 </plist>
