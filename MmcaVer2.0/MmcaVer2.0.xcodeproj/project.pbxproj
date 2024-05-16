@@ -17,7 +17,6 @@
 		3A64C2D12BC3D9F000CD31B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A64C2D02BC3D9F000CD31B4 /* Assets.xcassets */; };
 		3A64C2D42BC3D9F000CD31B4 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 3A64C2D32BC3D9F000CD31B4 /* Base */; };
 		3AA8DCC52BC3E82E00A1B8CB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA8DCC42BC3E82E00A1B8CB /* HomeViewController.swift */; };
-		3AB05CB72BF3525400F37454 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB05CB62BF3525400F37454 /* CustomTabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,7 +32,6 @@
 		3A64C2D32BC3D9F000CD31B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A64C2D52BC3D9F000CD31B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3AA8DCC42BC3E82E00A1B8CB /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		3AB05CB62BF3525400F37454 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +66,6 @@
 			children = (
 				3A64C2C72BC3D9F000CD31B4 /* AppDelegate.swift */,
 				3A64C2C92BC3D9F000CD31B4 /* SceneDelegate.swift */,
-				3AB05CB62BF3525400F37454 /* CustomTabBarController.swift */,
 				3A702FF52BCCE5B3000D382D /* InitialViewController */,
 				3AA8DCC62BC3E83800A1B8CB /* BoxTableViewController */,
 				3A64C2CD2BC3D9F000CD31B4 /* Main.storyboard */,
@@ -171,7 +168,6 @@
 			files = (
 				3A64C2C82BC3D9F000CD31B4 /* AppDelegate.swift in Sources */,
 				3A448E042BC3E484001E7731 /* MenuViewController.swift in Sources */,
-				3AB05CB72BF3525400F37454 /* CustomTabBarController.swift in Sources */,
 				3A448E002BC3E2DC001E7731 /* InfoViewController.swift in Sources */,
 				3A448E022BC3E40A001E7731 /* SearchViewController.swift in Sources */,
 				3A64C2CA2BC3D9F000CD31B4 /* SceneDelegate.swift in Sources */,
