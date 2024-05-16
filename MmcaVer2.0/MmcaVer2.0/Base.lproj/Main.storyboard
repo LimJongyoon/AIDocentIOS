@@ -1,31 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ouq-T0-Dpd">
-    <device id="retina6_12" orientation="portrait" appearance="dark"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="h6E-nn-gPn">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="UIMenu" message="Requires Xcode 11 or later." minToolsVersion="11.0" requiredIntegratedClassName="UICommandDiff"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Tab Bar Controller-->
         <scene sceneID="H5R-OI-sU5">
             <objects>
-                <tabBarController id="Ouq-T0-Dpd" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainTabBarController" id="Ouq-T0-Dpd" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="7JS-T0-EQV"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bru-8C-Rhu">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="selectedImageTintColor" red="0.65490196079999996" green="0.66274509800000003" blue="0.67450980390000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" name="Color"/>
+                        <color key="barTintColor" name="Color"/>
+                        <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="5bz-oT-6Sm" kind="relationship" relationship="viewControllers" id="LRW-vt-ZfS"/>
                         <segue destination="DoU-v3-MSk" kind="relationship" relationship="viewControllers" id="IFw-FB-PEG"/>
                         <segue destination="gdw-St-VMl" kind="relationship" relationship="viewControllers" id="6hz-t3-y7D"/>
                         <segue destination="g6U-CZ-s6P" kind="relationship" relationship="viewControllers" id="dZB-j6-1r9"/>
+                        <segue destination="l5F-GA-yjZ" kind="relationship" relationship="viewControllers" id="7FD-GS-Gw0"/>
+                        <segue destination="veC-Jk-1gT" kind="relationship" relationship="viewControllers" id="lmJ-ak-dgz"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zKc-In-EjB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -41,8 +46,12 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="l38-fm-5Dt">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" red="0.65490196079999996" green="0.66274509800000003" blue="0.67450980390000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -54,7 +63,7 @@
             </objects>
             <point key="canvasLocation" x="-3876" y="451"/>
         </scene>
-        <!--홈-->
+        <!--Home View Controller-->
         <scene sceneID="rUT-CN-ezA">
             <objects>
                 <viewController storyboardIdentifier="HomeViewController" id="DCQ-ku-xMP" customClass="HomeViewController" customModule="MmcaVer2_0" customModuleProvider="target" sceneMemberID="viewController">
@@ -104,6 +113,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7ju-F1-mCq"/>
                         <color key="backgroundColor" name="Color"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Qcv-Lh-so0" firstAttribute="leading" secondItem="gUk-Tv-2EJ" secondAttribute="trailing" constant="10" id="0Vx-ky-1k9"/>
                             <constraint firstItem="FRb-XY-4Ty" firstAttribute="trailing" secondItem="Qcv-Lh-so0" secondAttribute="trailing" id="3sS-jS-PdJ"/>
@@ -125,7 +135,18 @@
                             <constraint firstItem="F9T-99-2E6" firstAttribute="width" secondItem="YG6-YN-8he" secondAttribute="width" id="yWg-h7-Dnv"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="홈" id="rYJ-qG-1qm"/>
+                    <navigationItem key="navigationItem" id="rYJ-qG-1qm">
+                        <nil key="title"/>
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="xL4-Tf-DVo">
+                            <rect key="frame" x="169.66666666666666" y="5" width="53.666666666666657" height="34.333333333333336"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="청주"/>
+                            <connections>
+                                <action selector="titleButton:" destination="DCQ-ku-xMP" eventType="touchUpInside" id="hrq-3O-7Zn"/>
+                            </connections>
+                        </button>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8KV-da-rpn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -247,7 +268,7 @@
             </objects>
             <point key="canvasLocation" x="1434" y="451"/>
         </scene>
-        <!--View Controller-->
+        <!--Item-->
         <scene sceneID="0yc-SC-guF">
             <objects>
                 <viewController id="l5F-GA-yjZ" sceneMemberID="viewController">
@@ -257,12 +278,13 @@
                         <viewLayoutGuide key="safeArea" id="NgT-Nr-CRZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="rmK-Vw-R4G"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cCM-9z-RZV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1002" y="-429"/>
         </scene>
-        <!--View Controller-->
+        <!--Item-->
         <scene sceneID="1KY-bu-Dkb">
             <objects>
                 <viewController id="veC-Jk-1gT" sceneMemberID="viewController">
@@ -272,14 +294,141 @@
                         <viewLayoutGuide key="safeArea" id="hZH-Ev-Bec"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="NIo-Pk-kny"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zhx-r7-fYs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1650" y="-430"/>
         </scene>
+        <!--Initial View Controller-->
+        <scene sceneID="HRd-UM-VC0">
+            <objects>
+                <viewController storyboardIdentifier="InitialViewController" id="h6E-nn-gPn" customClass="InitialViewController" customModule="MmcaVer2_0" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Pa6-bd-OWh">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bro-RC-FvN">
+                                <rect key="frame" x="96.666666666666686" y="406" width="200" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="43g-yQ-pvz"/>
+                                    <constraint firstAttribute="width" constant="200" id="GnZ-iQ-h8b"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="서울">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="Seoul:" destination="h6E-nn-gPn" eventType="touchUpInside" id="be4-2q-ZQ7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q7n-3b-Rxn">
+                                <rect key="frame" x="96.666666666666686" y="456" width="200" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Neq-g2-hBr"/>
+                                    <constraint firstAttribute="width" constant="200" id="fKC-zg-cYi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="과천">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="Guwacheon:" destination="h6E-nn-gPn" eventType="touchUpInside" id="vUi-Fg-llB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f8z-In-UXz">
+                                <rect key="frame" x="96.666666666666686" y="506" width="200" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="3kj-vu-Gbl"/>
+                                    <constraint firstAttribute="width" constant="200" id="WOy-tK-tWE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="덕수궁">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="deoksugoong:" destination="h6E-nn-gPn" eventType="touchUpInside" id="oRk-3C-1VC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TId-eW-O4r">
+                                <rect key="frame" x="96.666666666666686" y="556" width="200" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="WJ4-ub-VPk"/>
+                                    <constraint firstAttribute="height" constant="40" id="fLW-Sk-vQX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="청주">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="cheongju:" destination="h6E-nn-gPn" eventType="touchUpInside" id="Rds-oP-wif"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MMCA_H" translatesAutoresizingMaskIntoConstraints="NO" id="DEd-AZ-i8I">
+                                <rect key="frame" x="76.666666666666686" y="198" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="XAV-u4-la1"/>
+                                    <constraint firstAttribute="height" constant="128" id="tsX-ct-61F"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" changesSelectionAsPrimaryAction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F47-yM-b8y">
+                                <rect key="frame" x="328" y="59" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="Iho-j8-E1j"/>
+                                    <constraint firstAttribute="height" constant="50" id="h8y-Ah-gaY"/>
+                                </constraints>
+                                <menu key="menu" id="Trz-UD-O6S">
+                                    <children>
+                                        <command title="KO : 한국어" discoverabilityTitle="" id="fp3-ia-Q6s" propertyAccessControl="none"/>
+                                        <command title="EN : English" id="b5r-3n-VvX" propertyAccessControl="none"/>
+                                    </children>
+                                </menu>
+                                <state key="normal" backgroundImage="LanguageButton">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="Language:" destination="h6E-nn-gPn" eventType="touchUpInside" id="gFp-WJ-4ZX"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="3ZX-6h-NFj"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bro-RC-FvN" firstAttribute="centerX" secondItem="Pa6-bd-OWh" secondAttribute="centerX" id="9rA-9m-tm7"/>
+                            <constraint firstItem="TId-eW-O4r" firstAttribute="centerX" secondItem="Pa6-bd-OWh" secondAttribute="centerX" id="DjT-n1-FTd"/>
+                            <constraint firstItem="bro-RC-FvN" firstAttribute="top" secondItem="DEd-AZ-i8I" secondAttribute="bottom" constant="80" id="IHD-j1-y29"/>
+                            <constraint firstItem="TId-eW-O4r" firstAttribute="top" secondItem="f8z-In-UXz" secondAttribute="bottom" constant="10" id="OrA-G2-5hx"/>
+                            <constraint firstItem="3ZX-6h-NFj" firstAttribute="trailing" secondItem="F47-yM-b8y" secondAttribute="trailing" constant="15" id="VIc-QV-BDS"/>
+                            <constraint firstItem="q7n-3b-Rxn" firstAttribute="centerX" secondItem="Pa6-bd-OWh" secondAttribute="centerX" id="cao-Dn-GOD"/>
+                            <constraint firstItem="q7n-3b-Rxn" firstAttribute="top" secondItem="bro-RC-FvN" secondAttribute="bottom" constant="10" id="fz2-oj-BkP"/>
+                            <constraint firstItem="DEd-AZ-i8I" firstAttribute="centerX" secondItem="Pa6-bd-OWh" secondAttribute="centerX" id="ioD-ra-95t"/>
+                            <constraint firstItem="bro-RC-FvN" firstAttribute="centerY" secondItem="Pa6-bd-OWh" secondAttribute="centerY" id="is8-KU-IgT"/>
+                            <constraint firstItem="F47-yM-b8y" firstAttribute="top" secondItem="3ZX-6h-NFj" secondAttribute="top" id="lcO-eU-RYd"/>
+                            <constraint firstItem="f8z-In-UXz" firstAttribute="top" secondItem="q7n-3b-Rxn" secondAttribute="bottom" constant="10" id="mdG-ra-xVG"/>
+                            <constraint firstItem="f8z-In-UXz" firstAttribute="centerX" secondItem="Pa6-bd-OWh" secondAttribute="centerX" id="tJd-dy-Ohb"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="Guwacheon" destination="q7n-3b-Rxn" id="JIN-0a-Pgd"/>
+                        <outlet property="Language" destination="F47-yM-b8y" id="4Xh-GX-mMV"/>
+                        <outlet property="Seoul" destination="bro-RC-FvN" id="B03-ZC-2nH"/>
+                        <outlet property="cheongju" destination="TId-eW-O4r" id="Qnf-R3-WOu"/>
+                        <outlet property="deoksugoong" destination="f8z-In-UXz" id="uj0-w4-Rl6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MmI-Q4-IQ1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1069" y="-974"/>
+        </scene>
     </scenes>
-    <color key="tintColor" red="0.65490196079999996" green="0.66274509800000003" blue="0.67450980390000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
+        <image name="LanguageButton" width="55" height="52"/>
+        <image name="MMCA_H" width="1458" height="625"/>
         <image name="homekit" catalog="system" width="128" height="104"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <image name="menucard" catalog="system" width="108" height="128"/>
