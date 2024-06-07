@@ -82,7 +82,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="라벨 카메라"/>
                                 <connections>
-                                    <action selector="cameraButtonTapped:" destination="DCQ-ku-xMP" eventType="touchUpInside" id="tKV-Sf-VZP"/>
+                                    <action selector="cameraButtonTapped:" destination="DCQ-ku-xMP" eventType="touchUpInside" id="1Bm-vg-hzr"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FRb-XY-4Ty">
@@ -215,18 +215,71 @@
         <!--메뉴-->
         <scene sceneID="Z2q-uR-5tx">
             <objects>
-                <viewController storyboardIdentifier="MenuViewController" id="Aqa-wn-dnF" customClass="MenuViewController" customModule="MmcaVer2_0" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CameraViewController" id="Aqa-wn-dnF" customClass="CameraViewController" customModule="MmcaVer2_0" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cZU-rS-AFE">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6nY-B2-qux">
+                                <rect key="frame" x="16" y="103" width="361" height="440"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QV8-aD-pJE">
+                                <rect key="frame" x="162" y="691" width="69" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="사진첩"/>
+                                <connections>
+                                    <action selector="uploadPhoto:" destination="Aqa-wn-dnF" eventType="touchUpInside" id="Elj-jS-ptl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FTe-fN-qIu">
+                                <rect key="frame" x="170" y="734" width="54" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="촬영"/>
+                                <connections>
+                                    <action selector="takePhoto:" destination="Aqa-wn-dnF" eventType="touchUpInside" id="Fdi-1K-v36"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5kT-Xp-xtG">
+                                <rect key="frame" x="202" y="620" width="54" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="저장"/>
+                                <connections>
+                                    <action selector="savePhoto:" destination="Aqa-wn-dnF" eventType="touchUpInside" id="aXd-Pq-ODm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pd1-ga-fWn">
+                                <rect key="frame" x="121" y="620" width="54" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="캡션"/>
+                                <connections>
+                                    <action selector="toggleCaption:" destination="Aqa-wn-dnF" eventType="touchUpInside" id="haA-Ty-Ps0"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1OT-l1-SMD">
+                                <rect key="frame" x="77" y="568" width="240" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="wyv-fW-mTC"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="메뉴" id="aN1-Do-Q23"/>
+                    <connections>
+                        <outlet property="imageView" destination="6nY-B2-qux" id="ebZ-gS-gnR"/>
+                        <outlet property="label" destination="1OT-l1-SMD" id="jRl-Dr-OxG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IdH-3O-Jg2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2182" y="451"/>
+            <point key="canvasLocation" x="2180.9160305343512" y="450.7042253521127"/>
         </scene>
         <!--메뉴-->
         <scene sceneID="BA9-mf-7K4">

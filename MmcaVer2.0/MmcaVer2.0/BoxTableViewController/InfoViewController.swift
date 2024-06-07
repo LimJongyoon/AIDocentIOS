@@ -27,7 +27,7 @@ class InfoViewController: UIViewController, CBCentralManagerDelegate, UITableVie
         titleLabel.text = "주변에 근접한 작품"  // 레이블에 표시될 텍스트 설정
         titleLabel.textAlignment = .left   // 텍스트 정렬을 왼쪽으로 설정
         titleLabel.font = UIFont.systemFont(ofSize: 30, weight: .bold) // 폰트 크기 30, 볼드체로 설정
-        titleLabel.frame = CGRect(x: 20, y: 100, width: self.view.bounds.width, height: 100)  // 레이블의 위치와 크기 설정
+        titleLabel.frame = CGRect(x: 20, y: 100, width: self.view.bounds.width, height: 150)  // 레이블의 위치와 크기 설정
         // x: 0, y: 0 시작 지점은 뷰의 상단 왼쪽 모서리
         // width: 뷰의 전체 너비와 동일하게 설정하여 화면 가로를 꽉 채움
         // height: 300으로 설정하여 높이가 300픽셀이 됨
