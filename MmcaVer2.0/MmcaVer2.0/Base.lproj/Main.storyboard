@@ -29,8 +29,6 @@
                         <segue destination="DoU-v3-MSk" kind="relationship" relationship="viewControllers" id="IFw-FB-PEG"/>
                         <segue destination="gdw-St-VMl" kind="relationship" relationship="viewControllers" id="6hz-t3-y7D"/>
                         <segue destination="g6U-CZ-s6P" kind="relationship" relationship="viewControllers" id="dZB-j6-1r9"/>
-                        <segue destination="l5F-GA-yjZ" kind="relationship" relationship="viewControllers" id="7FD-GS-Gw0"/>
-                        <segue destination="veC-Jk-1gT" kind="relationship" relationship="viewControllers" id="lmJ-ak-dgz"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zKc-In-EjB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -87,11 +85,6 @@
                                     <action selector="cameraButtonTapped:" destination="DCQ-ku-xMP" eventType="touchUpInside" id="tKV-Sf-VZP"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YG6-YN-8he">
-                                <rect key="frame" x="15" y="453.66666666666669" width="176.66666666666666" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="관 바꾸기"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FRb-XY-4Ty">
                                 <rect key="frame" x="201.66666666666663" y="363.66666666666669" width="176.33333333333337" height="35"/>
                                 <state key="normal" title="Button"/>
@@ -99,11 +92,6 @@
                                 <connections>
                                     <action selector="searchButtonTapped:" destination="DCQ-ku-xMP" eventType="touchUpInside" id="Bkc-Mv-TSz"/>
                                 </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F9T-99-2E6">
-                                <rect key="frame" x="201.66666666666663" y="453.66666666666669" width="176.33333333333337" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="언어 / Language"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qcv-Lh-so0">
                                 <rect key="frame" x="201.66666666666663" y="408.66666666666669" width="176.33333333333337" height="35"/>
@@ -118,21 +106,15 @@
                             <constraint firstItem="Qcv-Lh-so0" firstAttribute="leading" secondItem="gUk-Tv-2EJ" secondAttribute="trailing" constant="10" id="0Vx-ky-1k9"/>
                             <constraint firstItem="FRb-XY-4Ty" firstAttribute="trailing" secondItem="Qcv-Lh-so0" secondAttribute="trailing" id="3sS-jS-PdJ"/>
                             <constraint firstItem="gUk-Tv-2EJ" firstAttribute="leading" secondItem="7ju-F1-mCq" secondAttribute="leading" constant="15" id="6ij-Fe-rlS"/>
-                            <constraint firstItem="YG6-YN-8he" firstAttribute="top" secondItem="gUk-Tv-2EJ" secondAttribute="bottom" constant="10" id="EmB-AV-54Y"/>
-                            <constraint firstItem="F9T-99-2E6" firstAttribute="trailing" secondItem="Qcv-Lh-so0" secondAttribute="trailing" id="K4U-zn-h2k"/>
                             <constraint firstItem="gUk-Tv-2EJ" firstAttribute="top" secondItem="Qgq-Lh-eyy" secondAttribute="bottom" constant="10" id="L2T-zZ-16t"/>
                             <constraint firstItem="gUk-Tv-2EJ" firstAttribute="centerY" secondItem="P71-IH-gh5" secondAttribute="centerY" id="Q8I-Ww-j2c"/>
                             <constraint firstItem="Qcv-Lh-so0" firstAttribute="top" secondItem="FRb-XY-4Ty" secondAttribute="bottom" constant="10" id="UIb-Hh-Gtw"/>
                             <constraint firstItem="FRb-XY-4Ty" firstAttribute="width" secondItem="Qgq-Lh-eyy" secondAttribute="width" id="e4T-6T-0FY"/>
-                            <constraint firstItem="YG6-YN-8he" firstAttribute="leading" secondItem="gUk-Tv-2EJ" secondAttribute="leading" id="eHe-ag-TCA"/>
                             <constraint firstItem="Qcv-Lh-so0" firstAttribute="width" secondItem="gUk-Tv-2EJ" secondAttribute="width" id="feU-YK-kW7"/>
                             <constraint firstItem="Qcv-Lh-so0" firstAttribute="centerY" secondItem="P71-IH-gh5" secondAttribute="centerY" id="fyp-Sy-Xcp"/>
                             <constraint firstItem="7ju-F1-mCq" firstAttribute="trailing" secondItem="Qcv-Lh-so0" secondAttribute="trailing" constant="15" id="iVy-i0-Het"/>
-                            <constraint firstItem="F9T-99-2E6" firstAttribute="top" secondItem="Qcv-Lh-so0" secondAttribute="bottom" constant="10" id="m4a-a2-YSB"/>
-                            <constraint firstItem="F9T-99-2E6" firstAttribute="leading" secondItem="YG6-YN-8he" secondAttribute="trailing" constant="10" id="nIZ-st-0KL"/>
                             <constraint firstItem="Qgq-Lh-eyy" firstAttribute="leading" secondItem="gUk-Tv-2EJ" secondAttribute="leading" id="nMu-6d-33O"/>
                             <constraint firstItem="FRb-XY-4Ty" firstAttribute="leading" secondItem="Qgq-Lh-eyy" secondAttribute="trailing" constant="10" id="wzG-DA-ZiU"/>
-                            <constraint firstItem="F9T-99-2E6" firstAttribute="width" secondItem="YG6-YN-8he" secondAttribute="width" id="yWg-h7-Dnv"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="rYJ-qG-1qm">
@@ -267,38 +249,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dTi-9v-wBy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1434" y="451"/>
-        </scene>
-        <!--Item-->
-        <scene sceneID="0yc-SC-guF">
-            <objects>
-                <viewController id="l5F-GA-yjZ" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="gB6-dt-33X">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="NgT-Nr-CRZ"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="rmK-Vw-R4G"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cCM-9z-RZV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1002" y="-429"/>
-        </scene>
-        <!--Item-->
-        <scene sceneID="1KY-bu-Dkb">
-            <objects>
-                <viewController id="veC-Jk-1gT" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="xy1-Yc-D98">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="hZH-Ev-Bec"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="NIo-Pk-kny"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zhx-r7-fYs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1650" y="-430"/>
         </scene>
         <!--Initial View Controller-->
         <scene sceneID="HRd-UM-VC0">
