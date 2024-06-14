@@ -139,11 +139,23 @@ class InfoViewController: UIViewController, CBCentralManagerDelegate, UITableVie
     
     
     // UITableViewDelegate 프로토콜 메소드 - 셀 선택 시 호출
-    private func tableView(_ tableView: UITableView, didSelectRowAt indexPath: Int) {
+    internal func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // DetailViewController 인스턴스 생성
+        let detailVC = DetailViewController()
+        
+        // 선택된 주변 기기 정보 전달
+        let namedPeripherals = discoveredPeripherals.filter { $0.name != nil && !$0.name!.isEmpty }
+        let selectedPeripheral = namedPeripherals[indexPath.row]
+        detailVC.peripheral = selectedPeripheral
+        detailVC.rssiValue = rssiValues[selectedPeripheral] ?? 0
+        
+        // DetailViewController로 전환
+        self.navigationController?.pushViewController(detailVC, animated: true)
+    }
         // 셀 선택 시 수행할 작업
     }
     
-}
+
 
 /*
  비콘의 정보를 읽어와서 database의 id 값과 비교한다음
