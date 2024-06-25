@@ -7,6 +7,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     let tableView = UITableView()
     var messages: [String] = []
+    var chatButton: UIButton! // 채팅 버튼을 선언합니다.
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +39,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
             // 이름과 설명 메시지 추가
             messages.append("\(peripheral.name ?? "Unknown")")
             messages.append("작가(연도), 000x000mm, 재료  ")
-            messages.append("설명입니다 설명입니다 설명입니다 설명입니다 설명입니다 설명입니다 설명입니다 설명입니다 설명입니다 설명입니다 설명입니다 설명입니다 설명입니다 설명입니다 설명입니다 설명입니다 설명입니다 설명입니다 설명입니다 설명입니다 설명입니다 설명입니다 설명입니다 설명입니다 설명입니다 설명입니다 설명입니다 설명입니다 설명입니다 설명입니다")
+            messages.append("설명입니다 설명입니다 설명입니다 설명입니다 설명입니다 설명입니다 설명입니다 설명입니다 설명입니다 설명입니다 설명입니다 설명입니다 설명입니다 설명입니다 설명입니다 설명입니다 설명입니다 설명입니다 설명입니다 설명입니다 설명입니다 설명입니다 설명입니다 설명입니다 설명입니다 설명입니다 설명입니다 설명입니다 설명입니다 설명입니다 설명입니다")
         }
 
         // 테이블 뷰 설정
@@ -48,10 +49,37 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "ChatCell")
         tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.view.addSubview(tableView)
+
+        // "AI도슨트와 채팅하기" 버튼 설정
+        setupChatButton()
+    }
+    
+    // "AI도슨트와 채팅하기" 버튼 설정 메서드입니다.
+    func setupChatButton() {
+        chatButton = UIButton(type: .system) // 버튼 초기화
+        chatButton.setTitle("AI도슨트와 채팅하기", for: .normal) // 버튼 타이틀 설정
+        chatButton.addTarget(self, action: #selector(chatButtonTapped), for: .touchUpInside) // 버튼 액션 설정
+        chatButton.translatesAutoresizingMaskIntoConstraints = false // 오토 레이아웃 사용
+        
+        self.view.addSubview(chatButton) // 버튼을 뷰에 추가
+        
+        // 제약 조건 설정
+        NSLayoutConstraint.activate([
+            chatButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor), // 버튼을 화면 중앙에 배치
+            chatButton.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -20), // 버튼을 화면 하단에 배치
+            chatButton.widthAnchor.constraint(equalToConstant: 200), // 버튼 너비 설정
+            chatButton.heightAnchor.constraint(equalToConstant: 50) // 버튼 높이 설정
+        ])
     }
 
     @objc func backButtonTapped() {
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    @objc func chatButtonTapped() {
+        // ChatViewController로 전환하는 코드입니다.
+        let chatVC = ChatViewController()
+        self.navigationController?.pushViewController(chatVC, animated: true)
     }
 
     // UITableViewDataSource 메소드

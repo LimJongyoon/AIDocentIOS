@@ -10,6 +10,7 @@
 		3A448E002BC3E2DC001E7731 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A448DFF2BC3E2DC001E7731 /* InfoViewController.swift */; };
 		3A448E022BC3E40A001E7731 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A448E012BC3E40A001E7731 /* SearchViewController.swift */; };
 		3A448E042BC3E484001E7731 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A448E032BC3E484001E7731 /* CameraViewController.swift */; };
+		3A4934D02C257C8800D2F5AC /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4934CF2C257C8800D2F5AC /* ChatViewController.swift */; };
 		3A5A19342BF5DCD400A57037 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5A19332BF5DCD400A57037 /* InitialViewController.swift */; };
 		3A5A193E2BF5EFB900A57037 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A5A193D2BF5EFB900A57037 /* libsqlite3.tbd */; };
 		3A5A194D2BF5F02600A57037 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5A19402BF5F02600A57037 /* FMDatabase.m */; };
@@ -35,6 +36,7 @@
 		3A448DFF2BC3E2DC001E7731 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		3A448E012BC3E40A001E7731 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		3A448E032BC3E484001E7731 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		3A4934CF2C257C8800D2F5AC /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		3A5A19332BF5DCD400A57037 /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		3A5A193D2BF5EFB900A57037 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		3A5A193F2BF5F02600A57037 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 				3A448E012BC3E40A001E7731 /* SearchViewController.swift */,
 				3A448E032BC3E484001E7731 /* CameraViewController.swift */,
 				3AEFA4672C1C042C00AAA6F3 /* DetailViewController.swift */,
+				3A4934CF2C257C8800D2F5AC /* ChatViewController.swift */,
 			);
 			path = BoxTableViewController;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 				3A5A19502BF5F02600A57037 /* FMDatabaseQueue.m in Sources */,
 				3A5A19342BF5DCD400A57037 /* InitialViewController.swift in Sources */,
 				3A5A194D2BF5F02600A57037 /* FMDatabase.m in Sources */,
+				3A4934D02C257C8800D2F5AC /* ChatViewController.swift in Sources */,
 				3AEFA4682C1C042C00AAA6F3 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
