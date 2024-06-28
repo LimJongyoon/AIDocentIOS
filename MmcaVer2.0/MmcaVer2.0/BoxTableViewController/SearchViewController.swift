@@ -109,7 +109,13 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         
         // 셀의 텍스트 라벨 설정
         cell.textLabel?.attributedText = attributedTitle
-        cell.detailTextLabel?.attributedText = attributedArtist
+        
+        // 작가, 크기, 재료 정보를 detailTextLabel에 설정
+        let detailText = "\(device.value.artist), \(device.value.size), \(device.value.material)"
+        let attributedDetailText = NSMutableAttributedString(string: detailText)
+        let detailTextRange = (detailText as NSString).range(of: highlightedText)
+        attributedDetailText.addAttribute(.backgroundColor, value: UIColor.yellow, range: detailTextRange)
+        cell.detailTextLabel?.attributedText = attributedDetailText
         
         // 이미지 파일을 Assets에서 찾기
         var image: UIImage? = UIImage(named: device.key)
@@ -134,9 +140,12 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let detailVC = DetailViewController()
         let selectedDevice = filteredDeviceInfo[indexPath.row]
+        
+        // 선택된 디바이스의 정보를 DetailViewController에 전달
         detailVC.peripheral = nil
         detailVC.rssiValue = nil
-        detailVC.deviceInfo = deviceInfo
+        detailVC.deviceInfo = deviceInfo // 이 부분을 선택된 디바이스의 정보로 설정
+        detailVC.selectedDeviceInfo = selectedDevice.value
         
         self.navigationController?.pushViewController(detailVC, animated: true)
     }

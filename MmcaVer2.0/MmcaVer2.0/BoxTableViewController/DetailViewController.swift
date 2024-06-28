@@ -6,6 +6,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var peripheral: CBPeripheral?
     var rssiValue: NSNumber?
     var deviceInfo: [String: (title: String, artist: String, size: String, material: String, description: String)] = [:]
+    var selectedDeviceInfo: (title: String, artist: String, size: String, material: String, description: String)? // 선택된 디바이스 정보를 저장할 변수
     
     let tableView = UITableView()
     var messages: [String] = []
@@ -33,7 +34,8 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 self.title = info.title
                 
                 // 이미지 파일을 Assets에서 찾기
-                var image: UIImage? = UIImage(named: peripheral.name ?? "Unknown")
+                let imageName = peripheral.name ?? "Unknown"
+                var image: UIImage? = UIImage(named: imageName)
                 
                 // 이미지가 없을 경우, 시스템의 기본 이미지 사용
                 if image == nil {
@@ -42,7 +44,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 
                 // 이미지 메시지 추가
                 if image != nil {
-                    messages.append("Image: \(peripheral.name ?? "Unknown")")
+                    messages.append("Image: \(imageName)")
                 }
                 
                 // 이름과 설명 메시지 추가
@@ -56,6 +58,33 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 // 음성으로 읽기 시작
                 speakText("\(artworkInfo)\n\(artworkDetails)\n\(artworkDescription)")
             }
+        } else if let info = selectedDeviceInfo {
+            self.title = info.title
+            
+            // 이미지 파일을 Assets에서 찾기
+            let imageName = info.title
+            var image: UIImage? = UIImage(named: imageName)
+            
+            // 이미지가 없을 경우, 시스템의 기본 이미지 사용
+            if image == nil {
+                image = UIImage(named: "EmptyQuestionMark") // 빈 이미지에 적합한 이미지
+            }
+            
+            // 이미지 메시지 추가
+            if image != nil {
+                messages.append("Image: \(imageName)")
+            }
+            
+            // 이름과 설명 메시지 추가
+            let artworkInfo = info.title
+            let artworkDetails = "\(info.artist), \(info.size), \(info.material)"
+            let artworkDescription = info.description
+            messages.append(artworkInfo)
+            messages.append(artworkDetails)
+            messages.append(artworkDescription)
+            
+            // 음성으로 읽기 시작
+            speakText("\(artworkInfo)\n\(artworkDetails)\n\(artworkDescription)")
         }
         
         // 테이블 뷰 설정
