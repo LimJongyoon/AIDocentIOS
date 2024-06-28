@@ -189,7 +189,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
             return
         }
         let bottomSafeAreaInset = view.safeAreaInsets.bottom
-        view.frame.origin.y = -(keyboardFrame.height - bottomSafeAreaInset + 34)
+        view.frame.origin.y = -(keyboardFrame.height - bottomSafeAreaInset + 80)
     }
     
     // 키보드가 숨겨질 때 호출되는 메서드입니다.
