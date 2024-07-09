@@ -29,6 +29,7 @@
 		3A64C2D42BC3D9F000CD31B4 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 3A64C2D32BC3D9F000CD31B4 /* Base */; };
 		3A9D65E82C12EA33000F1995 /* ImageClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 3A9D65E72C12EA33000F1995 /* ImageClassifier.mlmodel */; };
 		3AA8DCC52BC3E82E00A1B8CB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA8DCC42BC3E82E00A1B8CB /* HomeViewController.swift */; };
+		3ACB0C232C3D474400B8786D /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACB0C222C3D474400B8786D /* TextViewController.swift */; };
 		3AEFA4682C1C042C00AAA6F3 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEFA4672C1C042C00AAA6F3 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +65,7 @@
 		3A64C2D52BC3D9F000CD31B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A9D65E72C12EA33000F1995 /* ImageClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ImageClassifier.mlmodel; sourceTree = "<group>"; };
 		3AA8DCC42BC3E82E00A1B8CB /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		3ACB0C222C3D474400B8786D /* TextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
 		3AEFA4672C1C042C00AAA6F3 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -169,6 +171,7 @@
 				3A448E032BC3E484001E7731 /* CameraViewController.swift */,
 				3AEFA4672C1C042C00AAA6F3 /* DetailViewController.swift */,
 				3A4934CF2C257C8800D2F5AC /* ChatViewController.swift */,
+				3ACB0C222C3D474400B8786D /* TextViewController.swift */,
 			);
 			path = BoxTableViewController;
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 				3A9D65E82C12EA33000F1995 /* ImageClassifier.mlmodel in Sources */,
 				3A64C2CA2BC3D9F000CD31B4 /* SceneDelegate.swift in Sources */,
 				3A5A194E2BF5F02600A57037 /* FMDatabaseAdditions.m in Sources */,
+				3ACB0C232C3D474400B8786D /* TextViewController.swift in Sources */,
 				3A5A19512BF5F02600A57037 /* FMResultSet.m in Sources */,
 				3AA8DCC52BC3E82E00A1B8CB /* HomeViewController.swift in Sources */,
 				3A5A194F2BF5F02600A57037 /* FMDatabasePool.m in Sources */,

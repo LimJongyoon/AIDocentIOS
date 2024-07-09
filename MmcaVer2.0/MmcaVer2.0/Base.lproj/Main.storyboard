@@ -283,19 +283,21 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dhz-Ld-10J">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dAr-Z4-bBu">
                                 <rect key="frame" x="183.66666666666666" y="604" width="101.99999999999997" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="텍스트 수정"/>
                                 <connections>
-                                    <action selector="editLabel:" destination="Aqa-wn-dnF" eventType="touchUpInside" id="Ykg-9m-G2y"/>
+                                    <action selector="moveToTextViewController:" destination="Aqa-wn-dnF" eventType="touchUpInside" id="ryV-xU-Rld"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wyv-fW-mTC"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="dAr-Z4-bBu" firstAttribute="top" secondItem="6nY-B2-qux" secondAttribute="bottom" constant="10" id="2CP-Fc-Wbo"/>
                             <constraint firstAttribute="bottom" secondItem="QV8-aD-pJE" secondAttribute="bottom" constant="120" id="3cW-xG-Cv2"/>
+                            <constraint firstItem="pd1-ga-fWn" firstAttribute="leading" secondItem="dAr-Z4-bBu" secondAttribute="trailing" constant="10" id="DWi-RQ-SVw"/>
                             <constraint firstItem="1OT-l1-SMD" firstAttribute="centerX" secondItem="cZU-rS-AFE" secondAttribute="centerX" id="DXF-P3-SF0"/>
                             <constraint firstItem="6nY-B2-qux" firstAttribute="centerX" secondItem="cZU-rS-AFE" secondAttribute="centerX" id="EyX-yL-ssC"/>
                             <constraint firstItem="wyv-fW-mTC" firstAttribute="trailing" secondItem="5kT-Xp-xtG" secondAttribute="trailing" constant="50" id="Lcd-TX-VoQ"/>
@@ -305,13 +307,11 @@
                             <constraint firstItem="5kT-Xp-xtG" firstAttribute="top" secondItem="6nY-B2-qux" secondAttribute="bottom" constant="100" id="Uk0-US-LMD"/>
                             <constraint firstItem="wyv-fW-mTC" firstAttribute="trailing" secondItem="pd1-ga-fWn" secondAttribute="trailing" constant="10" id="aLe-Ps-aSd"/>
                             <constraint firstItem="FTe-fN-qIu" firstAttribute="centerX" secondItem="cZU-rS-AFE" secondAttribute="centerX" id="f8h-H7-XbY"/>
-                            <constraint firstItem="pd1-ga-fWn" firstAttribute="leading" secondItem="dhz-Ld-10J" secondAttribute="trailing" constant="10" id="oHi-73-5h2"/>
                             <constraint firstItem="pd1-ga-fWn" firstAttribute="top" secondItem="6nY-B2-qux" secondAttribute="bottom" constant="10" id="pln-ZW-zPl"/>
                             <constraint firstItem="6nY-B2-qux" firstAttribute="leading" secondItem="wyv-fW-mTC" secondAttribute="leading" constant="5" id="q7e-Gq-Gil"/>
                             <constraint firstAttribute="bottom" secondItem="FTe-fN-qIu" secondAttribute="bottom" constant="120" id="rw6-iw-hEx"/>
                             <constraint firstItem="wyv-fW-mTC" firstAttribute="bottom" secondItem="5kT-Xp-xtG" secondAttribute="bottom" constant="40" id="sOY-6C-m01"/>
                             <constraint firstItem="6nY-B2-qux" firstAttribute="top" secondItem="wyv-fW-mTC" secondAttribute="top" constant="5" id="wW8-Ha-UtY"/>
-                            <constraint firstItem="dhz-Ld-10J" firstAttribute="top" secondItem="6nY-B2-qux" secondAttribute="bottom" constant="10" id="xpf-FS-Tg3"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="캡션 카메라" id="aN1-Do-Q23"/>
@@ -323,6 +323,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IdH-3O-Jg2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2180.9160305343512" y="450.7042253521127"/>
+        </scene>
+        <!--Text View Controller-->
+        <scene sceneID="p8K-ps-ux2">
+            <objects>
+                <viewController storyboardIdentifier="TextViewController" id="kIb-fF-r61" customClass="TextViewController" customModule="MmcaVer2_0" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0pK-oh-Dul">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="QYa-V9-5ck"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="gn9-9B-gJC"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5bv-pG-qei" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2181" y="1173"/>
         </scene>
         <!--캡션 카메라-->
         <scene sceneID="BA9-mf-7K4">

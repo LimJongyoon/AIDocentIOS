@@ -9,7 +9,7 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     // UILabel을 IBOutlet으로 연결하여 인터페이스 빌더에서 설정할 수 있도록 합니다.
     @IBOutlet weak var label: UILabel!
-    
+        
     // UIImagePickerController 인스턴스를 생성합니다.
     let imagePicker = UIImagePickerController()
     
@@ -211,8 +211,18 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         // 새로 생성된 이미지를 반환합니다.
         return newImage!
     }
-
-
+    
+    @IBAction func moveToTextViewController(_ sender: UIButton) {
+            // 스토리보드에서 TextViewController를 가져옵니다.
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                if let textViewController = storyboard.instantiateViewController(withIdentifier: "TextViewController") as? TextViewController {
+                    // 화면 전환 스타일 설정
+                    textViewController.modalPresentationStyle = .fullScreen
+                    textViewController.modalTransitionStyle = .coverVertical
+                    // 화면 전환을 수행합니다.
+                    self.present(textViewController, animated: true, completion: nil)
+            }
+        }
     
     // 저장 버튼의 액션 메서드입니다.
     @IBAction func savePhoto(_ sender: UIButton) {
