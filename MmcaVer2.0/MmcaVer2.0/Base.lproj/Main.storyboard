@@ -237,7 +237,6 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6nY-B2-qux">
                                 <rect key="frame" x="5" y="108" width="383" height="486"/>
-                                <color key="backgroundColor" white="0.94999999999999996" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QV8-aD-pJE">
                                 <rect key="frame" x="50" y="690.66666666666663" width="54" height="41.333333333333371"/>
@@ -268,18 +267,26 @@
                                     <action selector="savePhoto:" destination="Aqa-wn-dnF" eventType="touchUpInside" id="aXd-Pq-ODm"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pd1-ga-fWn">
+                                <rect key="frame" x="295.66666666666669" y="604" width="87.333333333333314" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="캡션 달기"/>
+                                <connections>
+                                    <action selector="toggleCaption:" destination="Aqa-wn-dnF" eventType="touchUpInside" id="haA-Ty-Ps0"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사진을 업로드하거나 촬영 해주세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1OT-l1-SMD">
-                                <rect key="frame" x="79.666666666666671" y="640.33333333333337" width="233.66666666666663" height="20.333333333333371"/>
+                                <rect key="frame" x="79.666666666666671" y="650.33333333333337" width="233.66666666666663" height="20.333333333333371"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pd1-ga-fWn">
-                                <rect key="frame" x="265" y="694" width="54" height="35"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dhz-Ld-10J">
+                                <rect key="frame" x="183.66666666666666" y="604" width="101.99999999999997" height="35"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="캡션"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="텍스트 수정"/>
                                 <connections>
-                                    <action selector="toggleCaption:" destination="Aqa-wn-dnF" eventType="touchUpInside" id="haA-Ty-Ps0"/>
+                                    <action selector="editLabel:" destination="Aqa-wn-dnF" eventType="touchUpInside" id="Ykg-9m-G2y"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -287,20 +294,22 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="QV8-aD-pJE" secondAttribute="bottom" constant="120" id="3cW-xG-Cv2"/>
-                            <constraint firstItem="5kT-Xp-xtG" firstAttribute="leading" secondItem="pd1-ga-fWn" secondAttribute="trailing" constant="10" id="D9W-b8-Juw"/>
                             <constraint firstItem="1OT-l1-SMD" firstAttribute="centerX" secondItem="cZU-rS-AFE" secondAttribute="centerX" id="DXF-P3-SF0"/>
                             <constraint firstItem="6nY-B2-qux" firstAttribute="centerX" secondItem="cZU-rS-AFE" secondAttribute="centerX" id="EyX-yL-ssC"/>
-                            <constraint firstItem="wyv-fW-mTC" firstAttribute="bottom" secondItem="pd1-ga-fWn" secondAttribute="bottom" constant="40" id="Jw9-k3-vtH"/>
                             <constraint firstItem="wyv-fW-mTC" firstAttribute="trailing" secondItem="5kT-Xp-xtG" secondAttribute="trailing" constant="10" id="Lcd-TX-VoQ"/>
                             <constraint firstItem="wyv-fW-mTC" firstAttribute="trailing" secondItem="6nY-B2-qux" secondAttribute="trailing" constant="5" id="MQR-Tm-2db"/>
                             <constraint firstItem="QV8-aD-pJE" firstAttribute="leading" secondItem="wyv-fW-mTC" secondAttribute="leading" constant="50" id="Obr-ci-WYN"/>
-                            <constraint firstItem="QV8-aD-pJE" firstAttribute="top" secondItem="1OT-l1-SMD" secondAttribute="bottom" constant="30" id="Rwy-Jq-sM1"/>
+                            <constraint firstItem="QV8-aD-pJE" firstAttribute="top" secondItem="1OT-l1-SMD" secondAttribute="bottom" constant="20" id="Rwy-Jq-sM1"/>
                             <constraint firstItem="5kT-Xp-xtG" firstAttribute="top" secondItem="6nY-B2-qux" secondAttribute="bottom" constant="100" id="Uk0-US-LMD"/>
+                            <constraint firstItem="wyv-fW-mTC" firstAttribute="trailing" secondItem="pd1-ga-fWn" secondAttribute="trailing" constant="10" id="aLe-Ps-aSd"/>
                             <constraint firstItem="FTe-fN-qIu" firstAttribute="centerX" secondItem="cZU-rS-AFE" secondAttribute="centerX" id="f8h-H7-XbY"/>
+                            <constraint firstItem="pd1-ga-fWn" firstAttribute="leading" secondItem="dhz-Ld-10J" secondAttribute="trailing" constant="10" id="oHi-73-5h2"/>
+                            <constraint firstItem="pd1-ga-fWn" firstAttribute="top" secondItem="6nY-B2-qux" secondAttribute="bottom" constant="10" id="pln-ZW-zPl"/>
                             <constraint firstItem="6nY-B2-qux" firstAttribute="leading" secondItem="wyv-fW-mTC" secondAttribute="leading" constant="5" id="q7e-Gq-Gil"/>
                             <constraint firstAttribute="bottom" secondItem="FTe-fN-qIu" secondAttribute="bottom" constant="120" id="rw6-iw-hEx"/>
                             <constraint firstItem="wyv-fW-mTC" firstAttribute="bottom" secondItem="5kT-Xp-xtG" secondAttribute="bottom" constant="40" id="sOY-6C-m01"/>
                             <constraint firstItem="6nY-B2-qux" firstAttribute="top" secondItem="wyv-fW-mTC" secondAttribute="top" constant="5" id="wW8-Ha-UtY"/>
+                            <constraint firstItem="dhz-Ld-10J" firstAttribute="top" secondItem="6nY-B2-qux" secondAttribute="bottom" constant="10" id="xpf-FS-Tg3"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="캡션 카메라" id="aN1-Do-Q23"/>

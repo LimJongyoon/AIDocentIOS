@@ -13,6 +13,9 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
     // UIImagePickerController 인스턴스를 생성합니다.
     let imagePicker = UIImagePickerController()
     
+    // 원본 이미지를 저장할 변수
+    var originalImage: UIImage?
+    
     // 캡션 기능 활성화 여부를 나타내는 변수
     var captionEnabled = false
     
@@ -48,11 +51,13 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         captionEnabled.toggle()
         
         if captionEnabled, let image = imageView.image {
+            // 원본 이미지를 저장합니다.
+            originalImage = image
             // 캡션이 활성화된 경우 현재 이미지를 다시 그려서 캡션을 추가합니다.
             self.imageView.image = self.drawTextOnImage(text: label.text ?? "", inImage: image)
-        } else if let image = imageView.image {
-            // 캡션이 비활성화된 경우 이미지를 다시 로드하여 캡션을 제거합니다.
-            imageView.image = image // 원본 이미지를 다시 설정 (실제 구현에서는 원본 이미지를 저장해두는 것이 필요할 수 있음)
+        } else if let originalImage = originalImage {
+            // 캡션이 비활성화된 경우 원본 이미지를 다시 설정합니다.
+            imageView.image = originalImage
         }
     }
 
@@ -108,56 +113,74 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     // 이미지에 텍스트를 덮어씌우는 메서드입니다.
     func drawTextOnImage(text: String, inImage: UIImage) -> UIImage {
-        // 텍스트 색상을 흰색으로 설정합니다.
-        let textColor = UIColor.white
-        // 텍스트 폰트를 굵고 크기가 40인 시스템 폰트로 설정합니다.
-        let textFont = UIFont.boldSystemFont(ofSize: 200)
-        // 텍스트 배경색을 반투명 검정색으로 설정합니다.
-        let backgroundColor = UIColor.black.withAlphaComponent(0.2)
+        // 텍스트 색상을 설정합니다.
+        let textColor = UIColor.black
+        // 텍스트 사이즈를 설정합니다.
+        let textSize: CGFloat = 120
+        // 텍스트 폰트를 설정합니다.
+        let textFont = UIFont.boldSystemFont(ofSize: textSize)
+        // 텍스트 정렬
+        let textAlignment: NSTextAlignment = .center
+        // 배경 색상을 밝은 회색으로 설정합니다.
+        let backgroundColor = UIColor(white: 0.9, alpha: 1.0)
 
-        // 현재 화면의 스케일을 가져옵니다. 이는 레티나 디스플레이의 해상도를 지원하기 위해 사용됩니다.
+        // 현재 화면의 스케일을 가져옵니다.
         let scale = UIScreen.main.scale
+        // 상하좌우 기본 여백을 설정합니다.
+        let padding: CGFloat = 40
+        // 하단 여백을 더 크게 설정합니다.
+        let bottomPadding: CGFloat = 400
+        // 텍스트 상하 위치 조정 패딩
+        let textPadding: CGFloat = 100
+        
+        // 새로운 이미지 크기를 설정합니다. 원본 이미지의 크기에 상하좌우 여백을 더합니다.
+        let imageSize = CGSize(width: inImage.size.width + padding * 2, height: inImage.size.height + padding + bottomPadding)
+        
         // 새로운 그래픽 컨텍스트를 생성합니다. 이 컨텍스트는 이미지를 그리고 텍스트를 덧붙이기 위해 사용됩니다.
-        UIGraphicsBeginImageContextWithOptions(inImage.size, false, scale)
-
+        UIGraphicsBeginImageContextWithOptions(imageSize, false, scale)
+        
         // 텍스트의 폰트 속성과 색상 속성을 설정합니다.
         let textFontAttributes = [
             NSAttributedString.Key.font: textFont, // 폰트 설정
             NSAttributedString.Key.foregroundColor: textColor, // 텍스트 색상 설정
-            NSAttributedString.Key.backgroundColor: backgroundColor // 텍스트 배경색 설정
         ] as [NSAttributedString.Key : Any]
 
-        // 원본 이미지를 그래픽 컨텍스트에 그립니다.
-        inImage.draw(in: CGRect(origin: CGPoint.zero, size: inImage.size))
-
-        // 텍스트가 그려질 위치와 크기를 설정합니다.
-        // CGRect는 사각형을 정의하는 구조체로, (x, y) 좌표와 너비(width), 높이(height)를 포함합니다.
-        let textRect = CGRect(x: 20, y: inImage.size.height - 270, width: inImage.size.width - 40, height: 250)
-        // 배경 사각형의 위치와 크기를 텍스트 사각형과 동일하게 설정합니다.
-        //let backgroundRect = CGRect(x: 20, y: inImage.size.height - 270, width: inImage.size.width - 40, height: 250)
-        
-        // 현재 그래픽 컨텍스트를 가져옵니다.
+        // 배경 색상을 설정합니다.
         let context = UIGraphicsGetCurrentContext()
-        // 배경 사각형의 색상을 설정합니다.
         context?.setFillColor(backgroundColor.cgColor)
-        // 배경 사각형을 그래픽 컨텍스트에 그립니다.
-        //context?.fill(backgroundRect)
-        context?.fill(textRect)
+        // 배경 색상을 전체 이미지 크기로 채웁니다.
+        context?.fill(CGRect(origin: CGPoint.zero, size: imageSize))
         
-        // 텍스트를 그래픽 컨텍스트에 그립니다.
-        // 이 함수는 지정된 사각형(textRect) 내에 텍스트를 그리며, 주어진 폰트 속성과 색상 속성을 적용합니다.
-        text.draw(in: textRect, withAttributes: textFontAttributes)
-
+        // 원본 이미지를 그래픽 컨텍스트에 그립니다.
+        inImage.draw(in: CGRect(x: padding, y: padding, width: inImage.size.width, height: inImage.size.height))
+        
+        // 텍스트가 그려질 위치와 크기를 설정합니다.
+        let textRect = CGRect(x: padding, y: inImage.size.height + padding + textPadding, width: inImage.size.width, height: bottomPadding)
+        
+        // 텍스트 정렬 스타일을 중앙 정렬로 설정합니다.
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = textAlignment
+        
+        // 텍스트 속성에 정렬 스타일을 추가합니다.
+        let attributedString = NSAttributedString(string: text, attributes: [
+            NSAttributedString.Key.font: textFont,
+            NSAttributedString.Key.foregroundColor: textColor,
+            NSAttributedString.Key.paragraphStyle: paragraphStyle
+        ])
+        
+        // 텍스트를 지정된 사각형 영역에 그립니다.
+        attributedString.draw(in: textRect)
+        
         // 그래픽 컨텍스트에 그려진 이미지를 가져옵니다.
         let newImage = UIGraphicsGetImageFromCurrentImageContext()
         // 그래픽 컨텍스트를 종료합니다.
         UIGraphicsEndImageContext()
 
-        // 새로 생성된 이미지가 nil이 아닌지 확인하기 위한 로그 출력입니다.
+        // 새로 생성된 이미지가 있는지 확인합니다.
         if let newImage = newImage {
-            print("이미지 생성 성공: \(newImage.size)") // 이미지 생성이 성공했음을 출력합니다.
+            print("이미지 생성 성공: \(newImage.size)")
         } else {
-            print("이미지 생성 실패") // 이미지 생성이 실패했음을 출력합니다.
+            print("이미지 생성 실패")
         }
 
         // 새로 생성된 이미지를 반환합니다.
