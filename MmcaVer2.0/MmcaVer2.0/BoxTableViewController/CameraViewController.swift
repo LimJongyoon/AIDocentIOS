@@ -24,6 +24,7 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     // 사진 업로드 버튼의 액션 메서드입니다.
     @IBAction func uploadPhoto(_ sender: UIButton) {
+        
         // 사진첩을 소스 타입으로 설정합니다.
         imagePicker.sourceType = .photoLibrary
         // 이미지 피커를 화면에 표시합니다.
@@ -112,7 +113,7 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         // 텍스트 폰트를 굵고 크기가 40인 시스템 폰트로 설정합니다.
         let textFont = UIFont.boldSystemFont(ofSize: 200)
         // 텍스트 배경색을 반투명 검정색으로 설정합니다.
-        let backgroundColor = UIColor.black.withAlphaComponent(0.5)
+        let backgroundColor = UIColor.black.withAlphaComponent(0.2)
 
         // 현재 화면의 스케일을 가져옵니다. 이는 레티나 디스플레이의 해상도를 지원하기 위해 사용됩니다.
         let scale = UIScreen.main.scale

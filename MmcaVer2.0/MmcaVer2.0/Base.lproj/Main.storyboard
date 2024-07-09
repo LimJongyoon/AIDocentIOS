@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -234,56 +235,73 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6nY-B2-qux">
-                                <rect key="frame" x="16" y="103" width="361" height="440"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6nY-B2-qux">
+                                <rect key="frame" x="5" y="108" width="383" height="486"/>
+                                <color key="backgroundColor" white="0.94999999999999996" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QV8-aD-pJE">
-                                <rect key="frame" x="162" y="691" width="69" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="사진첩"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QV8-aD-pJE">
+                                <rect key="frame" x="50" y="690.66666666666663" width="54" height="41.333333333333371"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="photo.artframe" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30" scale="large"/>
+                                </state>
                                 <connections>
                                     <action selector="uploadPhoto:" destination="Aqa-wn-dnF" eventType="touchUpInside" id="Elj-jS-ptl"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FTe-fN-qIu">
-                                <rect key="frame" x="170" y="734" width="54" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="촬영"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FTe-fN-qIu">
+                                <rect key="frame" x="174" y="687" width="45" height="45"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal">
+                                    <imageReference key="image" image="record.circle" catalog="system" variableValue="0.0"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30" scale="large"/>
+                                </state>
                                 <connections>
                                     <action selector="takePhoto:" destination="Aqa-wn-dnF" eventType="touchUpInside" id="Fdi-1K-v36"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5kT-Xp-xtG">
-                                <rect key="frame" x="202" y="620" width="54" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5kT-Xp-xtG">
+                                <rect key="frame" x="329" y="694" width="54" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" title="저장"/>
                                 <connections>
                                     <action selector="savePhoto:" destination="Aqa-wn-dnF" eventType="touchUpInside" id="aXd-Pq-ODm"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pd1-ga-fWn">
-                                <rect key="frame" x="121" y="620" width="54" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사진을 업로드하거나 촬영 해주세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1OT-l1-SMD">
+                                <rect key="frame" x="79.666666666666671" y="640.33333333333337" width="233.66666666666663" height="20.333333333333371"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pd1-ga-fWn">
+                                <rect key="frame" x="265" y="694" width="54" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="캡션"/>
                                 <connections>
                                     <action selector="toggleCaption:" destination="Aqa-wn-dnF" eventType="touchUpInside" id="haA-Ty-Ps0"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1OT-l1-SMD">
-                                <rect key="frame" x="76" y="513" width="240" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wyv-fW-mTC"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="QV8-aD-pJE" secondAttribute="bottom" constant="120" id="3cW-xG-Cv2"/>
+                            <constraint firstItem="5kT-Xp-xtG" firstAttribute="leading" secondItem="pd1-ga-fWn" secondAttribute="trailing" constant="10" id="D9W-b8-Juw"/>
+                            <constraint firstItem="1OT-l1-SMD" firstAttribute="centerX" secondItem="cZU-rS-AFE" secondAttribute="centerX" id="DXF-P3-SF0"/>
+                            <constraint firstItem="6nY-B2-qux" firstAttribute="centerX" secondItem="cZU-rS-AFE" secondAttribute="centerX" id="EyX-yL-ssC"/>
+                            <constraint firstItem="wyv-fW-mTC" firstAttribute="bottom" secondItem="pd1-ga-fWn" secondAttribute="bottom" constant="40" id="Jw9-k3-vtH"/>
+                            <constraint firstItem="wyv-fW-mTC" firstAttribute="trailing" secondItem="5kT-Xp-xtG" secondAttribute="trailing" constant="10" id="Lcd-TX-VoQ"/>
+                            <constraint firstItem="wyv-fW-mTC" firstAttribute="trailing" secondItem="6nY-B2-qux" secondAttribute="trailing" constant="5" id="MQR-Tm-2db"/>
+                            <constraint firstItem="QV8-aD-pJE" firstAttribute="leading" secondItem="wyv-fW-mTC" secondAttribute="leading" constant="50" id="Obr-ci-WYN"/>
+                            <constraint firstItem="QV8-aD-pJE" firstAttribute="top" secondItem="1OT-l1-SMD" secondAttribute="bottom" constant="30" id="Rwy-Jq-sM1"/>
+                            <constraint firstItem="5kT-Xp-xtG" firstAttribute="top" secondItem="6nY-B2-qux" secondAttribute="bottom" constant="100" id="Uk0-US-LMD"/>
+                            <constraint firstItem="FTe-fN-qIu" firstAttribute="centerX" secondItem="cZU-rS-AFE" secondAttribute="centerX" id="f8h-H7-XbY"/>
+                            <constraint firstItem="6nY-B2-qux" firstAttribute="leading" secondItem="wyv-fW-mTC" secondAttribute="leading" constant="5" id="q7e-Gq-Gil"/>
+                            <constraint firstAttribute="bottom" secondItem="FTe-fN-qIu" secondAttribute="bottom" constant="120" id="rw6-iw-hEx"/>
+                            <constraint firstItem="wyv-fW-mTC" firstAttribute="bottom" secondItem="5kT-Xp-xtG" secondAttribute="bottom" constant="40" id="sOY-6C-m01"/>
+                            <constraint firstItem="6nY-B2-qux" firstAttribute="top" secondItem="wyv-fW-mTC" secondAttribute="top" constant="5" id="wW8-Ha-UtY"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="캡션 카메라" id="aN1-Do-Q23"/>
                     <connections>
@@ -449,6 +467,8 @@
         <image name="camera.macro.circle" catalog="system" width="128" height="123"/>
         <image name="homekit" catalog="system" width="128" height="104"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
+        <image name="photo.artframe" catalog="system" width="128" height="93"/>
+        <image name="record.circle" catalog="system" width="128" height="123"/>
         <image name="signpost.right.and.left" catalog="system" width="125" height="128"/>
         <namedColor name="Color">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
