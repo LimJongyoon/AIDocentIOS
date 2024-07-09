@@ -259,15 +259,17 @@
                                     <action selector="takePhoto:" destination="Aqa-wn-dnF" eventType="touchUpInside" id="Fdi-1K-v36"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5kT-Xp-xtG">
-                                <rect key="frame" x="329" y="694" width="54" height="35"/>
+                            <button opaque="NO" tag="99" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5kT-Xp-xtG">
+                                <rect key="frame" x="289" y="694" width="54" height="35"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="gray" title="저장"/>
+                                <buttonConfiguration key="configuration" style="gray" title="저장">
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="savePhoto:" destination="Aqa-wn-dnF" eventType="touchUpInside" id="aXd-Pq-ODm"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pd1-ga-fWn">
+                            <button opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pd1-ga-fWn">
                                 <rect key="frame" x="295.66666666666669" y="604" width="87.333333333333314" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="캡션 달기"/>
@@ -296,7 +298,7 @@
                             <constraint firstAttribute="bottom" secondItem="QV8-aD-pJE" secondAttribute="bottom" constant="120" id="3cW-xG-Cv2"/>
                             <constraint firstItem="1OT-l1-SMD" firstAttribute="centerX" secondItem="cZU-rS-AFE" secondAttribute="centerX" id="DXF-P3-SF0"/>
                             <constraint firstItem="6nY-B2-qux" firstAttribute="centerX" secondItem="cZU-rS-AFE" secondAttribute="centerX" id="EyX-yL-ssC"/>
-                            <constraint firstItem="wyv-fW-mTC" firstAttribute="trailing" secondItem="5kT-Xp-xtG" secondAttribute="trailing" constant="10" id="Lcd-TX-VoQ"/>
+                            <constraint firstItem="wyv-fW-mTC" firstAttribute="trailing" secondItem="5kT-Xp-xtG" secondAttribute="trailing" constant="50" id="Lcd-TX-VoQ"/>
                             <constraint firstItem="wyv-fW-mTC" firstAttribute="trailing" secondItem="6nY-B2-qux" secondAttribute="trailing" constant="5" id="MQR-Tm-2db"/>
                             <constraint firstItem="QV8-aD-pJE" firstAttribute="leading" secondItem="wyv-fW-mTC" secondAttribute="leading" constant="50" id="Obr-ci-WYN"/>
                             <constraint firstItem="QV8-aD-pJE" firstAttribute="top" secondItem="1OT-l1-SMD" secondAttribute="bottom" constant="20" id="Rwy-Jq-sM1"/>

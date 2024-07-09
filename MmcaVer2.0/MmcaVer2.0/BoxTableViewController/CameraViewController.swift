@@ -23,6 +23,21 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         super.viewDidLoad()
         // 이미지 피커의 델리게이트를 설정합니다.
         imagePicker.delegate = self
+        // 버튼 초기 상태 설정
+        if let captionButton = view.viewWithTag(100) as? UIButton {
+            captionButton.setTitle("캡션 달기", for: .normal)
+            captionButton.backgroundColor = UIColor(red: 0.68, green: 0.85, blue: 0.90, alpha: 1.0) // 연한 파란색
+            captionButton.layer.cornerRadius = 5 // 모서리를 둥글게
+            captionButton.clipsToBounds = true
+        }
+        
+        // savePhoto 버튼에 테두리 설정
+        if let savePhoto = view.viewWithTag(99) as? UIButton {
+            savePhoto.layer.borderColor = UIColor.black.cgColor
+            savePhoto.layer.borderWidth = 2
+            savePhoto.layer.cornerRadius = 15 // 모서리를 둥글게
+            savePhoto.clipsToBounds = true
+        }
     }
     
     // 사진 업로드 버튼의 액션 메서드입니다.
@@ -55,9 +70,19 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
             originalImage = image
             // 캡션이 활성화된 경우 현재 이미지를 다시 그려서 캡션을 추가합니다.
             self.imageView.image = self.drawTextOnImage(text: label.text ?? "", inImage: image)
+            // 버튼 제목과 색상 변경
+            sender.setTitle("캡션 취소", for: .normal)
+            sender.backgroundColor = UIColor(red: 1.0, green: 0.5, blue: 0.5, alpha: 1.0) // 연한 빨간색
+            sender.layer.cornerRadius = 10 // 모서리를 둥글게
+            sender.clipsToBounds = true
         } else if let originalImage = originalImage {
             // 캡션이 비활성화된 경우 원본 이미지를 다시 설정합니다.
             imageView.image = originalImage
+            // 버튼 제목과 색상 변경
+            sender.setTitle("캡션 달기", for: .normal)
+            sender.backgroundColor = UIColor(red: 0.68, green: 0.85, blue: 0.90, alpha: 1.0) // 연한 파란색
+            sender.layer.cornerRadius = 10 // 모서리를 둥글게
+            sender.clipsToBounds = true
         }
     }
 
@@ -127,11 +152,11 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         // 현재 화면의 스케일을 가져옵니다.
         let scale = UIScreen.main.scale
         // 상하좌우 기본 여백을 설정합니다.
-        let padding: CGFloat = 40
+        let padding: CGFloat = 80
         // 하단 여백을 더 크게 설정합니다.
         let bottomPadding: CGFloat = 400
-        // 텍스트 상하 위치 조정 패딩
-        let textPadding: CGFloat = 100
+        // 텍스트 상하 위치 조정 패딩 클수록 아래로 내려감
+        let textPadding: CGFloat = 120
         
         // 새로운 이미지 크기를 설정합니다. 원본 이미지의 크기에 상하좌우 여백을 더합니다.
         let imageSize = CGSize(width: inImage.size.width + padding * 2, height: inImage.size.height + padding + bottomPadding)
