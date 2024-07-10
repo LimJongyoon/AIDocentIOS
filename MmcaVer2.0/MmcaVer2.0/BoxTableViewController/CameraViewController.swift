@@ -18,6 +18,11 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     // 캡션 기능 활성화 여부를 나타내는 변수
     var captionEnabled = false
+    var editedText: String?
+    var editedTextColor: UIColor?
+    var editedTextAlignment: NSTextAlignment?
+    var editedBackgroundColor: UIColor?
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,8 +73,20 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         if captionEnabled, let image = imageView.image {
             // 원본 이미지를 저장합니다.
             originalImage = image
+            // 수정된 값이 있으면 이를 사용
+            let text = editedText ?? label.text ?? ""
+            let textColor = editedTextColor ?? .black
+            let textAlignment = editedTextAlignment ?? .center
+            let backgroundColor = editedBackgroundColor ?? label.backgroundColor ?? UIColor(white: 0.9, alpha: 1.0)
+
             // 캡션이 활성화된 경우 현재 이미지를 다시 그려서 캡션을 추가합니다.
-            self.imageView.image = self.drawTextOnImage(text: label.text ?? "", inImage: image)
+            self.imageView.image = self.drawTextOnImage(
+                text: text,
+                inImage: image,
+                textColor: textColor,
+                textAlignment: textAlignment,
+                backgroundColor: backgroundColor
+            )
             // 버튼 제목과 색상 변경
             sender.setTitle("캡션 취소", for: .normal)
             sender.backgroundColor = UIColor(red: 1.0, green: 0.5, blue: 0.5, alpha: 1.0) // 연한 빨간색
@@ -122,7 +139,13 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
                 self.label.text = classification
                 // 텍스트를 이미지에 그려서 imageView에 설정합니다.
                 if self.captionEnabled {
-                    self.imageView.image = self.drawTextOnImage(text: classification, inImage: self.imageView.image!)
+                    self.imageView.image = self.drawTextOnImage(
+                        text: classification,
+                        inImage: self.imageView.image!,
+                        textColor: .black,
+                        textAlignment: .center,
+                        backgroundColor: UIColor(white: 0.9, alpha: 1.0)
+                    )
                 }
             }
         }
@@ -136,19 +159,46 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         }
     }
     
+    //수정버튼
+    @IBAction func moveToTextViewController(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let textViewController = storyboard.instantiateViewController(withIdentifier: "TextViewController") as? TextViewController {
+            // 데이터 전달
+            textViewController.currentText = self.label.text
+            textViewController.currentTextColor = self.label.textColor
+            textViewController.currentTextAlignment = self.label.textAlignment
+            textViewController.currentBackgroundColor = self.label.backgroundColor
+
+            // 데이터 수정 후 받기
+            textViewController.completionHandler = { [weak self] text, textColor, textAlignment, backgroundColor in
+                guard let self = self else { return }
+                // 수정된 값을 저장
+                self.editedText = text
+                self.editedTextColor = textColor
+                self.editedTextAlignment = textAlignment
+                self.editedBackgroundColor = backgroundColor
+                
+                // UILabel에도 수정된 값 반영
+                self.label.text = text
+                self.label.textColor = textColor ?? .black
+                self.label.textAlignment = textAlignment ?? .center
+                self.label.backgroundColor = backgroundColor ?? .white
+            }
+            
+            textViewController.modalPresentationStyle = .fullScreen
+            textViewController.modalTransitionStyle = .coverVertical
+            
+            self.present(textViewController, animated: true, completion: nil)
+        }
+    }
+    
     // 이미지에 텍스트를 덮어씌우는 메서드입니다.
-    func drawTextOnImage(text: String, inImage: UIImage) -> UIImage {
-        // 텍스트 색상을 설정합니다.
-        let textColor = UIColor.black
+    func drawTextOnImage(text: String, inImage: UIImage, textColor: UIColor, textAlignment: NSTextAlignment, backgroundColor: UIColor) -> UIImage {
         // 텍스트 사이즈를 설정합니다.
         let textSize: CGFloat = 120
         // 텍스트 폰트를 설정합니다.
         let textFont = UIFont.boldSystemFont(ofSize: textSize)
-        // 텍스트 정렬
-        let textAlignment: NSTextAlignment = .center
-        // 배경 색상을 밝은 회색으로 설정합니다.
-        let backgroundColor = UIColor(white: 0.9, alpha: 1.0)
-
+        
         // 현재 화면의 스케일을 가져옵니다.
         let scale = UIScreen.main.scale
         // 상하좌우 기본 여백을 설정합니다.
@@ -201,28 +251,9 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         // 그래픽 컨텍스트를 종료합니다.
         UIGraphicsEndImageContext()
 
-        // 새로 생성된 이미지가 있는지 확인합니다.
-        if let newImage = newImage {
-            print("이미지 생성 성공: \(newImage.size)")
-        } else {
-            print("이미지 생성 실패")
-        }
-
         // 새로 생성된 이미지를 반환합니다.
         return newImage!
     }
-    
-    @IBAction func moveToTextViewController(_ sender: UIButton) {
-            // 스토리보드에서 TextViewController를 가져옵니다.
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                if let textViewController = storyboard.instantiateViewController(withIdentifier: "TextViewController") as? TextViewController {
-                    // 화면 전환 스타일 설정
-                    textViewController.modalPresentationStyle = .fullScreen
-                    textViewController.modalTransitionStyle = .coverVertical
-                    // 화면 전환을 수행합니다.
-                    self.present(textViewController, animated: true, completion: nil)
-            }
-        }
     
     // 저장 버튼의 액션 메서드입니다.
     @IBAction func savePhoto(_ sender: UIButton) {

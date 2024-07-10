@@ -97,6 +97,9 @@
                                 <rect key="frame" x="201.66666666666663" y="408.66666666666669" width="176.33333333333337" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="미디어월 연결"/>
+                                <connections>
+                                    <action selector="mediaWallButtonTapped:" destination="DCQ-ku-xMP" eventType="touchUpInside" id="dgw-xa-vey"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7ju-F1-mCq"/>
@@ -129,6 +132,12 @@
                             </connections>
                         </button>
                     </navigationItem>
+                    <connections>
+                        <outlet property="cameraButton" destination="gUk-Tv-2EJ" id="8sD-w1-NL2"/>
+                        <outlet property="infoButton" destination="Qgq-Lh-eyy" id="Gvu-4e-7cD"/>
+                        <outlet property="mediaWallButton" destination="Qcv-Lh-so0" id="dka-63-HQO"/>
+                        <outlet property="searchButton" destination="FRb-XY-4Ty" id="gz0-v9-6oV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8KV-da-rpn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -236,10 +245,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6nY-B2-qux">
-                                <rect key="frame" x="5" y="108" width="383" height="486"/>
+                                <rect key="frame" x="5" y="108" width="383" height="481"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QV8-aD-pJE">
-                                <rect key="frame" x="50" y="690.66666666666663" width="54" height="41.333333333333371"/>
+                                <rect key="frame" x="50" y="695.66666666666663" width="54" height="41.333333333333371"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="photo.artframe" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30" scale="large"/>
@@ -249,7 +258,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FTe-fN-qIu">
-                                <rect key="frame" x="174" y="687" width="45" height="45"/>
+                                <rect key="frame" x="174" y="692" width="45" height="45"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal">
                                     <imageReference key="image" image="record.circle" catalog="system" variableValue="0.0"/>
@@ -260,7 +269,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="99" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5kT-Xp-xtG">
-                                <rect key="frame" x="289" y="694" width="54" height="35"/>
+                                <rect key="frame" x="289" y="699" width="54" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" title="저장">
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -270,21 +279,25 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pd1-ga-fWn">
-                                <rect key="frame" x="295.66666666666669" y="604" width="87.333333333333314" height="35"/>
+                                <rect key="frame" x="295.66666666666669" y="599" width="87.333333333333314" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="캡션 달기"/>
                                 <connections>
                                     <action selector="toggleCaption:" destination="Aqa-wn-dnF" eventType="touchUpInside" id="haA-Ty-Ps0"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사진을 업로드하거나 촬영 해주세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1OT-l1-SMD">
-                                <rect key="frame" x="79.666666666666671" y="650.33333333333337" width="233.66666666666663" height="20.333333333333371"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사진을 업로드하거나 촬영 해주세요" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1OT-l1-SMD">
+                                <rect key="frame" x="10" y="650.66666666666663" width="373" height="30"/>
+                                <color key="backgroundColor" white="0.90000000000000002" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="rz8-7H-uon"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dAr-Z4-bBu">
-                                <rect key="frame" x="183.66666666666666" y="604" width="101.99999999999997" height="35"/>
+                                <rect key="frame" x="183.66666666666666" y="599" width="101.99999999999997" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="텍스트 수정"/>
                                 <connections>
@@ -296,21 +309,23 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="dAr-Z4-bBu" firstAttribute="top" secondItem="6nY-B2-qux" secondAttribute="bottom" constant="10" id="2CP-Fc-Wbo"/>
-                            <constraint firstAttribute="bottom" secondItem="QV8-aD-pJE" secondAttribute="bottom" constant="120" id="3cW-xG-Cv2"/>
+                            <constraint firstAttribute="bottom" secondItem="QV8-aD-pJE" secondAttribute="bottom" constant="115" id="3cW-xG-Cv2"/>
                             <constraint firstItem="pd1-ga-fWn" firstAttribute="leading" secondItem="dAr-Z4-bBu" secondAttribute="trailing" constant="10" id="DWi-RQ-SVw"/>
                             <constraint firstItem="1OT-l1-SMD" firstAttribute="centerX" secondItem="cZU-rS-AFE" secondAttribute="centerX" id="DXF-P3-SF0"/>
                             <constraint firstItem="6nY-B2-qux" firstAttribute="centerX" secondItem="cZU-rS-AFE" secondAttribute="centerX" id="EyX-yL-ssC"/>
                             <constraint firstItem="wyv-fW-mTC" firstAttribute="trailing" secondItem="5kT-Xp-xtG" secondAttribute="trailing" constant="50" id="Lcd-TX-VoQ"/>
                             <constraint firstItem="wyv-fW-mTC" firstAttribute="trailing" secondItem="6nY-B2-qux" secondAttribute="trailing" constant="5" id="MQR-Tm-2db"/>
                             <constraint firstItem="QV8-aD-pJE" firstAttribute="leading" secondItem="wyv-fW-mTC" secondAttribute="leading" constant="50" id="Obr-ci-WYN"/>
-                            <constraint firstItem="QV8-aD-pJE" firstAttribute="top" secondItem="1OT-l1-SMD" secondAttribute="bottom" constant="20" id="Rwy-Jq-sM1"/>
-                            <constraint firstItem="5kT-Xp-xtG" firstAttribute="top" secondItem="6nY-B2-qux" secondAttribute="bottom" constant="100" id="Uk0-US-LMD"/>
+                            <constraint firstItem="QV8-aD-pJE" firstAttribute="top" secondItem="1OT-l1-SMD" secondAttribute="bottom" constant="15" id="Rwy-Jq-sM1"/>
+                            <constraint firstItem="5kT-Xp-xtG" firstAttribute="top" secondItem="6nY-B2-qux" secondAttribute="bottom" constant="110" id="Uk0-US-LMD"/>
                             <constraint firstItem="wyv-fW-mTC" firstAttribute="trailing" secondItem="pd1-ga-fWn" secondAttribute="trailing" constant="10" id="aLe-Ps-aSd"/>
                             <constraint firstItem="FTe-fN-qIu" firstAttribute="centerX" secondItem="cZU-rS-AFE" secondAttribute="centerX" id="f8h-H7-XbY"/>
+                            <constraint firstItem="1OT-l1-SMD" firstAttribute="leading" secondItem="wyv-fW-mTC" secondAttribute="leading" constant="10" id="pjS-Xg-2f0"/>
                             <constraint firstItem="pd1-ga-fWn" firstAttribute="top" secondItem="6nY-B2-qux" secondAttribute="bottom" constant="10" id="pln-ZW-zPl"/>
                             <constraint firstItem="6nY-B2-qux" firstAttribute="leading" secondItem="wyv-fW-mTC" secondAttribute="leading" constant="5" id="q7e-Gq-Gil"/>
-                            <constraint firstAttribute="bottom" secondItem="FTe-fN-qIu" secondAttribute="bottom" constant="120" id="rw6-iw-hEx"/>
-                            <constraint firstItem="wyv-fW-mTC" firstAttribute="bottom" secondItem="5kT-Xp-xtG" secondAttribute="bottom" constant="40" id="sOY-6C-m01"/>
+                            <constraint firstAttribute="bottom" secondItem="FTe-fN-qIu" secondAttribute="bottom" constant="115" id="rw6-iw-hEx"/>
+                            <constraint firstItem="wyv-fW-mTC" firstAttribute="bottom" secondItem="5kT-Xp-xtG" secondAttribute="bottom" constant="35" id="sOY-6C-m01"/>
+                            <constraint firstItem="wyv-fW-mTC" firstAttribute="trailing" secondItem="1OT-l1-SMD" secondAttribute="trailing" constant="10" id="tz0-e8-mDo"/>
                             <constraint firstItem="6nY-B2-qux" firstAttribute="top" secondItem="wyv-fW-mTC" secondAttribute="top" constant="5" id="wW8-Ha-UtY"/>
                         </constraints>
                     </view>
@@ -331,14 +346,87 @@
                     <view key="view" contentMode="scaleToFill" id="0pK-oh-Dul">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iiy-vu-BmQ">
+                                <rect key="frame" x="10" y="309" width="373" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="aSr-x7-MAc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uye-pP-D9Y">
+                                <rect key="frame" x="329" y="59" width="54" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="완료"/>
+                                <connections>
+                                    <action selector="closeButtonTapped" destination="kIb-fF-r61" eventType="touchUpInside" id="Ygv-61-0zg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2s4-7r-L1e">
+                                <rect key="frame" x="170.33333333333334" y="59" width="52.333333333333343" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="paintbrush.pointed" catalog="system"/>
+                                <connections>
+                                    <action selector="changeTextColor" destination="kIb-fF-r61" eventType="touchUpInside" id="4Oh-wY-6RG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g3j-2B-qlh">
+                                <rect key="frame" x="232.66666666666666" y="59" width="53.666666666666657" height="34.333333333333343"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="paintpalette" catalog="system"/>
+                                <connections>
+                                    <action selector="changeBackgroundColor" destination="kIb-fF-r61" eventType="touchUpInside" id="E9P-6b-OXj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RDm-Ov-pAe">
+                                <rect key="frame" x="10" y="59" width="54" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="취소"/>
+                                <connections>
+                                    <action selector="cancelButtonTapped" destination="kIb-fF-r61" eventType="touchUpInside" id="fPg-l2-zcI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gZ4-3Z-m3p">
+                                <rect key="frame" x="109.33333333333331" y="59" width="51" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="text.aligncenter" catalog="system"/>
+                                <connections>
+                                    <action selector="changeTextAlignment" destination="kIb-fF-r61" eventType="touchUpInside" id="T6w-vU-zDK"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="QYa-V9-5ck"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="RDm-Ov-pAe" firstAttribute="leading" secondItem="QYa-V9-5ck" secondAttribute="leading" constant="10" id="0ev-Ql-3k4"/>
+                            <constraint firstItem="2s4-7r-L1e" firstAttribute="leading" secondItem="gZ4-3Z-m3p" secondAttribute="trailing" constant="10" id="3hu-op-hId"/>
+                            <constraint firstItem="2s4-7r-L1e" firstAttribute="top" secondItem="QYa-V9-5ck" secondAttribute="top" id="Dc3-Qc-JJ4"/>
+                            <constraint firstItem="iiy-vu-BmQ" firstAttribute="leading" secondItem="QYa-V9-5ck" secondAttribute="leading" constant="10" id="IVN-bV-ttT"/>
+                            <constraint firstItem="RDm-Ov-pAe" firstAttribute="top" secondItem="QYa-V9-5ck" secondAttribute="top" id="RSI-eq-8Cb"/>
+                            <constraint firstItem="g3j-2B-qlh" firstAttribute="top" secondItem="QYa-V9-5ck" secondAttribute="top" id="TSV-BQ-NSI"/>
+                            <constraint firstItem="uye-pP-D9Y" firstAttribute="top" secondItem="QYa-V9-5ck" secondAttribute="top" id="VPc-Hu-s6e"/>
+                            <constraint firstItem="gZ4-3Z-m3p" firstAttribute="top" secondItem="QYa-V9-5ck" secondAttribute="top" id="bjR-T7-Y4F"/>
+                            <constraint firstItem="QYa-V9-5ck" firstAttribute="trailing" secondItem="iiy-vu-BmQ" secondAttribute="trailing" constant="10" id="ieA-Hr-H7h"/>
+                            <constraint firstItem="iiy-vu-BmQ" firstAttribute="top" secondItem="QYa-V9-5ck" secondAttribute="top" constant="250" id="mSN-RB-RUl"/>
+                            <constraint firstItem="2s4-7r-L1e" firstAttribute="centerX" secondItem="0pK-oh-Dul" secondAttribute="centerX" id="pck-fS-T6d"/>
+                            <constraint firstItem="g3j-2B-qlh" firstAttribute="leading" secondItem="2s4-7r-L1e" secondAttribute="trailing" constant="10" id="saB-ov-UC3"/>
+                            <constraint firstItem="QYa-V9-5ck" firstAttribute="trailing" secondItem="uye-pP-D9Y" secondAttribute="trailing" constant="10" id="uL9-uU-GYD"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="gn9-9B-gJC"/>
+                    <connections>
+                        <outlet property="backgroundColorButton" destination="g3j-2B-qlh" id="Vfy-az-4TC"/>
+                        <outlet property="cancelButton" destination="RDm-Ov-pAe" id="Ubt-bq-zPO"/>
+                        <outlet property="closeButton" destination="uye-pP-D9Y" id="ldu-lO-qcV"/>
+                        <outlet property="textAlignmentButton" destination="gZ4-3Z-m3p" id="DYO-I4-Uzm"/>
+                        <outlet property="textColorButton" destination="2s4-7r-L1e" id="Cp6-lH-G6A"/>
+                        <outlet property="textField" destination="iiy-vu-BmQ" id="H94-ZY-oMC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5bv-pG-qei" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2181" y="1173"/>
+            <point key="canvasLocation" x="2180.9160305343512" y="1172.5352112676057"/>
         </scene>
         <!--캡션 카메라-->
         <scene sceneID="BA9-mf-7K4">
@@ -494,9 +582,12 @@
         <image name="camera.macro.circle" catalog="system" width="128" height="123"/>
         <image name="homekit" catalog="system" width="128" height="104"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
+        <image name="paintbrush.pointed" catalog="system" width="128" height="118"/>
+        <image name="paintpalette" catalog="system" width="128" height="105"/>
         <image name="photo.artframe" catalog="system" width="128" height="93"/>
         <image name="record.circle" catalog="system" width="128" height="123"/>
         <image name="signpost.right.and.left" catalog="system" width="125" height="128"/>
+        <image name="text.aligncenter" catalog="system" width="128" height="99"/>
         <namedColor name="Color">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
