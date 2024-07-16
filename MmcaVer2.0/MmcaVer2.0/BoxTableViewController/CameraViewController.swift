@@ -2,7 +2,7 @@ import UIKit
 import CoreML
 import Vision
 
-class CameraViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class CameraViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIGestureRecognizerDelegate {
     
     // UIImageView를 IBOutlet으로 연결하여 인터페이스 빌더에서 설정할 수 있도록 합니다.
     @IBOutlet weak var imageView: UIImageView!
@@ -26,6 +26,9 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.title = "라벨 카메라"
+
         // 이미지 피커의 델리게이트를 설정합니다.
         imagePicker.delegate = self
         // 버튼 초기 상태 설정
@@ -43,6 +46,38 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
             savePhoto.layer.cornerRadius = 15 // 모서리를 둥글게
             savePhoto.clipsToBounds = true
         }
+        setupCustomNavigationButton()
+
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
+    }
+    
+    func setupCustomNavigationButton() {
+        // 홈 버튼과 chevron.left 이미지 추가
+        let homeChevron = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: self, action: #selector(goToHome))
+        let homeButton = createCustomButton(title: " 홈 ", image: nil, action: #selector(goToHome))
+        let customHomeButton = UIBarButtonItem(customView: homeButton)
+        
+        self.navigationItem.leftBarButtonItems = [homeChevron, customHomeButton]
+    }
+    
+    func createCustomButton(title: String, image: String?, action: Selector) -> UIButton {
+        var config = UIButton.Configuration.plain()
+        config.title = title
+        config.baseForegroundColor = .black
+        config.background.backgroundColor = .white
+        config.background.strokeColor = .gray
+        config.background.strokeWidth = 1
+        config.background.cornerRadius = 5
+        config.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 7, bottom: 5, trailing: 7)
+        
+        let button = UIButton(configuration: config, primaryAction: nil)
+        if let imageName = image {
+            button.setImage(UIImage(systemName: imageName), for: .normal)
+        }
+        button.addTarget(self, action: action, for: .touchUpInside)
+        
+        return button
     }
     
     // 사진 업로드 버튼의 액션 메서드입니다.
@@ -276,6 +311,9 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
             alert.addAction(UIAlertAction(title: "ㅇㅇ", style: .default, handler: nil))
             present(alert, animated: true, completion: nil)
         }
+    }
+    @objc func goToHome() {
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
 }

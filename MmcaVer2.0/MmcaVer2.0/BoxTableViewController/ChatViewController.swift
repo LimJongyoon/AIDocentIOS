@@ -2,7 +2,7 @@ import UIKit
 import AVFoundation // 음성 합성을 위한 프레임워크
 
 // ChatViewController 클래스는 UIViewController, UITableViewDelegate, UITableViewDataSource, UITextViewDelegate를 상속받습니다.
-class ChatViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextViewDelegate, AVSpeechSynthesizerDelegate {
+class ChatViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextViewDelegate, AVSpeechSynthesizerDelegate, UIGestureRecognizerDelegate {
         
     // 테이블뷰, 메시지 입력 바, 메시지 텍스트뷰, 전송 버튼, 추가 버튼을 선언합니다.
     var tableView: UITableView!
@@ -66,41 +66,63 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         setupTapGesture() // 탭 제스처를 설정합니다.
         speechSynthesizer.delegate = self // 음성 합성기의 델리게이트를 설정합니다.
         setupCustomNavigationButtons()
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
     }
     
     
     func setupCustomNavigationButtons() {
-        let homeButton = createCustomButton(title: "홈", image: "chevron.left", action: #selector(goToHome))
+        // 홈 버튼과 chevron.left 이미지 추가
+        let homeChevron = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: self, action: #selector(goToHome))
+        let homeButton = createCustomButton(title: " 홈 ", image: nil, action: #selector(goToHome))
         let customHomeButton = UIBarButtonItem(customView: homeButton)
         
         // 전전 뷰 컨트롤러의 타이틀을 가져오기
         let viewControllers = navigationController?.viewControllers ?? []
-        let infoButtonTitle = viewControllers.count > 2 ? viewControllers[viewControllers.count - 3].title ?? "" : ""
-        let infoButton = createCustomButton(title: "/ \(infoButtonTitle)", image: nil, action: #selector(goToInfo))
+        let infoButtonTitle = viewControllers.count > 2 ? truncateTitle(viewControllers[viewControllers.count - 3].title ?? "") : ""
+        let infoButton = createCustomButton(title: " \(infoButtonTitle) ", image: nil, action: #selector(goToInfo))
         let customInfoButton = UIBarButtonItem(customView: infoButton)
         
         // 이전 뷰 컨트롤러의 타이틀을 가져오기
-        let previousButtonTitle = viewControllers.count > 1 ? viewControllers[viewControllers.count - 2].title ?? "" : ""
-        let previousButton = createCustomButton(title: "/ \(previousButtonTitle)", image: nil, action: #selector(goToPrevious))
+        let previousButtonTitle = viewControllers.count > 1 ? truncateTitle(viewControllers[viewControllers.count - 2].title ?? "") : ""
+        let previousButton = createCustomButton(title: " \(previousButtonTitle) ", image: nil, action: #selector(goToPrevious))
         let customPreviousButton = UIBarButtonItem(customView: previousButton)
         
-        self.navigationItem.leftBarButtonItems = [customHomeButton, customInfoButton, customPreviousButton]
+        // Chevron 이미지 추가
+        let chevronImage1 = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: self, action: #selector(goToInfo))
+        let chevronImage2 = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: self, action: #selector(goToPrevious))
+        
+        self.navigationItem.leftBarButtonItems = [homeChevron, customHomeButton, chevronImage1, customInfoButton, chevronImage2, customPreviousButton]
     }
 
     func createCustomButton(title: String, image: String?, action: Selector) -> UIButton {
-        let button = UIButton(type: .system)
+        var config = UIButton.Configuration.plain()
+        config.title = title
+        config.baseForegroundColor = .black
+        config.background.backgroundColor = .white
+        config.background.strokeColor = .gray
+        config.background.strokeWidth = 1
+        config.background.cornerRadius = 5
+        config.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 7, bottom: 5, trailing: 7)
+        
+        let button = UIButton(configuration: config, primaryAction: nil)
         if let imageName = image {
             button.setImage(UIImage(systemName: imageName), for: .normal)
         }
-        button.setTitle(title, for: .normal)
-        button.sizeToFit()
         button.addTarget(self, action: action, for: .touchUpInside)
         
-        // 폰트 종류와 크기 설정
-        button.titleLabel?.font = UIFont(name: "San Francisco", size: 17) // 폰트 종류와 크기 설정
-        button.setTitleColor(.black, for: .normal) // 버튼 텍스트 색상 설정
-        
         return button
+    }
+
+
+    func truncateTitle(_ title: String) -> String {
+        let maxLength = 7
+        if title.count > maxLength {
+            let truncated = title.prefix(maxLength - 3)
+            return "\(truncated)..."
+        } else {
+            return title
+        }
     }
 
     @objc func goToHome() {
@@ -109,11 +131,9 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     @objc func goToInfo() {
         if let viewControllers = self.navigationController?.viewControllers {
-            for vc in viewControllers {
-                if vc is InfoViewController {
-                    self.navigationController?.popToViewController(vc, animated: true)
-                    return
-                }
+            if viewControllers.count > 2 {
+                let targetViewController = viewControllers[viewControllers.count - 3]
+                self.navigationController?.popToViewController(targetViewController, animated: true)
             }
         }
     }
@@ -121,7 +141,8 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     @objc func goToPrevious() {
         self.navigationController?.popViewController(animated: true)
     }
-    
+
+
     // UI 설정 메서드입니다.
     func setupUI() {
         setupTableView() // 테이블뷰를 설정합니다.

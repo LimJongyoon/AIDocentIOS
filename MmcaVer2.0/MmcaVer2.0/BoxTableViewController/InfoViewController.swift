@@ -2,7 +2,7 @@ import UIKit
 import CoreBluetooth
 
 // InfoViewController 클래스 선언
-class InfoViewController: UIViewController, CBCentralManagerDelegate, UITableViewDataSource, UITableViewDelegate {
+class InfoViewController: UIViewController, CBCentralManagerDelegate, UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate {
     // CBCentralManager 인스턴스 생성
     var centralManager: CBCentralManager!
     // 스캔된 주변 기기 목록을 저장하는 배열
@@ -62,30 +62,47 @@ class InfoViewController: UIViewController, CBCentralManagerDelegate, UITableVie
         tableView.delegate = self  // 테이블 뷰의 델리게이트 설정
         tableView.dataSource = self  // 테이블 뷰의 데이터 소스 설정
         self.view.addSubview(tableView) // 뷰에 테이블 뷰 추가
+        
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
     }
     
     func setupCustomNavigationButton() {
-        // 홈 버튼만 설정
-        let homeButton = createCustomButton(title: "홈", image: "chevron.left", action: #selector(goToHome))
+        // 홈 버튼과 chevron.left 이미지 추가
+        let homeChevron = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: self, action: #selector(goToHome))
+        let homeButton = createCustomButton(title: " 홈 ", image: nil, action: #selector(goToHome))
         let customHomeButton = UIBarButtonItem(customView: homeButton)
         
-        self.navigationItem.leftBarButtonItem = customHomeButton
+        self.navigationItem.leftBarButtonItems = [homeChevron, customHomeButton]
     }
     
     func createCustomButton(title: String, image: String?, action: Selector) -> UIButton {
-        let button = UIButton(type: .system)
+        var config = UIButton.Configuration.plain()
+        config.title = title
+        config.baseForegroundColor = .black
+        config.background.backgroundColor = .white
+        config.background.strokeColor = .gray
+        config.background.strokeWidth = 1
+        config.background.cornerRadius = 5
+        config.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 7, bottom: 5, trailing: 7)
+        
+        let button = UIButton(configuration: config, primaryAction: nil)
         if let imageName = image {
             button.setImage(UIImage(systemName: imageName), for: .normal)
         }
-        button.setTitle(title, for: .normal)
-        button.sizeToFit()
         button.addTarget(self, action: action, for: .touchUpInside)
         
-        // 폰트 종류와 크기 설정
-        button.titleLabel?.font = UIFont(name: "San Francisco", size: 17) // 폰트 종류와 크기 설정
-        button.setTitleColor(.black, for: .normal) // 버튼 텍스트 색상 설정
-        
         return button
+    }
+    
+    func truncateTitle(_ title: String) -> String {
+        let maxLength = 7
+        if title.count > maxLength {
+            let truncated = title.prefix(maxLength - 3)
+            return "\(truncated)..."
+        } else {
+            return title
+        }
     }
 
     // CBCentralManagerDelegate 프로토콜 메소드 - 블루투스 상태 업데이트 시 호출

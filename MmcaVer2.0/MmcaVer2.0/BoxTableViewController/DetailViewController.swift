@@ -2,7 +2,7 @@ import UIKit
 import CoreBluetooth
 import AVFoundation // 음성 합성을 위한 프레임워크
 
-class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, AVSpeechSynthesizerDelegate {
+class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, AVSpeechSynthesizerDelegate, UIGestureRecognizerDelegate {
     var peripheral: CBPeripheral?
     var rssiValue: NSNumber?
     var deviceInfo: [String: (title: String, artist: String, size: String, material: String, description: String)] = [:]
@@ -96,6 +96,8 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "ChatCell")
         tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.view.addSubview(tableView)
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
         
         // "AI도슨트와 채팅하기" 버튼 설정
         setupChatButton()
@@ -105,50 +107,50 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func setupCustomNavigationButtons() {
-        // 홈 버튼 설정
-        let homeButton = createCustomButton(title: "홈", image: "chevron.left", action: #selector(goToHome))
+        // 홈 버튼과 chevron.left 이미지 추가
+        let homeChevron = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: self, action: #selector(goToHome))
+        let homeButton = createCustomButton(title: " 홈 ", image: nil, action: #selector(goToHome))
         let customHomeButton = UIBarButtonItem(customView: homeButton)
         
-        // 내 주위 소장품 버튼 설정
-        let infoButtonTitle = navigationController?.viewControllers.dropLast().last?.title ?? ""
-        let infoButton = createCustomButton(title: "/ \(infoButtonTitle)", image: nil, action: #selector(goToInfo))
-        let customInfoButton = UIBarButtonItem(customView: infoButton)
+        // 이전 뷰 컨트롤러의 타이틀을 가져오기
+        let viewControllers = navigationController?.viewControllers ?? []
+        let previousButtonTitle = viewControllers.count > 1 ? viewControllers[viewControllers.count - 2].title ?? "" : ""
+        let previousButton = createCustomButton(title: " \(previousButtonTitle) ", image: nil, action: #selector(goToPrevious))
+        let customPreviousButton = UIBarButtonItem(customView: previousButton)
         
-        self.navigationItem.leftBarButtonItems = [customHomeButton, customInfoButton]
-    }
-    
-    
+        // Chevron 이미지 추가
+            let chevronImage = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: nil, action: nil)
+            
+            self.navigationItem.leftBarButtonItems = [homeChevron, customHomeButton, chevronImage, customPreviousButton]    }
+
     func createCustomButton(title: String, image: String?, action: Selector) -> UIButton {
-        let button = UIButton(type: .system)
+        var config = UIButton.Configuration.plain()
+        config.title = title
+        config.baseForegroundColor = .black
+        config.background.backgroundColor = .white
+        config.background.strokeColor = .gray
+        config.background.strokeWidth = 1
+        config.background.cornerRadius = 5
+        config.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 7, bottom: 5, trailing: 7)
+        
+        let button = UIButton(configuration: config, primaryAction: nil)
         if let imageName = image {
             button.setImage(UIImage(systemName: imageName), for: .normal)
         }
-        button.setTitle(title, for: .normal)
-        button.sizeToFit()
         button.addTarget(self, action: action, for: .touchUpInside)
-        
-        // 폰트 종류와 크기 설정
-        button.titleLabel?.font = UIFont(name: "San Francisco", size: 17) // 폰트 종류와 크기 설정
-        button.setTitleColor(.black, for: .normal) // 버튼 텍스트 색상 설정
         
         return button
     }
-    
+
+
     @objc func goToHome() {
         self.navigationController?.popToRootViewController(animated: true)
     }
-    
-    @objc func goToInfo() {
-        if let viewControllers = self.navigationController?.viewControllers {
-            for vc in viewControllers {
-                if vc is InfoViewController {
-                    self.navigationController?.popToViewController(vc, animated: true)
-                    return
-                }
-            }
-        }
+
+    @objc func goToPrevious() {
+        self.navigationController?.popViewController(animated: true)
     }
-    
+
     // "AI도슨트와 채팅하기" 버튼 설정 메서드입니다.
     func setupChatButton() {
         chatButton = UIButton(type: .system) // 버튼 초기화
