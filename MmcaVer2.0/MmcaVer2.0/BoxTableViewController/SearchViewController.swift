@@ -9,16 +9,21 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupCustomNavigationButton()
+        
+        self.title = "소장품 검색"
+
+        
         // 배경색을 흰색으로 설정
         self.view.backgroundColor = .white
         
         // "작품 검색하기" 레이블 설정
-        let searchLabel = UILabel()
-        searchLabel.text = "작품 검색하기"
-        searchLabel.textAlignment = .left
-        searchLabel.font = UIFont.systemFont(ofSize: 30, weight: .bold)
-        searchLabel.frame = CGRect(x: 20, y: 100, width: self.view.bounds.width, height: 50)
-        self.view.addSubview(searchLabel)
+//        let searchLabel = UILabel()
+//        searchLabel.text = "작품 검색하기"
+//        searchLabel.textAlignment = .left
+//        searchLabel.font = UIFont.systemFont(ofSize: 30, weight: .bold)
+//        searchLabel.frame = CGRect(x: 20, y: 100, width: self.view.bounds.width, height: 50)
+//        self.view.addSubview(searchLabel)
         
         // 검색 바 설정
         searchBar.frame = CGRect(x: 0, y: 160, width: self.view.bounds.width, height: 50)
@@ -55,9 +60,34 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         self.view.addGestureRecognizer(tapGesture)
     }
     
+    
     // 키보드 숨기기 메소드
     @objc func dismissKeyboard() {
         searchBar.resignFirstResponder()
+    }
+    
+    func setupCustomNavigationButton() {
+        // 홈 버튼만 설정
+        let homeButton = createCustomButton(title: "홈", image: "chevron.left", action: #selector(goToHome))
+        let customHomeButton = UIBarButtonItem(customView: homeButton)
+        
+        self.navigationItem.leftBarButtonItem = customHomeButton
+    }
+    
+    func createCustomButton(title: String, image: String?, action: Selector) -> UIButton {
+        let button = UIButton(type: .system)
+        if let imageName = image {
+            button.setImage(UIImage(systemName: imageName), for: .normal)
+        }
+        button.setTitle(title, for: .normal)
+        button.sizeToFit()
+        button.addTarget(self, action: action, for: .touchUpInside)
+        
+        // 폰트 종류와 크기 설정
+        button.titleLabel?.font = UIFont(name: "San Francisco", size: 17) // 폰트 종류와 크기 설정
+        button.setTitleColor(.black, for: .normal) // 버튼 텍스트 색상 설정
+        
+        return button
     }
     
     // UISearchBarDelegate 메소드 - 검색 바 텍스트가 변경될 때 호출
@@ -153,5 +183,8 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         detailVC.selectedDeviceInfo = selectedDevice.value
         
         self.navigationController?.pushViewController(detailVC, animated: true)
+    }
+    @objc func goToHome() {
+        self.navigationController?.popToRootViewController(animated: true)
     }
 }

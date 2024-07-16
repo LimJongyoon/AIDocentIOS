@@ -23,9 +23,11 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         // 배경색을 흰색으로 설정
         self.view.backgroundColor = .white
         
-        // 네비게이션 바에 뒤로 가기 버튼 추가
-        let backButton = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(backButtonTapped))
-        self.navigationItem.leftBarButtonItem = backButton
+        setupCustomNavigationButtons()
+        
+        //        // 네비게이션 바에 뒤로 가기 버튼 추가
+        //        let backButton = UIBarButtonItem(title: "내 주위...", style: .plain, target: self, action: #selector(backButtonTapped))
+        //        self.navigationItem.leftBarButtonItem = backButton
         
         // 전달된 정보를 사용하여 뷰를 설정
         if let peripheral = peripheral, let _ = rssiValue {
@@ -51,7 +53,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 let artworkInfo = info.title
                 let artworkDetails = "\(info.artist), \(info.size), \(info.material)"
                 let artworkDescription = info.description
-                messages.append(artworkInfo)
+                //messages.append(artworkInfo) // 제목타이틀 있으니까ㅜ지워
                 messages.append(artworkDetails)
                 messages.append(artworkDescription)
                 
@@ -102,6 +104,51 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         setupTapGesture()
     }
     
+    func setupCustomNavigationButtons() {
+        // 홈 버튼 설정
+        let homeButton = createCustomButton(title: "홈", image: "chevron.left", action: #selector(goToHome))
+        let customHomeButton = UIBarButtonItem(customView: homeButton)
+        
+        // 내 주위 소장품 버튼 설정
+        let infoButtonTitle = navigationController?.viewControllers.dropLast().last?.title ?? ""
+        let infoButton = createCustomButton(title: "/ \(infoButtonTitle)", image: nil, action: #selector(goToInfo))
+        let customInfoButton = UIBarButtonItem(customView: infoButton)
+        
+        self.navigationItem.leftBarButtonItems = [customHomeButton, customInfoButton]
+    }
+    
+    
+    func createCustomButton(title: String, image: String?, action: Selector) -> UIButton {
+        let button = UIButton(type: .system)
+        if let imageName = image {
+            button.setImage(UIImage(systemName: imageName), for: .normal)
+        }
+        button.setTitle(title, for: .normal)
+        button.sizeToFit()
+        button.addTarget(self, action: action, for: .touchUpInside)
+        
+        // 폰트 종류와 크기 설정
+        button.titleLabel?.font = UIFont(name: "San Francisco", size: 17) // 폰트 종류와 크기 설정
+        button.setTitleColor(.black, for: .normal) // 버튼 텍스트 색상 설정
+        
+        return button
+    }
+    
+    @objc func goToHome() {
+        self.navigationController?.popToRootViewController(animated: true)
+    }
+    
+    @objc func goToInfo() {
+        if let viewControllers = self.navigationController?.viewControllers {
+            for vc in viewControllers {
+                if vc is InfoViewController {
+                    self.navigationController?.popToViewController(vc, animated: true)
+                    return
+                }
+            }
+        }
+    }
+    
     // "AI도슨트와 채팅하기" 버튼 설정 메서드입니다.
     func setupChatButton() {
         chatButton = UIButton(type: .system) // 버튼 초기화
@@ -132,8 +179,13 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         stopSpeaking() // 터치 이벤트가 발생하면 음성을 중지
     }
     
+    
     @objc func backButtonTapped() {
         stopSpeaking() // 뒤로 가기 버튼을 누르면 음성을 중지
+        self.navigationController?.popToRootViewController(animated: true)
+    }
+    
+    @objc func previousButtonTapped() {
         self.navigationController?.popViewController(animated: true)
     }
     

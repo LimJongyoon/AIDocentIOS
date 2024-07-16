@@ -41,12 +41,12 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5bz-oT-6Sm" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="홈" image="homekit" catalog="system" id="G6E-Ku-3p6"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="l38-fm-5Dt">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="l38-fm-5Dt">
+                        <rect key="frame" x="0.0" y="59" width="393" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" red="0.65490196079999996" green="0.66274509800000003" blue="0.67450980390000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                         <textAttributes key="largeTitleTextAttributes">
                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -143,18 +143,18 @@
             </objects>
             <point key="canvasLocation" x="-3196.1832061068699" y="450.7042253521127"/>
         </scene>
-        <!--작품 안내-->
+        <!--내 주위 소장품-->
         <scene sceneID="nh8-AZ-Gjc">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DoU-v3-MSk" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="작품 안내" image="signpost.right.and.left" catalog="system" id="h7t-mN-MQh"/>
+                    <tabBarItem key="tabBarItem" title="내 주위 소장품" image="signpost.right.and.left" catalog="system" id="h7t-mN-MQh"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="djF-ZE-wtV"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="clK-6C-QxM">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="clK-6C-QxM">
+                        <rect key="frame" x="0.0" y="59" width="393" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" red="0.65490196079999996" green="0.66274509800000003" blue="0.67450980390000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -181,7 +181,7 @@
             </objects>
             <point key="canvasLocation" x="-1382" y="1227"/>
         </scene>
-        <!--작품 안내-->
+        <!--내 주위 소장품-->
         <scene sceneID="BrA-co-18A">
             <objects>
                 <viewController storyboardIdentifier="InfoViewController" id="k9j-3H-jac" customClass="InfoViewController" customModule="MmcaVer2_0" customModuleProvider="target" sceneMemberID="viewController">
@@ -191,13 +191,13 @@
                         <viewLayoutGuide key="safeArea" id="CZm-Mr-OOi"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="작품 안내" id="yAO-QQ-4DW"/>
+                    <navigationItem key="navigationItem" title="내 주위 소장품" id="yAO-QQ-4DW"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eec-mc-ySg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1381" y="451"/>
         </scene>
-        <!--작품 검색-->
+        <!--소장품 검색-->
         <scene sceneID="CKl-Sn-lU8">
             <objects>
                 <viewController storyboardIdentifier="SearchViewController" id="39e-Lc-Gz0" customClass="SearchViewController" customModule="MmcaVer2_0" customModuleProvider="target" sceneMemberID="viewController">
@@ -207,24 +207,24 @@
                         <viewLayoutGuide key="safeArea" id="bkF-qo-W2a"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="작품 검색" id="Fcb-m7-iNw"/>
+                    <navigationItem key="navigationItem" title="소장품 검색" id="Fcb-m7-iNw"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zh2-w6-pph" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="385" y="451"/>
         </scene>
-        <!--작품 검색-->
+        <!--소장품 검색-->
         <scene sceneID="fyZ-Xd-viB">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gdw-St-VMl" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="작품 검색" image="magnifyingglass" catalog="system" id="tWr-Kk-CbF"/>
+                    <tabBarItem key="tabBarItem" title="소장품 검색" image="magnifyingglass" catalog="system" id="tWr-Kk-CbF"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="vJL-yM-ey7"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9Fe-MW-pqF">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="9Fe-MW-pqF">
+                        <rect key="frame" x="0.0" y="59" width="393" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" red="0.65490196079999996" green="0.66274509800000003" blue="0.67450980390000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -236,7 +236,7 @@
             </objects>
             <point key="canvasLocation" x="-286" y="451"/>
         </scene>
-        <!--캡션 카메라-->
+        <!--라벨 카메라-->
         <scene sceneID="Z2q-uR-5tx">
             <objects>
                 <viewController storyboardIdentifier="CameraViewController" id="Aqa-wn-dnF" customClass="CameraViewController" customModule="MmcaVer2_0" customModuleProvider="target" sceneMemberID="viewController">
@@ -245,7 +245,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6nY-B2-qux">
-                                <rect key="frame" x="5" y="108" width="383" height="481"/>
+                                <rect key="frame" x="5" y="160" width="383" height="432"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QV8-aD-pJE">
                                 <rect key="frame" x="50" y="695.66666666666663" width="54" height="41.333333333333371"/>
@@ -269,7 +269,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="99" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5kT-Xp-xtG">
-                                <rect key="frame" x="289" y="699" width="54" height="35"/>
+                                <rect key="frame" x="289" y="702.66666666666663" width="54" height="34.333333333333371"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" title="저장">
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -279,7 +279,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pd1-ga-fWn">
-                                <rect key="frame" x="295.66666666666669" y="599" width="87.333333333333314" height="35"/>
+                                <rect key="frame" x="295.66666666666669" y="602" width="87.333333333333314" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="캡션 달기"/>
                                 <connections>
@@ -287,7 +287,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사진을 업로드하거나 촬영 해주세요" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1OT-l1-SMD">
-                                <rect key="frame" x="10" y="650.66666666666663" width="373" height="30"/>
+                                <rect key="frame" x="10" y="652" width="373" height="30"/>
                                 <color key="backgroundColor" white="0.90000000000000002" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="rz8-7H-uon"/>
@@ -297,7 +297,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dAr-Z4-bBu">
-                                <rect key="frame" x="183.66666666666666" y="599" width="101.99999999999997" height="35"/>
+                                <rect key="frame" x="183.66666666666666" y="602" width="101.99999999999997" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="텍스트 수정"/>
                                 <connections>
@@ -308,28 +308,27 @@
                         <viewLayoutGuide key="safeArea" id="wyv-fW-mTC"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="dAr-Z4-bBu" firstAttribute="top" secondItem="6nY-B2-qux" secondAttribute="bottom" constant="10" id="2CP-Fc-Wbo"/>
                             <constraint firstAttribute="bottom" secondItem="QV8-aD-pJE" secondAttribute="bottom" constant="115" id="3cW-xG-Cv2"/>
                             <constraint firstItem="pd1-ga-fWn" firstAttribute="leading" secondItem="dAr-Z4-bBu" secondAttribute="trailing" constant="10" id="DWi-RQ-SVw"/>
-                            <constraint firstItem="1OT-l1-SMD" firstAttribute="centerX" secondItem="cZU-rS-AFE" secondAttribute="centerX" id="DXF-P3-SF0"/>
                             <constraint firstItem="6nY-B2-qux" firstAttribute="centerX" secondItem="cZU-rS-AFE" secondAttribute="centerX" id="EyX-yL-ssC"/>
                             <constraint firstItem="wyv-fW-mTC" firstAttribute="trailing" secondItem="5kT-Xp-xtG" secondAttribute="trailing" constant="50" id="Lcd-TX-VoQ"/>
                             <constraint firstItem="wyv-fW-mTC" firstAttribute="trailing" secondItem="6nY-B2-qux" secondAttribute="trailing" constant="5" id="MQR-Tm-2db"/>
                             <constraint firstItem="QV8-aD-pJE" firstAttribute="leading" secondItem="wyv-fW-mTC" secondAttribute="leading" constant="50" id="Obr-ci-WYN"/>
-                            <constraint firstItem="QV8-aD-pJE" firstAttribute="top" secondItem="1OT-l1-SMD" secondAttribute="bottom" constant="15" id="Rwy-Jq-sM1"/>
-                            <constraint firstItem="5kT-Xp-xtG" firstAttribute="top" secondItem="6nY-B2-qux" secondAttribute="bottom" constant="110" id="Uk0-US-LMD"/>
+                            <constraint firstItem="dAr-Z4-bBu" firstAttribute="top" secondItem="6nY-B2-qux" secondAttribute="bottom" constant="10" id="QTh-Qm-tlp"/>
+                            <constraint firstItem="1OT-l1-SMD" firstAttribute="top" secondItem="dAr-Z4-bBu" secondAttribute="bottom" constant="15" id="RLe-jC-iqp"/>
                             <constraint firstItem="wyv-fW-mTC" firstAttribute="trailing" secondItem="pd1-ga-fWn" secondAttribute="trailing" constant="10" id="aLe-Ps-aSd"/>
+                            <constraint firstAttribute="bottom" secondItem="5kT-Xp-xtG" secondAttribute="bottom" constant="115" id="aqF-sC-CCt"/>
+                            <constraint firstItem="1OT-l1-SMD" firstAttribute="centerX" secondItem="cZU-rS-AFE" secondAttribute="centerX" id="d6d-ps-ZZA"/>
                             <constraint firstItem="FTe-fN-qIu" firstAttribute="centerX" secondItem="cZU-rS-AFE" secondAttribute="centerX" id="f8h-H7-XbY"/>
+                            <constraint firstItem="FTe-fN-qIu" firstAttribute="top" secondItem="1OT-l1-SMD" secondAttribute="bottom" constant="10" id="h8q-4b-upw"/>
                             <constraint firstItem="1OT-l1-SMD" firstAttribute="leading" secondItem="wyv-fW-mTC" secondAttribute="leading" constant="10" id="pjS-Xg-2f0"/>
-                            <constraint firstItem="pd1-ga-fWn" firstAttribute="top" secondItem="6nY-B2-qux" secondAttribute="bottom" constant="10" id="pln-ZW-zPl"/>
                             <constraint firstItem="6nY-B2-qux" firstAttribute="leading" secondItem="wyv-fW-mTC" secondAttribute="leading" constant="5" id="q7e-Gq-Gil"/>
                             <constraint firstAttribute="bottom" secondItem="FTe-fN-qIu" secondAttribute="bottom" constant="115" id="rw6-iw-hEx"/>
-                            <constraint firstItem="wyv-fW-mTC" firstAttribute="bottom" secondItem="5kT-Xp-xtG" secondAttribute="bottom" constant="35" id="sOY-6C-m01"/>
-                            <constraint firstItem="wyv-fW-mTC" firstAttribute="trailing" secondItem="1OT-l1-SMD" secondAttribute="trailing" constant="10" id="tz0-e8-mDo"/>
+                            <constraint firstItem="1OT-l1-SMD" firstAttribute="top" secondItem="pd1-ga-fWn" secondAttribute="bottom" constant="15" id="w41-Ks-fG7"/>
                             <constraint firstItem="6nY-B2-qux" firstAttribute="top" secondItem="wyv-fW-mTC" secondAttribute="top" constant="5" id="wW8-Ha-UtY"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="캡션 카메라" id="aN1-Do-Q23"/>
+                    <navigationItem key="navigationItem" title="라벨 카메라" id="aN1-Do-Q23"/>
                     <connections>
                         <outlet property="imageView" destination="6nY-B2-qux" id="ebZ-gS-gnR"/>
                         <outlet property="label" destination="1OT-l1-SMD" id="jRl-Dr-OxG"/>
@@ -428,17 +427,17 @@
             </objects>
             <point key="canvasLocation" x="2180.9160305343512" y="1172.5352112676057"/>
         </scene>
-        <!--캡션 카메라-->
+        <!--라벨 카메라-->
         <scene sceneID="BA9-mf-7K4">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="g6U-CZ-s6P" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="캡션 카메라" image="camera.macro.circle" catalog="system" id="vAh-pT-sfg"/>
+                    <tabBarItem key="tabBarItem" title="라벨 카메라" image="camera.macro.circle" catalog="system" id="vAh-pT-sfg"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bSx-BQ-TCX">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="bSx-BQ-TCX">
+                        <rect key="frame" x="0.0" y="59" width="393" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" red="0.65490196079999996" green="0.66274509800000003" blue="0.67450980390000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>

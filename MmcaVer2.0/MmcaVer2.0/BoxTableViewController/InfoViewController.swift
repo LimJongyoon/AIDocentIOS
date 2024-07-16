@@ -44,21 +44,50 @@ class InfoViewController: UIViewController, CBCentralManagerDelegate, UITableVie
         centralManager = CBCentralManager(delegate: self, queue: nil)
         
         // 페이지 타이틀을 위한 레이블 생성
-        let titleLabel = UILabel()
-        titleLabel.text = "주변에 근접한 작품"  // 레이블에 표시될 텍스트 설정
-        titleLabel.textAlignment = .left   // 텍스트 정렬을 왼쪽으로 설정
-        titleLabel.font = UIFont.systemFont(ofSize: 30, weight: .bold) // 폰트 크기 30, 볼드체로 설정
-        titleLabel.frame = CGRect(x: 20, y: 100, width: self.view.bounds.width, height: 150)  // 레이블의 위치와 크기 설정
-        self.view.addSubview(titleLabel)  // 생성된 레이블을 뷰의 서브뷰로 추가
-
+//        let titleLabel = UILabel()
+//        titleLabel.text = "내 주위 소장품"  // 레이블에 표시될 텍스트 설정
+//        titleLabel.textAlignment = .left   // 텍스트 정렬을 왼쪽으로 설정
+//        titleLabel.font = UIFont.systemFont(ofSize: 30, weight: .bold) // 폰트 크기 30, 볼드체로 설정
+//        titleLabel.frame = CGRect(x: 20, y: 100, width: self.view.bounds.width, height: 150)  // 레이블의 위치와 크기 설정
+//        self.view.addSubview(titleLabel)  // 생성된 레이블을 뷰의 서브뷰로 추가
+        
+        // 페이지 타이틀 설정
+        self.title = "내 주위 소장품"
+        
+        setupCustomNavigationButton()
+        
         // 테이블 뷰 프레임 설정
-        tableView.frame = CGRect(x: 0, y: 200, width: self.view.bounds.width, height: self.view.bounds.height - 300)
+        tableView.frame = CGRect(x: 0, y: 160, width: self.view.bounds.width, height: self.view.bounds.height - 160)
         tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         tableView.delegate = self  // 테이블 뷰의 델리게이트 설정
         tableView.dataSource = self  // 테이블 뷰의 데이터 소스 설정
         self.view.addSubview(tableView) // 뷰에 테이블 뷰 추가
     }
     
+    func setupCustomNavigationButton() {
+        // 홈 버튼만 설정
+        let homeButton = createCustomButton(title: "홈", image: "chevron.left", action: #selector(goToHome))
+        let customHomeButton = UIBarButtonItem(customView: homeButton)
+        
+        self.navigationItem.leftBarButtonItem = customHomeButton
+    }
+    
+    func createCustomButton(title: String, image: String?, action: Selector) -> UIButton {
+        let button = UIButton(type: .system)
+        if let imageName = image {
+            button.setImage(UIImage(systemName: imageName), for: .normal)
+        }
+        button.setTitle(title, for: .normal)
+        button.sizeToFit()
+        button.addTarget(self, action: action, for: .touchUpInside)
+        
+        // 폰트 종류와 크기 설정
+        button.titleLabel?.font = UIFont(name: "San Francisco", size: 17) // 폰트 종류와 크기 설정
+        button.setTitleColor(.black, for: .normal) // 버튼 텍스트 색상 설정
+        
+        return button
+    }
+
     // CBCentralManagerDelegate 프로토콜 메소드 - 블루투스 상태 업데이트 시 호출
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
         if central.state == .poweredOn {
@@ -161,5 +190,8 @@ class InfoViewController: UIViewController, CBCentralManagerDelegate, UITableVie
         
         // DetailViewController로 전환
         self.navigationController?.pushViewController(detailVC, animated: true)
+    }
+    @objc func goToHome() {
+        self.navigationController?.popToRootViewController(animated: true)
     }
 }
