@@ -195,7 +195,10 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         stopSpeaking() // ChatViewController로 전환하기 전에 음성을 중지
         // ChatViewController로 전환하는 코드입니다.
         let chatVC = ChatViewController()
-        self.navigationController?.pushViewController(chatVC, animated: true)
+        let navController = UINavigationController(rootViewController: chatVC)
+        navController.modalPresentationStyle = .formSheet
+        navController.preferredContentSize = CGSize(width: 600, height: 800)
+        self.present(navController, animated: true, completion: nil)
     }
     
     // UITableViewDataSource 메소드

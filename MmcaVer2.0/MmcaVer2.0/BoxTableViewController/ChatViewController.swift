@@ -1,9 +1,8 @@
 import UIKit
 import AVFoundation // 음성 합성을 위한 프레임워크
 
-// ChatViewController 클래스는 UIViewController, UITableViewDelegate, UITableViewDataSource, UITextViewDelegate를 상속받습니다.
 class ChatViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextViewDelegate, AVSpeechSynthesizerDelegate, UIGestureRecognizerDelegate {
-        
+    
     // 테이블뷰, 메시지 입력 바, 메시지 텍스트뷰, 전송 버튼, 추가 버튼을 선언합니다.
     var tableView: UITableView!
     var messageInputBar: UIView!
@@ -57,92 +56,25 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     // viewDidLoad 메서드는 뷰가 로드되었을 때 호출됩니다.
     override func viewDidLoad() {
         
-        self.title = "AI 도슨트"
         super.viewDidLoad()
         view.backgroundColor = .white // 뷰의 배경색을 흰색으로 설정합니다.
+        
+        // 완료 버튼 추가
+        let doneButton = UIBarButtonItem(title: "대화 종료", style: .done, target: self, action: #selector(dismissViewController))
+        navigationItem.rightBarButtonItem = doneButton
+        
         setupUI() // UI를 설정합니다.
         setupConstraints() // 제약 조건을 설정합니다.
         setupKeyboardObservers() // 키보드 옵저버를 설정합니다.
         setupTapGesture() // 탭 제스처를 설정합니다.
         speechSynthesizer.delegate = self // 음성 합성기의 델리게이트를 설정합니다.
-        setupCustomNavigationButtons()
-        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
-        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
     }
     
+    // 완료 버튼 액션 메서드
+    @objc func dismissViewController() {
+        dismiss(animated: true, completion: nil)
+    }
     
-    func setupCustomNavigationButtons() {
-        // 홈 버튼과 chevron.left 이미지 추가
-        let homeChevron = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: self, action: #selector(goToHome))
-        let homeButton = createCustomButton(title: " 홈 ", image: nil, action: #selector(goToHome))
-        let customHomeButton = UIBarButtonItem(customView: homeButton)
-        
-        // 전전 뷰 컨트롤러의 타이틀을 가져오기
-        let viewControllers = navigationController?.viewControllers ?? []
-        let infoButtonTitle = viewControllers.count > 2 ? truncateTitle(viewControllers[viewControllers.count - 3].title ?? "") : ""
-        let infoButton = createCustomButton(title: " \(infoButtonTitle) ", image: nil, action: #selector(goToInfo))
-        let customInfoButton = UIBarButtonItem(customView: infoButton)
-        
-        // 이전 뷰 컨트롤러의 타이틀을 가져오기
-        let previousButtonTitle = viewControllers.count > 1 ? truncateTitle(viewControllers[viewControllers.count - 2].title ?? "") : ""
-        let previousButton = createCustomButton(title: " \(previousButtonTitle) ", image: nil, action: #selector(goToPrevious))
-        let customPreviousButton = UIBarButtonItem(customView: previousButton)
-        
-        // Chevron 이미지 추가
-        let chevronImage1 = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: self, action: #selector(goToInfo))
-        let chevronImage2 = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: self, action: #selector(goToPrevious))
-        
-        self.navigationItem.leftBarButtonItems = [homeChevron, customHomeButton, chevronImage1, customInfoButton, chevronImage2, customPreviousButton]
-    }
-
-    func createCustomButton(title: String, image: String?, action: Selector) -> UIButton {
-        var config = UIButton.Configuration.plain()
-        config.title = title
-        config.baseForegroundColor = .black
-        config.background.backgroundColor = .white
-        config.background.strokeColor = .gray
-        config.background.strokeWidth = 1
-        config.background.cornerRadius = 5
-        config.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 7, bottom: 5, trailing: 7)
-        
-        let button = UIButton(configuration: config, primaryAction: nil)
-        if let imageName = image {
-            button.setImage(UIImage(systemName: imageName), for: .normal)
-        }
-        button.addTarget(self, action: action, for: .touchUpInside)
-        
-        return button
-    }
-
-
-    func truncateTitle(_ title: String) -> String {
-        let maxLength = 7
-        if title.count > maxLength {
-            let truncated = title.prefix(maxLength - 3)
-            return "\(truncated)..."
-        } else {
-            return title
-        }
-    }
-
-    @objc func goToHome() {
-        self.navigationController?.popToRootViewController(animated: true)
-    }
-
-    @objc func goToInfo() {
-        if let viewControllers = self.navigationController?.viewControllers {
-            if viewControllers.count > 2 {
-                let targetViewController = viewControllers[viewControllers.count - 3]
-                self.navigationController?.popToViewController(targetViewController, animated: true)
-            }
-        }
-    }
-
-    @objc func goToPrevious() {
-        self.navigationController?.popViewController(animated: true)
-    }
-
-
     // UI 설정 메서드입니다.
     func setupUI() {
         setupTableView() // 테이블뷰를 설정합니다.
@@ -197,9 +129,32 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         autocompleteTableView.dataSource = self // 테이블뷰의 데이터소스를 설정합니다.
         autocompleteTableView.register(UITableViewCell.self, forCellReuseIdentifier: "AutocompleteCell") // 셀을 등록합니다.
         autocompleteTableView.translatesAutoresizingMaskIntoConstraints = false // 오토 레이아웃을 사용합니다.
+        autocompleteTableView.backgroundColor = .lightGray // 원하는 색상으로 변경
         view.addSubview(autocompleteTableView) // 자동완성 테이블뷰를 뷰에 추가합니다.
         
         // 자동완성 테이블뷰의 제약 조건을 설정합니다.
+        NSLayoutConstraint.activate([
+            autocompleteTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            autocompleteTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            autocompleteTableView.bottomAnchor.constraint(equalTo: messageInputBar.topAnchor),
+            autocompleteTableView.heightAnchor.constraint(equalToConstant: 200)
+        ])
+        
+        //드래그바
+        let dragIndicator = UIView()
+        dragIndicator.backgroundColor = .darkGray // 원하는 색상으로 변경
+        dragIndicator.translatesAutoresizingMaskIntoConstraints = false
+        autocompleteTableView.addSubview(dragIndicator)
+        
+        NSLayoutConstraint.activate([
+            dragIndicator.leadingAnchor.constraint(equalTo: autocompleteTableView.leadingAnchor),
+            dragIndicator.widthAnchor.constraint(equalToConstant: 5),
+            dragIndicator.topAnchor.constraint(equalTo: autocompleteTableView.topAnchor),
+            dragIndicator.bottomAnchor.constraint(equalTo: autocompleteTableView.bottomAnchor)
+        ])
+
+        view.addSubview(autocompleteTableView)
+
         NSLayoutConstraint.activate([
             autocompleteTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             autocompleteTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
@@ -267,7 +222,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
             return
         }
         let bottomSafeAreaInset = view.safeAreaInsets.bottom
-        view.frame.origin.y = -(keyboardFrame.height - bottomSafeAreaInset + 80)
+        view.frame.origin.y = -(keyboardFrame.height - bottomSafeAreaInset + 30)
     }
     
     // 키보드가 숨겨질 때 호출되는 메서드입니다.
