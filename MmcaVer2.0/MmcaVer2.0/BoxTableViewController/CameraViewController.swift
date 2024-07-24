@@ -14,6 +14,7 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
     let imagePicker = UIImagePickerController()
     
     // 원본 이미지를 저장할 변수
+    var selectedImage: UIImage?
     var originalImage: UIImage?
     
     // 캡션 기능 활성화 여부를 나타내는 변수

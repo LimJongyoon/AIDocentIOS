@@ -22,6 +22,7 @@
 		3A5A195B2BF5F1B200A57037 /* MMCA001.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A5A19562BF5F1B200A57037 /* MMCA001.png */; };
 		3A5A195C2BF5F1B200A57037 /* MMCA002.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A5A19572BF5F1B200A57037 /* MMCA002.png */; };
 		3A5A195D2BF5F1B200A57037 /* MMCA003.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A5A19582BF5F1B200A57037 /* MMCA003.png */; };
+		3A5F2A012C467E3E0084EA18 /* ACaptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5F2A002C467E3E0084EA18 /* ACaptionViewController.swift */; };
 		3A64C2C82BC3D9F000CD31B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A64C2C72BC3D9F000CD31B4 /* AppDelegate.swift */; };
 		3A64C2CA2BC3D9F000CD31B4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A64C2C92BC3D9F000CD31B4 /* SceneDelegate.swift */; };
 		3A64C2CF2BC3D9F000CD31B4 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 3A64C2CE2BC3D9F000CD31B4 /* Base */; };
@@ -30,6 +31,7 @@
 		3A9D65E82C12EA33000F1995 /* ImageClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 3A9D65E72C12EA33000F1995 /* ImageClassifier.mlmodel */; };
 		3AA8DCC52BC3E82E00A1B8CB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA8DCC42BC3E82E00A1B8CB /* HomeViewController.swift */; };
 		3ACB0C232C3D474400B8786D /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACB0C222C3D474400B8786D /* TextViewController.swift */; };
+		3AD32E052C46848E00EA32BC /* ACameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD32E042C46848E00EA32BC /* ACameraViewController.swift */; };
 		3AEFA4682C1C042C00AAA6F3 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEFA4672C1C042C00AAA6F3 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +58,7 @@
 		3A5A19562BF5F1B200A57037 /* MMCA001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MMCA001.png; sourceTree = "<group>"; };
 		3A5A19572BF5F1B200A57037 /* MMCA002.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MMCA002.png; sourceTree = "<group>"; };
 		3A5A19582BF5F1B200A57037 /* MMCA003.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MMCA003.png; sourceTree = "<group>"; };
+		3A5F2A002C467E3E0084EA18 /* ACaptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACaptionViewController.swift; sourceTree = "<group>"; };
 		3A64C2C42BC3D9F000CD31B4 /* MmcaVer2.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MmcaVer2.0.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A64C2C72BC3D9F000CD31B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A64C2C92BC3D9F000CD31B4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +69,7 @@
 		3A9D65E72C12EA33000F1995 /* ImageClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ImageClassifier.mlmodel; sourceTree = "<group>"; };
 		3AA8DCC42BC3E82E00A1B8CB /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		3ACB0C222C3D474400B8786D /* TextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
+		3AD32E042C46848E00EA32BC /* ACameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACameraViewController.swift; sourceTree = "<group>"; };
 		3AEFA4672C1C042C00AAA6F3 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -170,8 +174,10 @@
 				3A448E012BC3E40A001E7731 /* SearchViewController.swift */,
 				3A448E032BC3E484001E7731 /* CameraViewController.swift */,
 				3AEFA4672C1C042C00AAA6F3 /* DetailViewController.swift */,
-				3A4934CF2C257C8800D2F5AC /* ChatViewController.swift */,
 				3ACB0C222C3D474400B8786D /* TextViewController.swift */,
+				3A4934CF2C257C8800D2F5AC /* ChatViewController.swift */,
+				3A5F2A002C467E3E0084EA18 /* ACaptionViewController.swift */,
+				3AD32E042C46848E00EA32BC /* ACameraViewController.swift */,
 			);
 			path = BoxTableViewController;
 			sourceTree = "<group>";
@@ -251,6 +257,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A5F2A012C467E3E0084EA18 /* ACaptionViewController.swift in Sources */,
+				3AD32E052C46848E00EA32BC /* ACameraViewController.swift in Sources */,
 				3A64C2C82BC3D9F000CD31B4 /* AppDelegate.swift in Sources */,
 				3A448E042BC3E484001E7731 /* CameraViewController.swift in Sources */,
 				3A448E002BC3E2DC001E7731 /* InfoViewController.swift in Sources */,
