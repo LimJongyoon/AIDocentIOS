@@ -52,6 +52,11 @@ class ACameraViewController: UIViewController, UIImagePickerControllerDelegate, 
         let homeButton = createCustomButton(title: " 홈 ", image: nil, action: #selector(goToHome))
         let customHomeButton = UIBarButtonItem(customView: homeButton)
         
+        // 이전 뷰 컨트롤러의 타이틀을 가져오기 삭제
+
+        
+        // Chevron 이미지 추가
+        let chevronImage = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: nil, action: nil)
         
         self.navigationItem.leftBarButtonItems = [homeChevron, customHomeButton]
     }
@@ -228,7 +233,6 @@ class ACameraViewController: UIViewController, UIImagePickerControllerDelegate, 
     @objc func goToHome() {
         self.navigationController?.popToRootViewController(animated: true)
     }
-
     
     func takePhoto() {
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
