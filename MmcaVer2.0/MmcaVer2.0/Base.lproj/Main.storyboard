@@ -619,8 +619,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zBM-IR-HV0">
-                                <rect key="frame" x="5" y="64" width="383" height="528"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zBM-IR-HV0">
+                                <rect key="frame" x="23" y="129" width="354" height="351"/>
                             </imageView>
                             <button opaque="NO" tag="99" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JZS-Dg-bd3">
                                 <rect key="frame" x="289" y="702.66666666666663" width="54" height="34.333333333333371"/>
@@ -630,14 +630,6 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="savePhoto:" destination="Pam-EN-glw" eventType="touchUpInside" id="R6Y-oX-85j"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vpd-Ae-Oak">
-                                <rect key="frame" x="295.66666666666669" y="602" width="87.333333333333314" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="캡션 달기"/>
-                                <connections>
-                                    <action selector="toggleCaption:" destination="Pam-EN-glw" eventType="touchUpInside" id="ocz-6f-qT2"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사진을 업로드하거나 촬영 해주세요" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="crs-7f-pgc">
@@ -650,14 +642,18 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XbE-6U-bHY">
-                                <rect key="frame" x="183.66666666666666" y="602" width="101.99999999999997" height="35"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XbE-6U-bHY">
+                                <rect key="frame" x="183.66666666666663" y="602" width="102" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="텍스트 수정"/>
                                 <connections>
                                     <action selector="moveToTextViewController:" destination="Pam-EN-glw" eventType="touchUpInside" id="iLH-O9-XgV"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pol" translatesAutoresizingMaskIntoConstraints="NO" id="UVL-ft-B05">
+                                <rect key="frame" x="76" y="240" width="108" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="CFH-nJ-8zo"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -672,10 +668,7 @@
                             <constraint firstItem="CFH-nJ-8zo" firstAttribute="trailing" secondItem="JZS-Dg-bd3" secondAttribute="trailing" constant="50" id="dob-cy-TCk"/>
                             <constraint firstItem="zBM-IR-HV0" firstAttribute="leading" secondItem="CFH-nJ-8zo" secondAttribute="leading" constant="5" id="oQT-02-kWo"/>
                             <constraint firstItem="crs-7f-pgc" firstAttribute="centerX" secondItem="psg-il-fXN" secondAttribute="centerX" id="s4q-Pn-VyF"/>
-                            <constraint firstItem="crs-7f-pgc" firstAttribute="top" secondItem="vpd-Ae-Oak" secondAttribute="bottom" constant="15" id="utv-Gu-Z6a"/>
-                            <constraint firstItem="CFH-nJ-8zo" firstAttribute="trailing" secondItem="vpd-Ae-Oak" secondAttribute="trailing" constant="10" id="voc-LD-D6h"/>
                             <constraint firstItem="XbE-6U-bHY" firstAttribute="top" secondItem="zBM-IR-HV0" secondAttribute="bottom" constant="10" id="zWf-8W-2V6"/>
-                            <constraint firstItem="vpd-Ae-Oak" firstAttribute="leading" secondItem="XbE-6U-bHY" secondAttribute="trailing" constant="10" id="zwP-am-s4z"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="라벨 카메라" id="Ir0-L0-qEN"/>
@@ -686,7 +679,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JaM-0I-Ef4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3651" y="451"/>
+            <point key="canvasLocation" x="3649.6183206106871" y="450.7042253521127"/>
         </scene>
     </scenes>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -699,6 +692,7 @@
         <image name="paintbrush.pointed" catalog="system" width="128" height="118"/>
         <image name="paintpalette" catalog="system" width="128" height="105"/>
         <image name="photo.artframe" catalog="system" width="128" height="93"/>
+        <image name="pol" width="299" height="365"/>
         <image name="record.circle" catalog="system" width="128" height="123"/>
         <image name="signpost.right.and.left" catalog="system" width="125" height="128"/>
         <image name="text.aligncenter" catalog="system" width="128" height="99"/>

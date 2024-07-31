@@ -9,7 +9,6 @@ class ACameraViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     var selectedImage: UIImage?
     var originalImage: UIImage?
-    var captionEnabled = false
     var editedText: String?
     var editedTextColor: UIColor?
     var editedTextAlignment: NSTextAlignment?
@@ -34,6 +33,9 @@ class ACameraViewController: UIViewController, UIImagePickerControllerDelegate, 
         
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
+        
+        // UILabel을 인비지블하게 설정
+        label.isHidden = true
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -52,13 +54,15 @@ class ACameraViewController: UIViewController, UIImagePickerControllerDelegate, 
         let homeButton = createCustomButton(title: " 홈 ", image: nil, action: #selector(goToHome))
         let customHomeButton = UIBarButtonItem(customView: homeButton)
         
-        // 이전 뷰 컨트롤러의 타이틀을 가져오기 삭제
-
-        
-        // Chevron 이미지 추가
+        // chevron.left 기호 추가
         let chevronImage = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: nil, action: nil)
+        chevronImage.isEnabled = false
         
-        self.navigationItem.leftBarButtonItems = [homeChevron, customHomeButton]
+        // 사진 다시 찍기 버튼 추가
+        let retakeButton = createCustomButton(title: " 사진 다시 찍기 ", image: nil, action: #selector(takePhoto))
+        let customRetakeButton = UIBarButtonItem(customView: retakeButton)
+        
+        self.navigationItem.leftBarButtonItems = [homeChevron, customHomeButton, chevronImage, customRetakeButton]
     }
 
     func createCustomButton(title: String, image: String?, action: Selector) -> UIButton {
@@ -80,33 +84,12 @@ class ACameraViewController: UIViewController, UIImagePickerControllerDelegate, 
         return button
     }
     
-    @IBAction func toggleCaption(_ sender: UIButton) {
-        captionEnabled.toggle()
-        
-        if captionEnabled, let image = imageView.image {
-            originalImage = image
-            let text = editedText ?? label.text ?? ""
-            let textColor = editedTextColor ?? .black
-            let textAlignment = editedTextAlignment ?? .center
-            let backgroundColor = editedBackgroundColor ?? label.backgroundColor ?? UIColor(white: 0.9, alpha: 1.0)
-
-            self.imageView.image = self.drawTextOnImage(
-                text: text,
-                inImage: image,
-                textColor: textColor,
-                textAlignment: textAlignment,
-                backgroundColor: backgroundColor
-            )
-            sender.setTitle("캡션 취소", for: .normal)
-            sender.backgroundColor = UIColor(red: 1.0, green: 0.5, blue: 0.5, alpha: 1.0)
-        } else if let originalImage = originalImage {
-            imageView.image = originalImage
-            sender.setTitle("캡션 달기", for: .normal)
-            sender.backgroundColor = UIColor(red: 0.68, green: 0.85, blue: 0.90, alpha: 1.0)
-        }
-    }
-    
     @IBAction func moveToTextViewController(_ sender: UIButton) {
+        // 텍스트 수정으로 들어가기 전에 캡션을 제거
+        if let originalImage = originalImage {
+            imageView.image = originalImage
+        }
+
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if let textViewController = storyboard.instantiateViewController(withIdentifier: "TextViewController") as? TextViewController {
             textViewController.currentText = self.label.text
@@ -125,6 +108,11 @@ class ACameraViewController: UIViewController, UIImagePickerControllerDelegate, 
                 self.label.textColor = textColor ?? .black
                 self.label.textAlignment = textAlignment ?? .center
                 self.label.backgroundColor = backgroundColor ?? .white
+
+                // 텍스트가 수정된 후 이미지를 다시 그려서 캡션을 업데이트합니다.
+                if let updatedText = text {
+                    self.addCaptionToImage(updatedText)
+                }
             }
             
             textViewController.modalPresentationStyle = .fullScreen
@@ -147,15 +135,7 @@ class ACameraViewController: UIViewController, UIImagePickerControllerDelegate, 
             DispatchQueue.main.async {
                 let classification = "\(topResult.identifier) - \(Int(topResult.confidence * 100))%"
                 self.label.text = classification
-                if self.captionEnabled {
-                    self.imageView.image = self.drawTextOnImage(
-                        text: classification,
-                        inImage: self.imageView.image!,
-                        textColor: .black,
-                        textAlignment: .center,
-                        backgroundColor: UIColor(white: 0.9, alpha: 1.0)
-                    )
-                }
+                self.addCaptionToImage(classification)
             }
         }
         guard let ciImage = CIImage(image: image) else { return }
@@ -163,6 +143,21 @@ class ACameraViewController: UIViewController, UIImagePickerControllerDelegate, 
         DispatchQueue.global().async {
             try? handler.perform([request])
         }
+    }
+    
+    func addCaptionToImage(_ text: String) {
+        guard let image = imageView.image else { return }
+        let textColor = editedTextColor ?? .black
+        let textAlignment = editedTextAlignment ?? .center
+        let backgroundColor = editedBackgroundColor ?? label.backgroundColor ?? UIColor(white: 0.9, alpha: 1.0)
+        
+        self.imageView.image = self.drawTextOnImage(
+            text: text,
+            inImage: image,
+            textColor: textColor,
+            textAlignment: textAlignment,
+            backgroundColor: backgroundColor
+        )
     }
     
     func drawTextOnImage(text: String, inImage: UIImage, textColor: UIColor, textAlignment: NSTextAlignment, backgroundColor: UIColor) -> UIImage {
@@ -234,7 +229,7 @@ class ACameraViewController: UIViewController, UIImagePickerControllerDelegate, 
         self.navigationController?.popToRootViewController(animated: true)
     }
     
-    func takePhoto() {
+    @objc func takePhoto() {
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
             imagePicker.sourceType = .camera
             present(imagePicker, animated: true, completion: nil)
@@ -250,6 +245,7 @@ class ACameraViewController: UIViewController, UIImagePickerControllerDelegate, 
         guard let image = info[.originalImage] as? UIImage else { return }
         
         self.selectedImage = image
+        self.originalImage = image
         self.imageView.image = image
         classifyImage(image: image)
     }
