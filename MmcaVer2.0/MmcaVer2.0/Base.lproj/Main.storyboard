@@ -633,40 +633,46 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사진을 업로드하거나 촬영 해주세요" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="crs-7f-pgc">
-                                <rect key="frame" x="10" y="652" width="373" height="30"/>
-                                <color key="backgroundColor" white="0.90000000000000002" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="79.666666666666671" y="652" width="233.66666666666663" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="vPp-Od-Vd4"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XbE-6U-bHY">
-                                <rect key="frame" x="183.66666666666663" y="602" width="102" height="35"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HlD-io-DhU">
+                                <rect key="frame" x="193" y="702.33333333333337" width="88" height="35"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="텍스트 수정"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="다시 찍기"/>
+                                <connections>
+                                    <action selector="reTakePhoto:" destination="Pam-EN-glw" eventType="touchUpInside" id="u5Y-DJ-Ab5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XbE-6U-bHY">
+                                <rect key="frame" x="321" y="650" width="33" height="34"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="pencil" catalog="system"/>
                                 <connections>
                                     <action selector="moveToTextViewController:" destination="Pam-EN-glw" eventType="touchUpInside" id="iLH-O9-XgV"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pol" translatesAutoresizingMaskIntoConstraints="NO" id="UVL-ft-B05">
-                                <rect key="frame" x="76" y="240" width="108" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="CFH-nJ-8zo"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="crs-7f-pgc" firstAttribute="leading" secondItem="CFH-nJ-8zo" secondAttribute="leading" constant="10" id="1kB-u8-pvP"/>
                             <constraint firstItem="zBM-IR-HV0" firstAttribute="centerX" secondItem="psg-il-fXN" secondAttribute="centerX" id="45c-e5-L8s"/>
+                            <constraint firstItem="XbE-6U-bHY" firstAttribute="leading" secondItem="crs-7f-pgc" secondAttribute="trailing" constant="7.6666666666666856" id="6sp-xS-7bU"/>
                             <constraint firstItem="CFH-nJ-8zo" firstAttribute="trailing" secondItem="zBM-IR-HV0" secondAttribute="trailing" constant="5" id="9MI-Mh-vKP"/>
                             <constraint firstItem="JZS-Dg-bd3" firstAttribute="top" secondItem="crs-7f-pgc" secondAttribute="bottom" constant="20.666666666666515" id="F84-fM-ZaM"/>
                             <constraint firstItem="zBM-IR-HV0" firstAttribute="top" secondItem="CFH-nJ-8zo" secondAttribute="top" constant="5" id="UMk-vT-c3e"/>
                             <constraint firstItem="crs-7f-pgc" firstAttribute="top" secondItem="XbE-6U-bHY" secondAttribute="bottom" constant="15" id="XR6-9q-fmn"/>
                             <constraint firstAttribute="bottom" secondItem="JZS-Dg-bd3" secondAttribute="bottom" constant="115" id="Yx0-FN-ltz"/>
+                            <constraint firstItem="XbE-6U-bHY" firstAttribute="centerY" secondItem="crs-7f-pgc" secondAttribute="centerY" id="Z2k-3o-YVa"/>
                             <constraint firstItem="CFH-nJ-8zo" firstAttribute="trailing" secondItem="JZS-Dg-bd3" secondAttribute="trailing" constant="50" id="dob-cy-TCk"/>
                             <constraint firstItem="zBM-IR-HV0" firstAttribute="leading" secondItem="CFH-nJ-8zo" secondAttribute="leading" constant="5" id="oQT-02-kWo"/>
+                            <constraint firstItem="HlD-io-DhU" firstAttribute="centerY" secondItem="JZS-Dg-bd3" secondAttribute="centerY" id="ozV-ji-rPx"/>
+                            <constraint firstItem="JZS-Dg-bd3" firstAttribute="leading" secondItem="HlD-io-DhU" secondAttribute="trailing" constant="8" symbolic="YES" id="qEH-aB-0XB"/>
                             <constraint firstItem="crs-7f-pgc" firstAttribute="centerX" secondItem="psg-il-fXN" secondAttribute="centerX" id="s4q-Pn-VyF"/>
                             <constraint firstItem="XbE-6U-bHY" firstAttribute="top" secondItem="zBM-IR-HV0" secondAttribute="bottom" constant="10" id="zWf-8W-2V6"/>
                         </constraints>
@@ -691,8 +697,8 @@
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <image name="paintbrush.pointed" catalog="system" width="128" height="118"/>
         <image name="paintpalette" catalog="system" width="128" height="105"/>
+        <image name="pencil" catalog="system" width="128" height="113"/>
         <image name="photo.artframe" catalog="system" width="128" height="93"/>
-        <image name="pol" width="299" height="365"/>
         <image name="record.circle" catalog="system" width="128" height="123"/>
         <image name="signpost.right.and.left" catalog="system" width="125" height="128"/>
         <image name="text.aligncenter" catalog="system" width="128" height="99"/>

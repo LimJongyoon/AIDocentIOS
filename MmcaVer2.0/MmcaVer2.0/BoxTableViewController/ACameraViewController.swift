@@ -54,15 +54,8 @@ class ACameraViewController: UIViewController, UIImagePickerControllerDelegate, 
         let homeButton = createCustomButton(title: " 홈 ", image: nil, action: #selector(goToHome))
         let customHomeButton = UIBarButtonItem(customView: homeButton)
         
-        // chevron.left 기호 추가
-        let chevronImage = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: nil, action: nil)
-        chevronImage.isEnabled = false
         
-        // 사진 다시 찍기 버튼 추가
-        let retakeButton = createCustomButton(title: " 사진 다시 찍기 ", image: nil, action: #selector(takePhoto))
-        let customRetakeButton = UIBarButtonItem(customView: retakeButton)
-        
-        self.navigationItem.leftBarButtonItems = [homeChevron, customHomeButton, chevronImage, customRetakeButton]
+        self.navigationItem.leftBarButtonItems = [homeChevron, customHomeButton]
     }
 
     func createCustomButton(title: String, image: String?, action: Selector) -> UIButton {
@@ -203,6 +196,12 @@ class ACameraViewController: UIViewController, UIImagePickerControllerDelegate, 
         return newImage!
     }
     
+    
+    
+    @IBAction func reTakePhoto(_ sender: UIButton) {
+        takePhoto()
+    }
+    
     @IBAction func savePhoto(_ sender: UIButton) {
         guard let image = imageView.image else {
             let alert = UIAlertController(title: "저장 실패", message: "저장할 이미지가 없습니다.", preferredStyle: .alert)
@@ -219,7 +218,7 @@ class ACameraViewController: UIViewController, UIImagePickerControllerDelegate, 
             alert.addAction(UIAlertAction(title: "ㅇㅇ", style: .default, handler: nil))
             present(alert, animated: true, completion: nil)
         } else {
-            let alert = UIAlertController(title: "저장 끝ㅎ", message: "이미지에 라벨달아서 저장함 ㅎ.", preferredStyle: .alert)
+            let alert = UIAlertController(title: "저장 완료", message: "이미지에 라벨을 달아서 저장했습니다.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "ㅇㅇ", style: .default, handler: nil))
             present(alert, animated: true, completion: nil)
         }
@@ -231,6 +230,11 @@ class ACameraViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     @objc func takePhoto() {
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            if let _ = presentedViewController as? UIImagePickerController {
+                // 이미 UIImagePickerController가 표시되어 있는 경우 다시 표시하지 않음
+                return
+            }
+            
             imagePicker.sourceType = .camera
             present(imagePicker, animated: true, completion: nil)
         } else {
@@ -239,6 +243,7 @@ class ACameraViewController: UIViewController, UIImagePickerControllerDelegate, 
             present(alert, animated: true, completion: nil)
         }
     }
+
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true, completion: nil)
